@@ -1,0 +1,45 @@
+module coder_stack(
+	input clk, reset, tb_in, wreq_data, tb_size_in, wreq_size,
+	);
+
+// enc
+wire cbs_ready, cbs_blocksize, cbs_din;
+wire int_ready, int_din;
+
+// int
+wire data_in, CRC_start, CRC_blocksize;
+
+// cbseg
+wire rreq_itl_fifo, rreq_enc_fifo, empty_itl_fifo, empty_enc_fifo;
+wire [4:0] q_itl_fifo;
+wire [2:0] q_enc_fifo;
+
+cb_seg my_cb_seg(
+    clk,
+    reset,
+    tb_in,
+    wreq_data,        //Write Request of the Input TB buffer
+    tb_size_in,  
+    wreq_size,
+
+	 rreq_itl_fifo,
+	 q_itl_fifo, //{data, size, start}
+	 empty_itl_fifo,
+	 
+	 rreq_enc_fifo,
+	 q_enc_fifo,  //{data, size, start, crc, filling}
+	 empty_enc_fifo
+);
+
+interleaver my_int
+	(data_in, clk, reset, CRC_start, CRC_blocksize, CRC_end, data_out, data_ready,
+                    done, next_state, state, counter1_done, counter1_reset, count1, pi1_small_value);
+						  
+encoder_top my_enc(
+	clk, reset, cbs_ready, cbs_blocksize, int_ready,
+	cbs_din, int_din,
+	xk_out, zk_out, zk_prime_out);
+
+
+
+endmodule 
