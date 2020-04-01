@@ -57,10 +57,12 @@ module interleaver (data_in, clk, reset, CRC_start, CRC_blocksize/*, CRC_end*/, 
 	dff data_delay2 (delayed_data_in1, clk, ~reset, 1'b1, delayed_data_in2);
 	
 	wire ram1_out;
-	RAM1 RAM1_inst (reset, clk, delayed_data_in2, pi1_value, 1'b1, count1, ram1_we, ram1_out);
+	RAM1 RAM1_inst (.aclr(reset), .clock(clk), .data(delayed_data_in2), .rdaddress(pi1_value),
+						 .rden(1'b1), .wraddress(count1), .wren(ram1_we), .q(ram1_out));
 	
 	wire ram2_out;
-	RAM2 RAM2_inst (reset, clk, delayed_data_in2, pi2_value, 1'b1, count2, ram2_we, ram2_out);
+	RAM2 RAM2_inst (.aclr(reset), .clock(clk), .data(delayed_data_in2), .rdaddress(pi2_value),
+						 .rden(1'b1), .wraddress(count2), .wren(ram2_we), .q(ram2_out));
 	
 	// final output mux
 	// when p1mode is 1, side 1 is writing, so send data from ram 1

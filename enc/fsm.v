@@ -12,6 +12,8 @@ parameter TAIL = 3'd5;
 parameter WAIT_TAIL = 3'd6;
 parameter LAST_TAIL = 3'd7;
 
+reg [2:0] state_curr, state_next;
+
 assign state = state_curr;
 
 assign record_en = state_curr == RECORD;
@@ -24,8 +26,6 @@ assign tail_mode = state_curr == TAIL | state_curr == WAIT_TAIL | state_curr == 
 assign enc_en = state_curr == OPERATE | state_curr == LAST_OPERATE | state_curr == TAIL | state_curr == WAIT_TAIL;
 assign tail_counter_enable = state_curr == LAST_OPERATE | state_curr == TAIL | state_curr == WAIT_TAIL;
 assign ready = state_curr == INIT;
-
-reg [2:0] state_curr, state_next;
 
 always @(posedge clock, posedge aclr) begin
 	if (aclr) begin
