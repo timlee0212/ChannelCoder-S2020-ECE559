@@ -1,0 +1,57 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/RAM2.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/RAM1.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/pi2_small.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/pi2_large.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/pi1_small.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/pi1_large.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/interleaver_fsm.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/interleaver.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/counter2.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/counter1.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/counter_wrapper2.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/counter_wrapper1.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/tailBitsGenerator.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/my_counter.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/fsm.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/fifoFSM.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/fifo.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/encoder_top.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/encoder.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/delay.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/counter.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/mux_4to1_3wide.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/mux_2to1_3wide.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/counter4.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/compare_2bit.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/shiftreg.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/register_8bits.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/register_2bits.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/register_1bit.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/mux_ip.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/itl_fifo.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/fifo20.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/fifo16.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/fifo_tb.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/enc_fifo.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/counter_16bits.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/src {E:/Courses/ECE559/coder-stack/cdseg/src/top_module.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/src {E:/Courses/ECE559/coder-stack/cdseg/src/data_path_control.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/src {E:/Courses/ECE559/coder-stack/cdseg/src/crc24.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack {E:/Courses/ECE559/coder-stack/coder_stack_top.v}
+vlog -sv -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/src {E:/Courses/ECE559/coder-stack/cdseg/src/CRC_size.sv}
+
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/tb {E:/Courses/ECE559/coder-stack/tb/tb_full_sys.v}
+
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_full
+
+add wave *
+view structure
+view signals
+run 100 us

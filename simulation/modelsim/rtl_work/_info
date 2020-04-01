@@ -1,0 +1,967 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/Courses/ECE559/coder-stack/simulation/modelsim
+vcal_size
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1585781249
+!i10b 1
+!s100 P[lN[Ghb=dMdfMBkhO1ll3
+I3QZg6aWHGfeWR=Og1>6R20
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 !s105 CRC_size_sv_unit
+S1
+R0
+Z5 w1583352625
+Z6 8E:/Courses/ECE559/coder-stack/cdseg/src/CRC_size.sv
+Z7 FE:/Courses/ECE559/coder-stack/cdseg/src/CRC_size.sv
+L0 2
+Z8 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z9 !s108 1585781249.000000
+Z10 !s107 E:/Courses/ECE559/coder-stack/cdseg/src/CRC_size.sv|
+Z11 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/Courses/ECE559/coder-stack/cdseg/src|E:/Courses/ECE559/coder-stack/cdseg/src/CRC_size.sv|
+!i113 1
+Z12 o-sv -work work
+Z13 !s92 -sv -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/src
+Z14 tCvgOpt 0
+vcb_seg
+Z15 !s110 1585781248
+!i10b 1
+!s100 [PoBY2L=iFGPnBPP7kMC<3
+IfkS3V>_F3g6=@4Y[hb8`U3
+R3
+R0
+Z16 w1585707824
+8E:/Courses/ECE559/coder-stack/cdseg/src/top_module.v
+FE:/Courses/ECE559/coder-stack/cdseg/src/top_module.v
+L0 1
+R8
+r1
+!s85 0
+31
+Z17 !s108 1585781248.000000
+!s107 E:/Courses/ECE559/coder-stack/cdseg/src/top_module.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/cdseg/src|E:/Courses/ECE559/coder-stack/cdseg/src/top_module.v|
+!i113 1
+Z18 o-vlog01compat -work work
+Z19 !s92 -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/src
+R14
+vcoder_stack_top
+R2
+!i10b 1
+!s100 U5Ad:>oIcC;j<i^faWUWg3
+Im3dHV<8[]`o`;;zBlU<oE0
+R3
+R0
+w1585781103
+8E:/Courses/ECE559/coder-stack/coder_stack_top.v
+FE:/Courses/ECE559/coder-stack/coder_stack_top.v
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+!s107 E:/Courses/ECE559/coder-stack/coder_stack_top.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack|E:/Courses/ECE559/coder-stack/coder_stack_top.v|
+!i113 1
+R18
+!s92 -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack
+R14
+vcompare_2bit
+Z20 !s110 1585781246
+!i10b 1
+!s100 08Z`?9CQTiB2BOOQjLNVl0
+IL839YKgDDRXC=Na42FX571
+R3
+R0
+Z21 w1585777035
+8E:/Courses/ECE559/coder-stack/enc/compare_2bit.v
+FE:/Courses/ECE559/coder-stack/enc/compare_2bit.v
+Z22 L0 39
+R8
+r1
+!s85 0
+31
+Z23 !s108 1585781246.000000
+!s107 E:/Courses/ECE559/coder-stack/enc/compare_2bit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/enc|E:/Courses/ECE559/coder-stack/enc/compare_2bit.v|
+!i113 1
+R18
+Z24 !s92 -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc
+R14
+vcounter1
+Z25 !s110 1585781242
+!i10b 1
+!s100 2L3LZB_49fj97;[LgR_KK0
+Il^nmoITb2<UkQ?e0]d2j:2
+R3
+R0
+R21
+8E:/Courses/ECE559/coder-stack/int/counter1.v
+FE:/Courses/ECE559/coder-stack/int/counter1.v
+R22
+R8
+r1
+!s85 0
+31
+Z26 !s108 1585781242.000000
+!s107 E:/Courses/ECE559/coder-stack/int/counter1.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/int|E:/Courses/ECE559/coder-stack/int/counter1.v|
+!i113 1
+R18
+Z27 !s92 -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int
+R14
+vcounter2
+R25
+!i10b 1
+!s100 B1QJISGF3D[i:E>RkP_1f2
+IeBd7QhbIXClHP?hRHC4n_2
+R3
+R0
+R21
+8E:/Courses/ECE559/coder-stack/int/counter2.v
+FE:/Courses/ECE559/coder-stack/int/counter2.v
+R22
+R8
+r1
+!s85 0
+31
+R26
+!s107 E:/Courses/ECE559/coder-stack/int/counter2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/int|E:/Courses/ECE559/coder-stack/int/counter2.v|
+!i113 1
+R18
+R27
+R14
+vcounter4
+Z28 !s110 1585781245
+!i10b 1
+!s100 PZl=e:Yc_`0S:<5d2;D;A0
+I<PAz_`V_E_5bYM:ImjbKO3
+R3
+R0
+R21
+8E:/Courses/ECE559/coder-stack/enc/counter4.v
+FE:/Courses/ECE559/coder-stack/enc/counter4.v
+R22
+R8
+r1
+!s85 0
+31
+Z29 !s108 1585781245.000000
+!s107 E:/Courses/ECE559/coder-stack/enc/counter4.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/enc|E:/Courses/ECE559/coder-stack/enc/counter4.v|
+!i113 1
+R18
+R24
+R14
+vcounter_16bits
+R15
+!i10b 1
+!s100 oDkN7EzW]G]oblQl@AU:X2
+IlY<n6@05BzC6f[YTEjlZ32
+R3
+R0
+w1585279684
+8E:/Courses/ECE559/coder-stack/cdseg/IP/counter_16bits.v
+FE:/Courses/ECE559/coder-stack/cdseg/IP/counter_16bits.v
+R22
+R8
+r1
+!s85 0
+31
+R17
+!s107 E:/Courses/ECE559/coder-stack/cdseg/IP/counter_16bits.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP|E:/Courses/ECE559/coder-stack/cdseg/IP/counter_16bits.v|
+!i113 1
+R18
+Z30 !s92 -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP
+R14
+vcounter_enc
+R28
+!i10b 1
+!s100 Sa1m79HUbgXS3K1;nn?LZ3
+IAIdgYz=0a5aJlOB]7OeoF0
+R3
+R0
+R21
+8E:/Courses/ECE559/coder-stack/enc/counter.v
+FE:/Courses/ECE559/coder-stack/enc/counter.v
+Z31 L0 40
+R8
+r1
+!s85 0
+31
+R29
+!s107 E:/Courses/ECE559/coder-stack/enc/counter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/enc|E:/Courses/ECE559/coder-stack/enc/counter.v|
+!i113 1
+R18
+R24
+R14
+vcounter_wrapper1
+Z32 !s110 1585781243
+!i10b 1
+!s100 o0g6Aa6Lf7S87LW8`NB9I3
+I^5:EPbLTV[TG4gocI3db?0
+R3
+R0
+R21
+8E:/Courses/ECE559/coder-stack/int/counter_wrapper1.v
+FE:/Courses/ECE559/coder-stack/int/counter_wrapper1.v
+L0 1
+R8
+r1
+!s85 0
+31
+Z33 !s108 1585781243.000000
+!s107 E:/Courses/ECE559/coder-stack/int/counter_wrapper1.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/int|E:/Courses/ECE559/coder-stack/int/counter_wrapper1.v|
+!i113 1
+R18
+R27
+R14
+vcounter_wrapper2
+R25
+!i10b 1
+!s100 FjoNZzP]Z7i<kFjWkhcPn2
+IZ6SM03T]UnS:50>>_;LJm3
+R3
+R0
+R21
+8E:/Courses/ECE559/coder-stack/int/counter_wrapper2.v
+FE:/Courses/ECE559/coder-stack/int/counter_wrapper2.v
+L0 1
+R8
+r1
+!s85 0
+31
+R26
+!s107 E:/Courses/ECE559/coder-stack/int/counter_wrapper2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/int|E:/Courses/ECE559/coder-stack/int/counter_wrapper2.v|
+!i113 1
+R18
+R27
+R14
+vcrc24
+R2
+!i10b 1
+!s100 @6oQgdPmBDnG3V@:eTib21
+I:RfTnN<o:z`CM5[WnEEnQ1
+R3
+R0
+w1585003554
+8E:/Courses/ECE559/coder-stack/cdseg/src/crc24.v
+FE:/Courses/ECE559/coder-stack/cdseg/src/crc24.v
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+!s107 E:/Courses/ECE559/coder-stack/cdseg/src/crc24.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/cdseg/src|E:/Courses/ECE559/coder-stack/cdseg/src/crc24.v|
+!i113 1
+R18
+R19
+R14
+vCRC_size
+R1
+R2
+!i10b 1
+!s100 Z7@MllEZo;cjGSf:P1==42
+IZj4iclIm7GoH<SnLDnCe?1
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 56
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+n@c@r@c_size
+vdata_fsm
+R2
+!i10b 1
+!s100 h9<Qio:;hEgb<g4biHhUA2
+I><=@4PNFRe8eC2;P1=Bj]3
+R3
+R0
+R16
+8E:/Courses/ECE559/coder-stack/cdseg/src/data_path_control.v
+FE:/Courses/ECE559/coder-stack/cdseg/src/data_path_control.v
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+!s107 E:/Courses/ECE559/coder-stack/cdseg/src/data_path_control.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/cdseg/src|E:/Courses/ECE559/coder-stack/cdseg/src/data_path_control.v|
+!i113 1
+R18
+R19
+R14
+vdelay
+Z34 !s110 1585781244
+!i10b 1
+!s100 QZc?QLJ0j]7HWjhDl5mJX1
+ICb2n852_NPROaV8Q<IAC_3
+R3
+R0
+w1585778654
+8E:/Courses/ECE559/coder-stack/enc/delay.v
+FE:/Courses/ECE559/coder-stack/enc/delay.v
+L0 1
+R8
+r1
+!s85 0
+31
+Z35 !s108 1585781244.000000
+!s107 E:/Courses/ECE559/coder-stack/enc/delay.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/enc|E:/Courses/ECE559/coder-stack/enc/delay.v|
+!i113 1
+R18
+R24
+R14
+venc_fifo
+R15
+!i10b 1
+!s100 UYefKe_I?[WdchoEO6[FE0
+IGolhM<G=Y6Q5kPgeZ<lHW2
+R3
+R0
+w1585279609
+8E:/Courses/ECE559/coder-stack/cdseg/IP/enc_fifo.v
+FE:/Courses/ECE559/coder-stack/cdseg/IP/enc_fifo.v
+R22
+R8
+r1
+!s85 0
+31
+R17
+!s107 E:/Courses/ECE559/coder-stack/cdseg/IP/enc_fifo.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP|E:/Courses/ECE559/coder-stack/cdseg/IP/enc_fifo.v|
+!i113 1
+R18
+R30
+R14
+vencoder
+R34
+!i10b 1
+!s100 eB[L34mChTUdaF:2:]9h@1
+I8LG@:J5LU[[AKV6D50J@f0
+R3
+R0
+w1585780326
+8E:/Courses/ECE559/coder-stack/enc/encoder.v
+FE:/Courses/ECE559/coder-stack/enc/encoder.v
+L0 1
+R8
+r1
+!s85 0
+31
+R35
+!s107 E:/Courses/ECE559/coder-stack/enc/encoder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/enc|E:/Courses/ECE559/coder-stack/enc/encoder.v|
+!i113 1
+R18
+R24
+R14
+vencoder_top
+R34
+!i10b 1
+!s100 Qeca0IK>lV1_?3?CB:E]11
+IXiO@L`e5XRdl<Pe6PQehX1
+R3
+R0
+w1585780187
+8E:/Courses/ECE559/coder-stack/enc/encoder_top.v
+FE:/Courses/ECE559/coder-stack/enc/encoder_top.v
+L0 1
+R8
+r1
+!s85 0
+31
+R35
+!s107 E:/Courses/ECE559/coder-stack/enc/encoder_top.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/enc|E:/Courses/ECE559/coder-stack/enc/encoder_top.v|
+!i113 1
+R18
+R24
+R14
+vfifo
+R34
+!i10b 1
+!s100 mbDCa:QM>C^OEzoTJdnU10
+IGE:d;hzbdXDFe>[=mo`;P1
+R3
+R0
+R21
+8E:/Courses/ECE559/coder-stack/enc/fifo.v
+FE:/Courses/ECE559/coder-stack/enc/fifo.v
+R31
+R8
+r1
+!s85 0
+31
+R35
+!s107 E:/Courses/ECE559/coder-stack/enc/fifo.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/enc|E:/Courses/ECE559/coder-stack/enc/fifo.v|
+!i113 1
+R18
+R24
+R14
+vfifo16
+R15
+!i10b 1
+!s100 <J0PPRJzHWnG2PJQ9=7fY3
+I[1obN<C]@UNDCTSgjZlk10
+R3
+R0
+w1585277151
+8E:/Courses/ECE559/coder-stack/cdseg/IP/fifo16.v
+FE:/Courses/ECE559/coder-stack/cdseg/IP/fifo16.v
+R22
+R8
+r1
+!s85 0
+31
+Z36 !s108 1585781247.000000
+!s107 E:/Courses/ECE559/coder-stack/cdseg/IP/fifo16.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP|E:/Courses/ECE559/coder-stack/cdseg/IP/fifo16.v|
+!i113 1
+R18
+R30
+R14
+vfifo20
+Z37 !s110 1585781247
+!i10b 1
+!s100 iF_E7ZQo=@EXa5BT5[Yak3
+IML1I6:>j_HB4mKmi;[Cg42
+R3
+R0
+w1585277258
+8E:/Courses/ECE559/coder-stack/cdseg/IP/fifo20.v
+FE:/Courses/ECE559/coder-stack/cdseg/IP/fifo20.v
+R22
+R8
+r1
+!s85 0
+31
+R36
+!s107 E:/Courses/ECE559/coder-stack/cdseg/IP/fifo20.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP|E:/Courses/ECE559/coder-stack/cdseg/IP/fifo20.v|
+!i113 1
+R18
+R30
+R14
+vfifo_tb
+R15
+!i10b 1
+!s100 ?]E>67>>Hb`L4NoZ09hO20
+IzP6m_:bV>CS]IE8=O4a2b2
+R3
+R0
+w1583361256
+8E:/Courses/ECE559/coder-stack/cdseg/IP/fifo_tb.v
+FE:/Courses/ECE559/coder-stack/cdseg/IP/fifo_tb.v
+R22
+R8
+r1
+!s85 0
+31
+R17
+!s107 E:/Courses/ECE559/coder-stack/cdseg/IP/fifo_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP|E:/Courses/ECE559/coder-stack/cdseg/IP/fifo_tb.v|
+!i113 1
+R18
+R30
+R14
+vfifoFSM
+R34
+!i10b 1
+!s100 S6Y5G<K6[Z[0a3Tb_IH=M3
+IG:XG`_QGeo`@K?TV:SRn92
+R3
+R0
+R21
+8E:/Courses/ECE559/coder-stack/enc/fifoFSM.v
+FE:/Courses/ECE559/coder-stack/enc/fifoFSM.v
+L0 1
+R8
+r1
+!s85 0
+31
+R33
+!s107 E:/Courses/ECE559/coder-stack/enc/fifoFSM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/enc|E:/Courses/ECE559/coder-stack/enc/fifoFSM.v|
+!i113 1
+R18
+R24
+R14
+nfifo@f@s@m
+vfsm
+R32
+!i10b 1
+!s100 o1V<K;>8hEJ:MQ]PmM?OI1
+I4^mRPKo4nz0H`g@7V9XZg1
+R3
+R0
+w1585780036
+8E:/Courses/ECE559/coder-stack/enc/fsm.v
+FE:/Courses/ECE559/coder-stack/enc/fsm.v
+L0 1
+R8
+r1
+!s85 0
+31
+R33
+!s107 E:/Courses/ECE559/coder-stack/enc/fsm.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/enc|E:/Courses/ECE559/coder-stack/enc/fsm.v|
+!i113 1
+R18
+R24
+R14
+vinterleaver
+R25
+!i10b 1
+!s100 23IaNKX]2ZUh0VR_MWS<;1
+I8VQ`OeKYbg7kY8>0X]YeT1
+R3
+R0
+w1585780992
+8E:/Courses/ECE559/coder-stack/int/interleaver.v
+FE:/Courses/ECE559/coder-stack/int/interleaver.v
+L0 1
+R8
+r1
+!s85 0
+31
+R26
+!s107 E:/Courses/ECE559/coder-stack/int/interleaver.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/int|E:/Courses/ECE559/coder-stack/int/interleaver.v|
+!i113 1
+R18
+R27
+R14
+vinterleaver_fsm
+R25
+!i10b 1
+!s100 8jLm;_<nZNTXd9j>C6?n02
+IYWOh11ZX^anl^]a3WWhOK3
+R3
+R0
+R21
+8E:/Courses/ECE559/coder-stack/int/interleaver_fsm.v
+FE:/Courses/ECE559/coder-stack/int/interleaver_fsm.v
+L0 1
+R8
+r1
+!s85 0
+31
+R26
+!s107 E:/Courses/ECE559/coder-stack/int/interleaver_fsm.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/int|E:/Courses/ECE559/coder-stack/int/interleaver_fsm.v|
+!i113 1
+R18
+R27
+R14
+vitl_fifo
+R37
+!i10b 1
+!s100 CScJk0e6l8@bhN<9d[JS81
+IK^566PV`PK:z7b[X=mAG<2
+R3
+R0
+w1585278662
+8E:/Courses/ECE559/coder-stack/cdseg/IP/itl_fifo.v
+FE:/Courses/ECE559/coder-stack/cdseg/IP/itl_fifo.v
+R22
+R8
+r1
+!s85 0
+31
+R36
+!s107 E:/Courses/ECE559/coder-stack/cdseg/IP/itl_fifo.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP|E:/Courses/ECE559/coder-stack/cdseg/IP/itl_fifo.v|
+!i113 1
+R18
+R30
+R14
+vmux_2to1_3wide
+R28
+!i10b 1
+!s100 0PMb[O<IeWNaZDEN4:?MY0
+IX6OdQ86mEBkTK9nUGi9D;0
+R3
+R0
+R21
+8E:/Courses/ECE559/coder-stack/enc/mux_2to1_3wide.v
+FE:/Courses/ECE559/coder-stack/enc/mux_2to1_3wide.v
+R22
+R8
+r1
+!s85 0
+31
+R29
+!s107 E:/Courses/ECE559/coder-stack/enc/mux_2to1_3wide.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/enc|E:/Courses/ECE559/coder-stack/enc/mux_2to1_3wide.v|
+!i113 1
+R18
+R24
+R14
+vmux_4to1_3wide
+R28
+!i10b 1
+!s100 5:6YdgOZQ4^;<RFW8dIPJ3
+IF2mSi8^n`VAKL[AlJ9VnE0
+R3
+R0
+R21
+8E:/Courses/ECE559/coder-stack/enc/mux_4to1_3wide.v
+FE:/Courses/ECE559/coder-stack/enc/mux_4to1_3wide.v
+R22
+R8
+r1
+!s85 0
+31
+R29
+!s107 E:/Courses/ECE559/coder-stack/enc/mux_4to1_3wide.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/enc|E:/Courses/ECE559/coder-stack/enc/mux_4to1_3wide.v|
+!i113 1
+R18
+R24
+R14
+vmux_ip
+R37
+!i10b 1
+!s100 ;Zd<XLLKZYU<;ZP@Z602c1
+IS>8SSNj`o^Y_FnN9j@@<H2
+R3
+R0
+w1585279635
+8E:/Courses/ECE559/coder-stack/cdseg/IP/mux_ip.v
+FE:/Courses/ECE559/coder-stack/cdseg/IP/mux_ip.v
+R22
+R8
+r1
+!s85 0
+31
+R36
+!s107 E:/Courses/ECE559/coder-stack/cdseg/IP/mux_ip.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP|E:/Courses/ECE559/coder-stack/cdseg/IP/mux_ip.v|
+!i113 1
+R18
+R30
+R14
+vmy_counter
+R32
+!i10b 1
+!s100 @9=AHBP`47AG;BJ@?9U8I2
+IGmVNRLLlDz9JLnMc3]W:b3
+R3
+R0
+R21
+8E:/Courses/ECE559/coder-stack/enc/my_counter.v
+FE:/Courses/ECE559/coder-stack/enc/my_counter.v
+L0 1
+R8
+r1
+!s85 0
+31
+R33
+!s107 E:/Courses/ECE559/coder-stack/enc/my_counter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/enc|E:/Courses/ECE559/coder-stack/enc/my_counter.v|
+!i113 1
+R18
+R24
+R14
+vpi1_large
+R25
+!i10b 1
+!s100 20=aB4ZJiHMez[mCUmPkM2
+I3nQFiNkCWPbMVA0@0SD4T3
+R3
+R0
+R21
+8E:/Courses/ECE559/coder-stack/int/pi1_large.v
+FE:/Courses/ECE559/coder-stack/int/pi1_large.v
+R22
+R8
+r1
+!s85 0
+31
+R26
+!s107 E:/Courses/ECE559/coder-stack/int/pi1_large.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/int|E:/Courses/ECE559/coder-stack/int/pi1_large.v|
+!i113 1
+R18
+R27
+R14
+vpi1_small
+R25
+!i10b 1
+!s100 VG>1IEz1b:C4WU@fb7NzE2
+IE7M=_h;YB3l<>jI@]cMYO2
+R3
+R0
+R21
+8E:/Courses/ECE559/coder-stack/int/pi1_small.v
+FE:/Courses/ECE559/coder-stack/int/pi1_small.v
+R22
+R8
+r1
+!s85 0
+31
+R26
+!s107 E:/Courses/ECE559/coder-stack/int/pi1_small.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/int|E:/Courses/ECE559/coder-stack/int/pi1_small.v|
+!i113 1
+R18
+R27
+R14
+vpi2_large
+Z38 !s110 1585781241
+!i10b 1
+!s100 f8^d40=fzfzcZ^dnkH5603
+Ii4U@:On`]I3c=G18i?7<13
+R3
+R0
+R21
+8E:/Courses/ECE559/coder-stack/int/pi2_large.v
+FE:/Courses/ECE559/coder-stack/int/pi2_large.v
+R22
+R8
+r1
+!s85 0
+31
+Z39 !s108 1585781241.000000
+!s107 E:/Courses/ECE559/coder-stack/int/pi2_large.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/int|E:/Courses/ECE559/coder-stack/int/pi2_large.v|
+!i113 1
+R18
+R27
+R14
+vpi2_small
+R38
+!i10b 1
+!s100 BWM@mNdcAAKQdZhDD1BWY0
+I;0NSd<6TfeDlI:gAOOSBT1
+R3
+R0
+R21
+8E:/Courses/ECE559/coder-stack/int/pi2_small.v
+FE:/Courses/ECE559/coder-stack/int/pi2_small.v
+R22
+R8
+r1
+!s85 0
+31
+R39
+!s107 E:/Courses/ECE559/coder-stack/int/pi2_small.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/int|E:/Courses/ECE559/coder-stack/int/pi2_small.v|
+!i113 1
+R18
+R27
+R14
+vRAM1
+R38
+!i10b 1
+!s100 LdSi=AXJ6cRlHUCG`BJTP1
+I=;G4E;nD_8cAV`8n6G?EB0
+R3
+R0
+R21
+8E:/Courses/ECE559/coder-stack/int/RAM1.v
+FE:/Courses/ECE559/coder-stack/int/RAM1.v
+R22
+R8
+r1
+!s85 0
+31
+R39
+!s107 E:/Courses/ECE559/coder-stack/int/RAM1.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/int|E:/Courses/ECE559/coder-stack/int/RAM1.v|
+!i113 1
+R18
+R27
+R14
+n@r@a@m1
+vRAM2
+R38
+!i10b 1
+!s100 Rz76]HNLXM<:Zm7EUbFX93
+ILFAU8_MPKoA1IneCR[E7i0
+R3
+R0
+R21
+8E:/Courses/ECE559/coder-stack/int/RAM2.v
+FE:/Courses/ECE559/coder-stack/int/RAM2.v
+R22
+R8
+r1
+!s85 0
+31
+R39
+!s107 E:/Courses/ECE559/coder-stack/int/RAM2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/int|E:/Courses/ECE559/coder-stack/int/RAM2.v|
+!i113 1
+R18
+R27
+R14
+n@r@a@m2
+vregister_1bit
+R37
+!i10b 1
+!s100 2e1M8mcIKFcz[0IzBDY;e1
+IF2;iDWLG8hXI>S2QWFDI`1
+R3
+R0
+w1583361265
+8E:/Courses/ECE559/coder-stack/cdseg/IP/register_1bit.v
+FE:/Courses/ECE559/coder-stack/cdseg/IP/register_1bit.v
+R22
+R8
+r1
+!s85 0
+31
+R36
+!s107 E:/Courses/ECE559/coder-stack/cdseg/IP/register_1bit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP|E:/Courses/ECE559/coder-stack/cdseg/IP/register_1bit.v|
+!i113 1
+R18
+R30
+R14
+vregister_2bits
+R20
+!i10b 1
+!s100 XMhz?L:7j?gYLgfa`Adn81
+IT[ZW:c807>[1FnA0T8M5L1
+R3
+R0
+w1583295614
+8E:/Courses/ECE559/coder-stack/cdseg/IP/register_2bits.v
+FE:/Courses/ECE559/coder-stack/cdseg/IP/register_2bits.v
+R22
+R8
+r1
+!s85 0
+31
+R23
+!s107 E:/Courses/ECE559/coder-stack/cdseg/IP/register_2bits.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP|E:/Courses/ECE559/coder-stack/cdseg/IP/register_2bits.v|
+!i113 1
+R18
+R30
+R14
+vregister_8bits
+R20
+!i10b 1
+!s100 03o;jK?C>YGF@KXD^hT3:0
+IT<o9[Q?cn]c?@jdmMEbf62
+R3
+R0
+w1585695588
+8E:/Courses/ECE559/coder-stack/cdseg/IP/register_8bits.v
+FE:/Courses/ECE559/coder-stack/cdseg/IP/register_8bits.v
+R22
+R8
+r1
+!s85 0
+31
+R23
+!s107 E:/Courses/ECE559/coder-stack/cdseg/IP/register_8bits.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP|E:/Courses/ECE559/coder-stack/cdseg/IP/register_8bits.v|
+!i113 1
+R18
+R30
+R14
+vshiftreg
+R20
+!i10b 1
+!s100 eNjzAzBJ2F`L0NcM;JD361
+IcGDVj]O:kb591zlZYcBzj2
+R3
+R0
+w1585279655
+8E:/Courses/ECE559/coder-stack/cdseg/IP/shiftreg.v
+FE:/Courses/ECE559/coder-stack/cdseg/IP/shiftreg.v
+R22
+R8
+r1
+!s85 0
+31
+R23
+!s107 E:/Courses/ECE559/coder-stack/cdseg/IP/shiftreg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP|E:/Courses/ECE559/coder-stack/cdseg/IP/shiftreg.v|
+!i113 1
+R18
+R30
+R14
+vtailBitsGenerator
+R32
+!i10b 1
+!s100 me9CTcXX<_XFRFjR_cL>G3
+IaT:g2J;Bl2T9MQe2iRAGL1
+R3
+R0
+R21
+8E:/Courses/ECE559/coder-stack/enc/tailBitsGenerator.v
+FE:/Courses/ECE559/coder-stack/enc/tailBitsGenerator.v
+L0 1
+R8
+r1
+!s85 0
+31
+R33
+!s107 E:/Courses/ECE559/coder-stack/enc/tailBitsGenerator.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/enc|E:/Courses/ECE559/coder-stack/enc/tailBitsGenerator.v|
+!i113 1
+R18
+R24
+R14
+ntail@bits@generator
+vtb_full
+!s110 1585781250
+!i10b 1
+!s100 mPV>6bb;24DDgSIFe_83X2
+IJDTo9edD3LWC_MJn6zB_G1
+R3
+R0
+w1585780609
+8E:/Courses/ECE559/coder-stack/tb/tb_full_sys.v
+FE:/Courses/ECE559/coder-stack/tb/tb_full_sys.v
+L0 2
+R8
+r1
+!s85 0
+31
+!s108 1585781250.000000
+!s107 E:/Courses/ECE559/coder-stack/tb/tb_full_sys.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/coder-stack/tb|E:/Courses/ECE559/coder-stack/tb/tb_full_sys.v|
+!i113 1
+R18
+!s92 -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/tb
+R14

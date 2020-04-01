@@ -6,14 +6,19 @@ module encoder_top(
 	output [2:0] d_state,
 	output d_ready);
 
-assign d_state = state;
-assign d_ready = ready;
+
 	
 reg block_size;
 	
 wire switch, record_en, delay_ren, delay_wen, counter_en, reset_or_cbs_ready;
 wire ready;
 assign reset_or_cbs_ready = reset | cbs_ready;
+
+wire tail_en, tail_mode, tail_counter, close_switch, tail_counter_enable;
+wire [2:0] state;
+
+assign d_state = state;
+assign d_ready = ready;
 
 always @(posedge clock, posedge reset, posedge cbs_ready) begin
 	if (reset | cbs_ready) begin
@@ -78,8 +83,7 @@ delay del(.clock(clock), .aclr(reset_or_cbs_ready), .data_in(cbs_din),
  .data_write(delay_wen), .data_read(delay_ren), .counter_mode(block_size),
  .data_out(delay_out), .full_6144(), .usedw());
  
-wire tail_en, tail_mode, tail_counter, close_switch, tail_counter_enable;
-wire [2:0] state;
+
 fsm my_fsm(
 	.aclr(reset), .clock(clock), .cbs_ready(cbs_ready), .int_ready(int_ready), 
 	.counter(switch), .tail_counter(tail_counter),
