@@ -41,6 +41,9 @@ assign cbs_blocksize = q_enc_fifo[1];
 assign cbs_din = q_enc_fifo[2];
 
 // connecting cbseg-int - TBD!!
+assign int_data_in = q_itl_fifo[4];
+assign int_start_in = q_itl_fifo[2];
+assign int_blksize_in = q_itl_fifo[3];
 
 cb_seg my_cb_seg(
     clk,
