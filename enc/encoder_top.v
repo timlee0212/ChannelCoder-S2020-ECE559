@@ -1,13 +1,8 @@
 module encoder_top(
 	input clock, reset, cbs_ready, cbs_blocksize, cbs_fifo_empty, int_ready,
 	input cbs_din, int_din,
-	output xk_out, zk_out, zk_prime_out, cbs_fifo_rreq,
-	
-	output [2:0] d_state,
-	output d_ready);
+	output xk_out, zk_out, zk_prime_out, cbs_fifo_rreq);
 
-
-	
 reg block_size;
 	
 wire switch, record_en, delay_ren, delay_wen, counter_en, reset_or_cbs_ready;
@@ -16,9 +11,6 @@ assign reset_or_cbs_ready = reset | cbs_ready;
 
 wire tail_en, tail_mode, tail_counter, close_switch, tail_counter_enable;
 wire [2:0] state;
-
-assign d_state = state;
-assign d_ready = ready;
 
 always @(posedge clock, posedge reset, posedge cbs_ready) begin
 	if (reset | cbs_ready) begin
