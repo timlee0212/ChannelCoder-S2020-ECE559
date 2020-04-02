@@ -1,10 +1,10 @@
-module interleaver (data_in, clk, reset, CRC_start, CRC_blocksize/*, CRC_end*/, data_out, data_ready,
-                    done/*, next_state, state, counter1_done, counter1_reset, count1, pi1_small_value*/);
+module interleaver (data_in, clk, reset, CRC_start, CRC_blocksize,empty_itl_fifo/*, CRC_end*/, data_out, data_ready,
+                    done,rreq_itl_fifo/*, next_state, state, counter1_done, counter1_reset, count1, pi1_small_value*/);
 	input data_in;
-	input clk, reset;
+	input clk, reset,empty_itl_fifo;
 	input CRC_start, CRC_blocksize;//, CRC_end; // control signals
 	
-	output data_out;
+	output data_out,rreq_itl_fifo;
 	output data_ready, done; // control signals
 	
 	wire [3:0] state, next_state;
@@ -69,4 +69,5 @@ module interleaver (data_in, clk, reset, CRC_start, CRC_blocksize/*, CRC_end*/, 
 	// when p1mode is 0, either side 2 is writing, or we don't have valid data, so we can 
 	// just send ram 2 and not assert data_ready if it's not valid data
 	assign data_out = (p1mode) ? (ram1_out) : (ram2_out);
+	assign rreq_itl_fifo = ~empty_itl_fifo;
 endmodule

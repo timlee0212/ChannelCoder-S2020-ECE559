@@ -14,7 +14,7 @@ wire int_data_in, int_start_in, int_blksize_in;
 wire data_out, data_ready, done;
 
 // cbseg
-reg rreq_itl_fifo;
+wire rreq_itl_fifo;
 wire rreq_enc_fifo;
 wire empty_itl_fifo, empty_enc_fifo;
 wire [4:0] q_itl_fifo;
@@ -30,19 +30,7 @@ assign cbs_blocksize = q_enc_fifo[1];
 assign cbs_din = q_enc_fifo[2];
 
 //interleaver input signals 
-always @(posedge clk) begin
-	if (int_ready) begin
-		if (~empty_itl_fifo) begin
-			rreq_itl_fifo <= 1'b1;
-		end
-		else begin
-			rreq_itl_fifo <= 1'b0;
-		end
-	end
-	else begin
-		rreq_itl_fifo <= 1'b0;
-	end
-end
+
 assign int_data_in = q_itl_fifo[4];
 assign int_start_in = q_itl_fifo[2];
 assign int_blksize_in = q_itl_fifo[3];
@@ -66,8 +54,8 @@ cb_seg my_cb_seg(
 
 interleaver my_int
 	(clk, reset,
-	int_data_in, int_start_in, int_blksize_in, 
-	data_out, data_ready, done);
+	int_data_in, int_start_in, int_blksize_in, empty_itl_fifo,
+	data_out, data_ready, done,rreq_itl_fifo);
 						  
 encoder_top my_enc(
 	.clock(clk), .reset(reset), .cbs_ready(cbs_ready), .cbs_blocksize(cbs_blocksize), .cbs_fifo_empty(empty_enc_fifo), .int_ready(int_ready),
