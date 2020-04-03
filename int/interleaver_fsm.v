@@ -11,6 +11,7 @@ module interleaver_fsm(clk,reset,block_size,next_state_w,state_w,CRC_start,CRC_d
 		output reg ctr1_blk,ctr2_blk;
 		output ready;
 		output done;
+		
 
 
 reg[3:0] next_state,current_state;
@@ -20,7 +21,7 @@ wire[15:0] ctr1_counter,ctr2_counter;
 reg ready_r, done_r;
  
 initial begin
-	current_state = 4'b0000;
+	current_state = 4'b1101;
 	ready_r = 1'b0;
 	done_r = 1'b0;
 	p1mode = 1'b0;
@@ -38,16 +39,28 @@ end
 
 always @(posedge clk or posedge reset) begin
 	if(reset) begin
-		current_state <= 4'b0000;
-		ctr2_re <= 1'b1;
-		ctr1_re = 1'b1;
+		current_state <= 4'b1101;
+	
 	end
 	else begin
-	current_state = next_state;
-	ctr1_re <= 1'b0;
-	ctr2_re <= 1'b0;
+	if((current_state!=next_state)||(current_state == 4'b1101))begin
+		ctr1_re <= 1'b1;
+		ctr2_re <= 1'b1;
+	end
+	else begin
+		ctr1_re <= 1'b0;
+		ctr2_re <= 1'b0;
+	end
+		current_state <= next_state;
+		
+	end
+end
+
+always @(current_state,CRC_start,CRC_data,block_size,ctr1_finish,ctr2_finish) begin
+//	ctr1_re <= 1'b0;
+//		ctr2_re <= 1'b0;
+//		
 	case (current_state)
-	
 	4'b1101:
 		begin
 			p1mode = 1'b0;
@@ -58,8 +71,8 @@ always @(posedge clk or posedge reset) begin
 			ram2_we=1'b0;
 			ctr1_blk=1'b0;
 			ctr2_blk=1'b0;
-			ctr1_re <= 1'b1;
-			ctr2_re <= 1'b1;
+			//ctr1_re <= 1'b1;
+			//ctr2_re <= 1'b1;
 			ready_r=1'b0;
 			done_r = 1'b0;
 			if(CRC_start)begin
@@ -79,15 +92,15 @@ always @(posedge clk or posedge reset) begin
 			ram2_we=1'b0;
 			ctr1_blk=1'b0;
 			ctr2_blk=1'b0;
-			ctr1_re <= 1'b1;
-			ctr2_re <= 1'b1;
+			//ctr1_re <= 1'b1;
+			//ctr2_re <= 1'b1;
 			ready_r=1'b0;
 			done_r = 1'b0;
-			if(!block_size && CRC_start) begin
+			if(~block_size ) begin
 				next_state <= 4'b0001;
 				//ctr1_re <= 1'b1; // should we just reset both counters in START anyway?
 			end
-			else if (block_size && CRC_start)begin
+			else if (block_size )begin
 				next_state <= 4'b0010;
 				//ctr1_re <= 1'b1;
 			end
@@ -110,7 +123,7 @@ always @(posedge clk or posedge reset) begin
 			done_r = 1'b0;
 			if(ctr1_finish) begin
 				next_state <= 4'b0111;
-				ctr1_re <= 1'b1;
+				//ctr1_re <= 1'b1;
 			end
 			else begin
 				next_state <= 4'b0001;
@@ -131,19 +144,19 @@ always @(posedge clk or posedge reset) begin
 			done_r = 1'b0;
 			if(CRC_END)begin
 				next_state <= 4'b1001;
-				ctr1_re <= 1'b1;
+				//ctr1_re <= 1'b1;
 			end
 			else begin
 			if(ctr1_finish) begin
 				if(block_size)begin
 					next_state <= 4'b0100;
-					ctr1_re <=1'b1;
-					ctr2_re<=1'b1;
+					//ctr1_re <=1'b1;
+					//ctr2_re <=1'b1;
 				end
 				else begin
 					next_state <= 4'b0110;
-					ctr1_re <= 1'b1;
-					ctr2_re <=1'b1;
+					//ctr1_re <= 1'b1;
+					//ctr2_re <= 1'b1;
 				end
 			end
 			else begin
@@ -166,21 +179,21 @@ always @(posedge clk or posedge reset) begin
 			done_r = 1'b0;
 			if(CRC_END) begin
 				next_state <= 4'b1001;
-				ctr1_re <= 1'b1;
+				//ctr1_re <= 1'b1;
 				ready_r=1'b0;
 			end
 			else begin
 			if(ctr1_finish && ctr2_finish) begin
 				if(block_size)begin
 					next_state <= 4'b0100;
-					ctr1_re <=1'b1;
-					ctr2_re<=1'b1;
+					//ctr1_re <=1'b1;
+					//ctr2_re<=1'b1;
 					ready_r=1'b0;
 				end
 				else begin
 					next_state <= 4'b0110;
-					ctr1_re <=1'b1;
-					ctr2_re<=1'b1;
+					//ctr1_re <=1'b1;
+					//ctr2_re<=1'b1;
 					ready_r=1'b0;
 				end
 			end
@@ -204,22 +217,22 @@ always @(posedge clk or posedge reset) begin
 			done_r = 1'b0;
 			if(CRC_END)begin
 				next_state <= 4'b1010;
-				ctr2_re <=1'b1;
+				//ctr2_re <=1'b1;
 				ready_r=1'b0;
 			end
 			else begin
 				if(ctr1_finish && ctr2_finish)begin
 					if(block_size)begin
 						next_state <= 4'b0011;
-						ctr1_re <=1'b1;
-						ctr2_re<=1'b1;
+						//ctr1_re <=1'b1;
+						//ctr2_re<=1'b1;
 						ready_r=1'b0;
 					end
 
 					else begin
 						next_state<=4'b0101;
-						ctr1_re <=1'b1;
-						ctr2_re<=1'b1;
+						//ctr1_re <=1'b1;
+						//ctr2_re<=1'b1;
 						ready_r=1'b0;
 					end
 				end
@@ -242,7 +255,7 @@ always @(posedge clk or posedge reset) begin
 			done_r = 1'b0;
 			if(ctr2_finish)begin
 				next_state <=4'b0111;
-				ctr1_re <=1'b1;
+				//ctr1_re <=1'b1;
 				ready_r=1'b0;
 			end	
 			else begin
@@ -263,7 +276,7 @@ always @(posedge clk or posedge reset) begin
 			done_r = 1'b0;
 			if(ctr1_finish)begin
 				next_state <=4'b1000;
-				ctr2_re <=1'b1;
+				//ctr2_re <=1'b1;
 				ready_r=1'b0;
 			end	
 			else begin
@@ -375,12 +388,12 @@ always @(posedge clk or posedge reset) begin
 			ctr1_blk=1'b0;
 			ctr2_blk=1'b0;
 			//wait for something .... go back to 0000
-			next_state<=4'b0000;
+			next_state<=4'b1101;
 			ready_r=1'b0;
 			done_r = 1'b1;
 		end
 	endcase
-	end
+	
 end
 
 

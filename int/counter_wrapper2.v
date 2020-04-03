@@ -8,7 +8,7 @@ module counter_wrapper2 (count_enable, block_size, clk, reset, count, target_rea
 	
 	wire [12:0] target;
 	//assign target = (block_size) ? (13'd6144) : (13'd1056);
-	assign target = (block_size) ? (13'd6143) : (13'd1055); // one less than actual number
+	assign target = (block_size) ? (13'd6144) : (13'd1056); // one less than actual number
 	
 	wire [12:0] q, target_check;
 	assign count = q;
