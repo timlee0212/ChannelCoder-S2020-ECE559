@@ -1,4 +1,4 @@
-module interleaver (data_in, clk, reset, CRC_start, CRC_blocksize,empty_itl_fifo/*, CRC_end*/, data_out, data_ready,
+module interleaver ( clk, reset,data_in, CRC_start, CRC_blocksize,empty_itl_fifo/*, CRC_end*/, data_out, data_ready,
                     done,rreq_itl_fifo/*, next_state, state, counter1_done, counter1_reset, count1, pi1_small_value*/);
 	input data_in;
 	input clk, reset,empty_itl_fifo;
