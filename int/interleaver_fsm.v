@@ -373,7 +373,7 @@ always @(current_state,CRC_start,CRC_data,block_size,ctr1_finish,ctr2_finish) be
 			ram2_we=1'b0;
 			next_state<=4'b1100;
 			ready_r=1'b0;
-			done_r = 1'b1;
+			done_r = 1'b0;
 			ctr1_blk=1'b0;
 			ctr2_blk=1'b0;
 		end
