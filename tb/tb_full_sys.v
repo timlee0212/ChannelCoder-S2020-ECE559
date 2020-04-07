@@ -6,7 +6,8 @@ reg clk, reset, tb_in, wreq_tb, wreq_size;
 reg[15:0] tb_size_in;
 
 //Output Ports
-wire ck_out, zk_out, zk_prime_out;
+wire ck_out, zk_out, zk_prime_out, d_int_ready;
+wire [2:0] d_state;
 
 coder_stack_top test_obj(
 	.clk(clk),
@@ -17,7 +18,9 @@ coder_stack_top test_obj(
 	.wreq_size(wreq_size),
 	.xk_out(xk_out), 
 	.zk_out(zk_out), 
-	.zk_prime_out(zk_prime_out)
+	.zk_prime_out(zk_prime_out),
+	.d_int_ready(d_int_ready),
+	.d_state(d_state)
 );
 
 
