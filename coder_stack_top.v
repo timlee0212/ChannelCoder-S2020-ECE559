@@ -1,9 +1,7 @@
 module coder_stack_top(
 	input clk, reset, tb_in, wreq_data, wreq_size,
 	input [15:0] tb_size_in,
-	output xk_out, zk_out, zk_prime_out,
-	output d_int_ready, 
-	output [2:0] d_state
+	output xk_out, zk_out, zk_prime_out, out_valid
 	);
 
 // enc
@@ -58,12 +56,11 @@ interleaver my_int
 	(clk, reset,
 	int_data_in, int_start_in, int_blksize_in, empty_itl_fifo,
 	data_out, data_ready, done,rreq_itl_fifo);
-	
-assign d_int_ready = int_ready;
 						  
 encoder_top my_enc(
 	.clock(clk), .reset(reset), .cbs_ready(cbs_ready), .cbs_blocksize(cbs_blocksize), .cbs_fifo_empty(empty_enc_fifo), .int_ready(int_ready),
 	.cbs_din(cbs_din), .int_din(int_din),
-	.xk_out(xk_out), .zk_out(zk_out), .zk_prime_out(zk_prime_out), .cbs_fifo_rreq(rreq_enc_fifo), .d_state(d_state));
+	.xk_out(xk_out), .zk_out(zk_out), .zk_prime_out(zk_prime_out), .cbs_fifo_rreq(rreq_enc_fifo), .out_valid(out_valid)
+	);
 
 endmodule 
