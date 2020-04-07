@@ -1,7 +1,8 @@
 module encoder_top(
 	input clock, reset, cbs_ready, cbs_blocksize, cbs_fifo_empty, int_ready,
 	input cbs_din, int_din,
-	output xk_out, zk_out, zk_prime_out, cbs_fifo_rreq);
+	output xk_out, zk_out, zk_prime_out, cbs_fifo_rreq, out_valid
+);
 
 reg block_size;
 	
@@ -81,7 +82,7 @@ fsm my_fsm(
 	.counter(switch), .tail_counter(tail_counter),
 	.record_en(record_en), .delay_ren(delay_ren), .delay_wen(delay_wen),
 	.counter_en(counter_en), .close_switch(close_switch), .tail_en(tail_en), .tail_mode(tail_mode), 
-	.state(state), .enc_en(enc_en), .tail_counter_enable(tail_counter_enable), .ready(ready));
+	.state(state), .enc_en(enc_en), .tail_counter_enable(tail_counter_enable), .ready(ready), .out_valid(out_valid));
 	
 tailBitsGenerator mytail(
 	.q0(q1[0]), .q1(q1[1]), .q2(q1[2]), .q0_prime(q2[0]), .q1_prime(q2[1]), 
