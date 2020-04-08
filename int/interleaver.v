@@ -1,11 +1,11 @@
-module interleaver ( clk, reset,data_in, CRC_start, CRC_blocksize,empty_itl_fifo/*, CRC_end*/, data_out, data_ready2,
+module interleaver ( clk, reset,data_in, CRC_start, CRC_blocksize,empty_itl_fifo/*, CRC_end*/, data_out, data_ready3,
                     done,rreq_itl_fifo/*, next_state, state, counter1_done, counter1_reset, count1, pi1_small_value*/);
 	input data_in;
 	input clk, reset,empty_itl_fifo;
 	input CRC_start, CRC_blocksize;//, CRC_end; // control signals
 	
 	output data_out,rreq_itl_fifo;
-	output data_ready2, done; // control signals
+	output data_ready3, done; // control signals
 	
 	wire [3:0] state, next_state;
 	wire p1mode, p2mode; // 0 for reading, 1 for writing
@@ -14,7 +14,7 @@ module interleaver ( clk, reset,data_in, CRC_start, CRC_blocksize,empty_itl_fifo
 	wire ram1_we, ram2_we; // RAM write enables
 	wire counter1_done, counter2_done; // asserted when counters have reached their targets
 	wire p1blocksize, p2blocksize; // 0 for small, 1 for large
-	wire data_ready1;
+	wire data_ready1,data_ready2;
 	wire fsm_ready; // need to delay this ready signal by one clock cycle
 	interleaver_fsm FSM (clk, reset, CRC_blocksize, next_state, state, CRC_start, data_in, 1'b0, fsm_ready,
 	                     done, p1mode, p2mode, counter1_reset, counter2_reset, counter1_enable,
@@ -22,7 +22,7 @@ module interleaver ( clk, reset,data_in, CRC_start, CRC_blocksize,empty_itl_fifo
 	dff ready_delay (fsm_ready, clk, ~reset, 1'b1, data_ready1);
 	dff ready_delay1 (data_ready1, clk, ~reset, 1'b1, data_ready2);
 	
-	
+	dff ready_delay2 (data_ready2, clk, ~reset, 1'b1, data_ready3);
 	
 	
 	wire [12:0] count1;
