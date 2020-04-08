@@ -47,13 +47,13 @@ vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/src {E
 vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack {E:/Courses/ECE559/coder-stack/coder_stack_top.v}
 vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/tb {E:/Courses/ECE559/coder-stack/tb/htb_coder_stack.v}
 vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/tb/IP {E:/Courses/ECE559/coder-stack/tb/IP/test_input.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/tb/IP {E:/Courses/ECE559/coder-stack/tb/IP/delay2.v}
 vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/tb/IP {E:/Courses/ECE559/coder-stack/tb/IP/ref_small.v}
-vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/tb/IP {E:/Courses/ECE559/coder-stack/tb/IP/delay3.v}
 vlog -sv -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/src {E:/Courses/ECE559/coder-stack/cdseg/src/CRC_size.sv}
 
-vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/tb {E:/Courses/ECE559/coder-stack/tb/tb_htb_coder_stack.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/tb {E:/Courses/ECE559/coder-stack/tb/tb_full_sys.v}
 
-vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_mem_htb
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_full
 
 add wave *
 view structure
