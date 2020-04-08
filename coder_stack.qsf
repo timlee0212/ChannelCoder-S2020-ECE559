@@ -94,9 +94,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE cdseg/src/CRC_size.sv
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name VERILOG_FILE coder_stack_top.v
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name TIMING_ANALYZER_MULTICORNER_ANALYSIS ON
 set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
 set_global_assignment -name SDC_FILE timing_constraint.sdc
@@ -106,5 +103,19 @@ set_global_assignment -name EDA_TEST_BENCH_NAME tb_full -section_id eda_simulati
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_full
 set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "100 us" -section_id tb_full
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_full -section_id tb_full
+set_global_assignment -name VERILOG_FILE tb/htb_coder_stack.v
+set_global_assignment -name QIP_FILE tb/IP/test_input.qip
+set_global_assignment -name QIP_FILE tb/IP/delay2.qip
+set_global_assignment -name QIP_FILE tb/IP/ref_small.qip
+set_global_assignment -name VERILOG_FILE tb/tb_htb_coder_stack.v
+set_global_assignment -name EDA_TEST_BENCH_NAME tb_htb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_htb
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "100 us" -section_id tb_htb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_mem_htb -section_id tb_htb
+set_global_assignment -name QIP_FILE tb/IP/delay3.qip
 set_global_assignment -name EDA_TEST_BENCH_FILE tb/tb_full_sys.v -section_id tb_full
+set_global_assignment -name EDA_TEST_BENCH_FILE tb/tb_htb_coder_stack.v -section_id tb_htb
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
