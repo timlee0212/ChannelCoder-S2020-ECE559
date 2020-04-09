@@ -14,6 +14,18 @@ parameter LAST_TAIL = 3'd7;
 
 reg [2:0] state_curr, state_next;
 
+wire count_valid;
+reg [2:0] count = 0;
+always @(posedge clock) begin
+	if (aclr) begin
+		count = 0;
+	end
+	else if (state_curr == OPERATE & count < 5) begin
+		count = count + 1;
+	end
+end
+assign count_valid = count > 4;
+
 assign state = state_curr;
 
 assign record_en = state_curr == RECORD;
@@ -26,7 +38,7 @@ assign tail_mode = state_curr == TAIL | state_curr == WAIT_TAIL | state_curr == 
 assign enc_en = state_curr == OPERATE | state_curr == LAST_OPERATE | state_curr == TAIL | state_curr == WAIT_TAIL;
 assign tail_counter_enable = state_curr == LAST_OPERATE | state_curr == TAIL | state_curr == WAIT_TAIL;
 assign ready = state_curr == INIT;
-assign out_valid = state_curr == OPERATE | state_curr == LAST_OPERATE | state_curr == TAIL | state_curr == WAIT_TAIL | state_curr == LAST_TAIL;
+assign out_valid = ((state_curr == OPERATE) & count_valid) | state_curr == LAST_OPERATE | state_curr == TAIL | state_curr == WAIT_TAIL | state_curr == LAST_TAIL;
 
 always @(posedge clock, posedge aclr) begin
 	if (aclr) begin
