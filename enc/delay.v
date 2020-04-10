@@ -1,12 +1,10 @@
-module delay(input clock, aclr,  data_write, data_read, counter_mode,
-				 input [7:0] data_in,
-				 output full_6144, usedw,
-				 output [7:0] data_out);
+module delay(input clock, aclr, data_in, data_write, data_read, counter_mode,
+				 output data_out, full_6144, usedw);
 	
 	wire we, count_complete;
 	
 	//FIFO clocked on falling edge
-	byte_fifo delay_fifo(aclr, ~clock, data_in, data_read, we, full_6144, empty, full, data_out);
+	fifo delay_fifo(aclr, ~clock, data_in, data_read, we, full_6144, data_out, usedw);
 	
 	
 	fifoFSM my_fifo_fsm(.init_we(data_write), .count_complete(count_complete), .clock(clock), .reset(aclr), .we(we));

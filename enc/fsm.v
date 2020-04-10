@@ -1,6 +1,6 @@
 module fsm(
-	input aclr, clock, cbs_ready, int_ready, counter,
-	output record_en, delay_ren, delay_wen, counter_en, close_switch, tail_en, enc_en, ready, out_valid,
+	input aclr, clock, cbs_ready, int_ready, counter, tail_counter,
+	output record_en, delay_ren, delay_wen, counter_en, close_switch, tail_en, tail_mode, enc_en, tail_counter_enable, ready, out_valid,
 	output [2:0] state);
 
 parameter INIT = 3'd0;
@@ -9,6 +9,8 @@ parameter WAIT_INT = 3'd2;
 parameter OPERATE = 3'd3;
 parameter LAST_OPERATE = 3'd4;
 parameter TAIL = 3'd5;
+parameter WAIT_TAIL = 3'd6;
+parameter LAST_TAIL = 3'd7;
 
 reg [2:0] state_curr, state_next;
 
@@ -31,11 +33,12 @@ assign delay_wen = state_curr == RECORD | state_curr == WAIT_INT | state_curr ==
 assign delay_ren = state_curr == OPERATE;
 assign tail_en = state_curr == LAST_OPERATE;
 assign counter_en = state_curr == OPERATE | state_curr == LAST_OPERATE;
-assign close_switch = state_curr == LAST_OPERATE | state_curr == TAIL;
-assign tail_mode = state_curr == TAIL;
-assign enc_en = state_curr == OPERATE | state_curr == LAST_OPERATE | state_curr == TAIL;
+assign close_switch = state_curr == LAST_OPERATE | state_curr == TAIL | state_curr == WAIT_TAIL;
+assign tail_mode = state_curr == TAIL | state_curr == WAIT_TAIL | state_curr == LAST_TAIL;
+assign enc_en = state_curr == OPERATE | state_curr == LAST_OPERATE | state_curr == TAIL | state_curr == WAIT_TAIL;
+assign tail_counter_enable = state_curr == LAST_OPERATE | state_curr == TAIL | state_curr == WAIT_TAIL;
 assign ready = state_curr == INIT;
-assign out_valid = ((state_curr == OPERATE) & count_valid) | state_curr == LAST_OPERATE | state_curr == TAIL;
+assign out_valid = ((state_curr == OPERATE) & count_valid) | state_curr == LAST_OPERATE | state_curr == TAIL | state_curr == WAIT_TAIL | state_curr == LAST_TAIL;
 
 always @(posedge clock, posedge aclr) begin
 	if (aclr) begin
@@ -79,9 +82,19 @@ always @(state_curr, cbs_ready, int_ready, counter, tail_counter) begin
 			state_next <= TAIL;
 		end
 		TAIL: begin
+			state_next <= WAIT_TAIL;
+		end
+		WAIT_TAIL: begin
+			if (tail_counter) begin
+				state_next <= LAST_TAIL;
+			end
+			else begin
+				state_next <= WAIT_TAIL;
+			end
+		end
+		LAST_TAIL: begin
 			state_next <= INIT;
 		end
-
 	endcase
 end
 
