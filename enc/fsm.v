@@ -1,6 +1,6 @@
 module fsm(
 	input aclr, clock, cbs_ready, int_ready, counter,
-	output record_en, delay_ren, delay_wen, counter_en, close_switch, tail_en, enc_en, ready, out_valid,
+	output record_en, delay_ren, delay_wen, counter_en, tail_en, tail_mode, enc_en, ready, out_valid,
 	output [2:0] state);
 
 parameter INIT = 3'd0;
@@ -31,7 +31,6 @@ assign delay_wen = state_curr == RECORD | state_curr == WAIT_INT | state_curr ==
 assign delay_ren = state_curr == OPERATE;
 assign tail_en = state_curr == LAST_OPERATE;
 assign counter_en = state_curr == OPERATE | state_curr == LAST_OPERATE;
-assign close_switch = state_curr == LAST_OPERATE | state_curr == TAIL;
 assign tail_mode = state_curr == TAIL;
 assign enc_en = state_curr == OPERATE | state_curr == LAST_OPERATE | state_curr == TAIL;
 assign ready = state_curr == INIT;
@@ -46,7 +45,7 @@ always @(posedge clock, posedge aclr) begin
 	end
 end
 
-always @(state_curr, cbs_ready, int_ready, counter, tail_counter) begin
+always @(state_curr, cbs_ready, int_ready, counter) begin
 	case (state_curr)
 		INIT: begin
 			if (cbs_ready) begin

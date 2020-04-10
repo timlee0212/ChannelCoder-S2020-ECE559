@@ -10,10 +10,13 @@ counter_enc count(
 	.cnt_en(en),
 	.q(out));
 	
-//Constant is BLOCK_SIZE-1
+//Constant is Serial: BLOCK_SIZE-1, Parallel: (BLOCK_SIZE / 8) - 1
+
 // -1 because want the switch to close on the last cycle of actual data not first cycle of tail bits
 
-assign switch = (~mode & (out == 1055)) | (mode & (out == 6143));
+assign switch = (mode & (out == 2)) | (~mode & (out == 767));
+//assign switch = (~mode & (out == 131)) | (mode & (out == 767));
+//assign switch = (~mode & (out == 1055)) | (mode & (out == 6143));
 assign count_valid = (out > 4);
 //assign switch = (mode & (out == 63)) | (~mode & (out == 6143));
 //assign switch = (mode & (out == 3)) | (~mode & (out == 7));
