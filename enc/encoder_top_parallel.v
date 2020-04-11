@@ -6,9 +6,10 @@ module encoder_top_parallel(
 	output [2:0] d_state
 );
 
+
 reg block_size;
 	
-wire switch, record_en, delay_ren, delay_wen, counter_en, reset_or_cbs_ready;
+wire switch, record_en, delay_ren, delay_wen, counter_en, reset_or_cbs_ready, clear_output;
 wire ready;
 assign reset_or_cbs_ready = reset | cbs_ready;
 
@@ -51,12 +52,13 @@ my_counter counter(
 wire [2:0] q1, q2;
 reg[7:0] xk_reg, zk_reg, zk_p_reg;
 wire[7:0] xk_reg_in, zk_reg_in, zk_p_reg_in;
+//wire[7:0] xk_intermed, zk_intermed, zk_p_intermed;
 wire[7:0] delay_out, delay_out_mux;
 wire enc_en;
 assign delay_out_mux = enc_en ? delay_out : 8'b00000000;
 
-always @(posedge clock, posedge reset, posedge cbs_ready) begin
-	if (reset | cbs_ready) begin
+always @(posedge clock, posedge reset, posedge cbs_ready, posedge clear_output) begin
+	if (reset | cbs_ready | clear_output) begin
 		xk_reg <= 1'b0;
 		zk_reg <= 1'b0;
 		zk_p_reg <= 1'b0;
@@ -84,7 +86,7 @@ fsm my_fsm(
 	.aclr(reset), .clock(clock), .cbs_ready(cbs_ready), .int_ready(int_ready), .counter(switch),
 	.record_en(record_en), .delay_ren(delay_ren), .delay_wen(delay_wen),
 	.counter_en(counter_en), .tail_en(tail_en), .tail_mode(tail_mode), 
-	.state(state), .enc_en(enc_en), .ready(ready), .out_valid(out_valid)); 
+	.state(state), .enc_en(enc_en), .ready(ready), .out_valid(out_valid), .clear_output(clear_output)); 
 
 tailBitsGenerator_parallel mytail(
 	.q0(q1[0]), .q1(q1[1]), .q2(q1[2]), .q0_prime(q2[0]), .q1_prime(q2[1]), 

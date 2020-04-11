@@ -1,6 +1,6 @@
 module fsm(
 	input aclr, clock, cbs_ready, int_ready, counter,
-	output record_en, delay_ren, delay_wen, counter_en, tail_en, tail_mode, enc_en, ready, out_valid,
+	output record_en, delay_ren, delay_wen, counter_en, tail_en, tail_mode, enc_en, ready, out_valid, clear_output,
 	output [2:0] state);
 
 parameter INIT = 3'd0;
@@ -34,7 +34,20 @@ assign counter_en = state_curr == OPERATE | state_curr == LAST_OPERATE;
 assign tail_mode = state_curr == TAIL;
 assign enc_en = state_curr == OPERATE | state_curr == LAST_OPERATE | state_curr == TAIL;
 assign ready = state_curr == INIT;
-assign out_valid = ((state_curr == OPERATE) & count_valid) | state_curr == LAST_OPERATE | state_curr == TAIL;
+assign clear_output = state_curr == INIT;
+//assign out_valid = ((state_curr == OPERATE) & count_valid) | state_curr == LAST_OPERATE | state_curr == TAIL;
+assign out_valid_reg_in = state_curr == OPERATE | state_curr == LAST_OPERATE;
+wire out_valid_reg_in;
+reg out_valid_reg;
+assign out_valid = out_valid_reg;
+always @(posedge clock, posedge aclr) begin
+	if (aclr) begin
+		out_valid_reg <= 1'b0;
+	end
+	else begin
+		out_valid_reg <= out_valid_reg_in;
+	end
+end
 
 always @(posedge clock, posedge aclr) begin
 	if (aclr) begin

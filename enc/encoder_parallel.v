@@ -33,6 +33,8 @@ assign d = b[2] ^ b[3] ^ b[4];
 assign e = b[4] ^ b[5] ^ b[6];
 assign f = q_in[2] ^ b[0] ^ b[1];
 
+assign xk = b;
+
 assign zk[0] = a ^ b[0];
 assign zk[1] = a ^ f;
 assign zk[2] = q_in[0] ^ f ^ b[2];
@@ -42,8 +44,8 @@ assign zk[5] = q_in[0] ^ d ^ b[5];
 assign zk[6] = q_in[1] ^ q_in[2] ^ b[0] ^ b[3] ^ e;
 assign zk[7] = a ^ b[1] ^ e ^ b[7];
 
-assign q_out[0] = q_in[0] ^ d ^ b[6];
-assign q_out[1] = q_in[1] ^ c ^ b[5];
-assign q_out[2] = f ^ b[2] ^ b[4];
+assign q_out[0] = q_in[1] ^ q_in[2] ^ b[0] ^ b[3] ^ b[4] ^ b[5] ^ b[7];
+assign q_out[1] = q_in[0] ^ d ^ b[6];
+assign q_out[2] = q_in[1] ^ b[1] ^ b[2] ^ b[3] ^ b[5];
 
 endmodule
