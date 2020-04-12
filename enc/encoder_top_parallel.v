@@ -6,29 +6,35 @@ module encoder_top_parallel(
 	output [2:0] d_state
 );
 
-
 reg block_size;
 	
 wire switch, record_en, delay_ren, delay_wen, counter_en, reset_or_cbs_ready, clear_output;
 wire ready;
-assign reset_or_cbs_ready = reset | cbs_ready;
+assign reset_or_cbs_ready = reset | cbs_ready_guarded;
 
 wire tail_en, tail_mode;
 wire [2:0] state;
 assign d_state = state;
 
-always @(posedge clock, posedge reset, posedge cbs_ready) begin
-	if (reset | cbs_ready) begin
+always @(posedge clock, posedge reset, posedge cbs_ready_guarded) begin
+	if (reset | cbs_ready_guarded) begin
 		block_size <= 1'b0;
 	end
 	else begin
 		if (record_en) begin
-			block_size <= cbs_blocksize;
+			block_size <= cbs_blocksize_guarded;
 		end
 	end
 end
 
-assign cbs_fifo_rreq = /*ready &*/ ~cbs_fifo_empty;
+wire cbs_data_being_input;
+wire cbs_ready_guarded, cbs_blocksize_guarded;
+wire[7:0] cbs_din_guarded;
+assign cbs_fifo_rreq = (ready | record_en | cbs_data_being_input) & ~cbs_fifo_empty & ~reset;
+assign cbs_ready_guarded = cbs_fifo_rreq ? cbs_ready : 1'b0;
+assign cbs_blocksize_guarded = cbs_fifo_rreq ? cbs_blocksize : 1'b0;
+assign cbs_din_guarded = cbs_fifo_rreq ? cbs_din : 8'b0;
+
 /*
 always @(posedge clock) begin
 	if (ready) begin
@@ -57,8 +63,8 @@ wire[7:0] delay_out, delay_out_mux;
 wire enc_en;
 assign delay_out_mux = enc_en ? delay_out : 8'b00000000;
 
-always @(posedge clock, posedge reset, posedge cbs_ready, posedge clear_output) begin
-	if (reset | cbs_ready | clear_output) begin
+always @(posedge clock, posedge reset, posedge cbs_ready_guarded, posedge clear_output) begin
+	if (reset | cbs_ready_guarded | clear_output) begin
 		xk_reg <= 1'b0;
 		zk_reg <= 1'b0;
 		zk_p_reg <= 1'b0;
@@ -78,12 +84,12 @@ encoder_parallel en2(
 	.b(int_din), .clock(clock), .reset(reset_or_cbs_ready), .en(enc_en),
 	.zk(zk_p_reg_in), .xk(), .q(q2));
 
-delay del(.clock(clock), .aclr(reset_or_cbs_ready), .data_in(cbs_din),
+delay del(.clock(clock), .aclr(reset_or_cbs_ready), .data_in(cbs_din_guarded),
  .data_write(delay_wen), .data_read(delay_ren), .counter_mode(block_size),
- .data_out(delay_out), .full_6144(), .usedw());
+ .data_out(delay_out), .full_6144(), .usedw(), .actual_fifo_we(cbs_data_being_input));
 
 fsm my_fsm(
-	.aclr(reset), .clock(clock), .cbs_ready(cbs_ready), .int_ready(int_ready), .counter(switch),
+	.aclr(reset), .clock(clock), .cbs_ready(cbs_ready_guarded), .int_ready(int_ready), .counter(switch),
 	.record_en(record_en), .delay_ren(delay_ren), .delay_wen(delay_wen),
 	.counter_en(counter_en), .tail_en(tail_en), .tail_mode(tail_mode), 
 	.state(state), .enc_en(enc_en), .ready(ready), .out_valid(out_valid), .clear_output(clear_output)); 
