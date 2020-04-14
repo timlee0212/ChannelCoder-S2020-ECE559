@@ -1,0 +1,7 @@
+module encoder_top(
+	input clock, reset, cbs_ready, cbs_blocksize, cbs_fifo_empty, int_ready,
+	input[7:0] cbs_din, int_din,
+	output[7:0] xk_out, zk_out, zk_prime_out,
+	output cbs_fifo_rreq, out_valid,
+	output [2:0] d_state
+);
