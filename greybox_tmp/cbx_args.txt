@@ -1,8 +1,0 @@
-LPM_DIRECTION=RIGHT
-LPM_TYPE=LPM_SHIFTREG
-LPM_WIDTH=3
-DEVICE_FAMILY="Cyclone V"
-aclr
-clock
-shiftin
-q

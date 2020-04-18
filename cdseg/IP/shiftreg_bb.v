@@ -1,4 +1,4 @@
-// megafunction wizard: %LPM_SHIFTREG%
+// megafunction wizard: %LPM_SHIFTREG%VBB%
 // GENERATION: STANDARD
 // VERSION: WM1.0
 // MODULE: LPM_SHIFTREG 
@@ -17,7 +17,6 @@
 // 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 // ************************************************************
 
-
 //Copyright (C) 2018  Intel Corporation. All rights reserved.
 //Your use of Intel Corporation's design tools, logic functions 
 //and other software and tools, and its AMPP partner logic 
@@ -32,10 +31,6 @@
 //Intel and sold by Intel or its authorized distributors.  Please
 //refer to the applicable agreement for further details.
 
-
-// synopsys translate_off
-`timescale 1 ps / 1 ps
-// synopsys translate_on
 module shiftreg (
 	aclr,
 	clock,
@@ -52,31 +47,6 @@ module shiftreg (
 	input	  load;
 	input	  sset;
 	output	[23:0]  q;
-
-	wire [23:0] sub_wire0;
-	wire [23:0] q = sub_wire0[23:0];
-
-	lpm_shiftreg	LPM_SHIFTREG_component (
-				.aclr (aclr),
-				.clock (clock),
-				.data (data),
-				.enable (enable),
-				.load (load),
-				.sset (sset),
-				.q (sub_wire0)
-				// synopsys translate_off
-				,
-				.aset (),
-				.sclr (),
-				.shiftin (),
-				.shiftout ()
-				// synopsys translate_on
-				);
-	defparam
-		LPM_SHIFTREG_component.lpm_direction = "RIGHT",
-		LPM_SHIFTREG_component.lpm_type = "LPM_SHIFTREG",
-		LPM_SHIFTREG_component.lpm_width = 24;
-
 
 endmodule
 
@@ -124,5 +94,5 @@ endmodule
 // Retrieval info: GEN_FILE: TYPE_NORMAL shiftreg.cmp FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL shiftreg.bsf FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL shiftreg_inst.v TRUE
-// Retrieval info: GEN_FILE: TYPE_NORMAL shiftreg_bb.v FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL shiftreg_bb.v TRUE
 // Retrieval info: LIB_FILE: lpm

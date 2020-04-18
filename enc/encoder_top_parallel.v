@@ -10,6 +10,11 @@ reg block_size;
 	
 wire switch, record_en, delay_ren, delay_wen, counter_en, reset_or_cbs_ready, clear_output;
 wire ready;
+
+wire cbs_data_being_input;
+wire cbs_ready_guarded, cbs_blocksize_guarded;
+wire[7:0] cbs_din_guarded;
+
 assign reset_or_cbs_ready = reset | cbs_ready_guarded;
 
 wire tail_en, tail_mode;
@@ -27,9 +32,7 @@ always @(posedge clock, posedge reset, posedge cbs_ready_guarded) begin
 	end
 end
 
-wire cbs_data_being_input;
-wire cbs_ready_guarded, cbs_blocksize_guarded;
-wire[7:0] cbs_din_guarded;
+
 assign cbs_fifo_rreq = (ready | record_en | cbs_data_being_input) & ~cbs_fifo_empty & ~reset;
 assign cbs_ready_guarded = cbs_fifo_rreq ? cbs_ready : 1'b0;
 assign cbs_blocksize_guarded = cbs_fifo_rreq ? cbs_blocksize : 1'b0;

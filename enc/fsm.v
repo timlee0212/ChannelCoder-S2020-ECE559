@@ -12,6 +12,9 @@ parameter TAIL = 3'd5;
 
 reg [2:0] state_curr, state_next;
 
+wire out_valid_reg_in;
+reg out_valid_reg;
+
 wire count_valid;
 reg [2:0] count = 0;
 always @(posedge clock) begin
@@ -37,8 +40,7 @@ assign ready = state_curr == INIT;
 assign clear_output = state_curr == INIT;
 //assign out_valid = ((state_curr == OPERATE) & count_valid) | state_curr == LAST_OPERATE | state_curr == TAIL;
 assign out_valid_reg_in = state_curr == OPERATE | state_curr == LAST_OPERATE;
-wire out_valid_reg_in;
-reg out_valid_reg;
+
 assign out_valid = out_valid_reg;
 always @(posedge clock, posedge aclr) begin
 	if (aclr) begin

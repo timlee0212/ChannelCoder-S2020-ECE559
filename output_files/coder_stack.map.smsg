@@ -1,2 +1,0 @@
-Warning (10268): Verilog HDL information at interleaver_fsm.v(59): always construct contains both blocking and non-blocking assignments File: C:/Users/matth/Documents/ECE559/coder-stack/int/interleaver_fsm.v Line: 59
-Info (10281): Verilog HDL Declaration information at data_path_control.v(26): object "filling" differs only in case from object "FILLING" in the same scope File: C:/Users/matth/Documents/ECE559/coder-stack/cdseg/src/data_path_control.v Line: 26
