@@ -62,10 +62,13 @@ interleaver my_int
 	int_data_in, int_start_in, int_blksize_in, empty_itl_fifo,
 	data_out, data_ready, done,rreq_itl_fifo);
 */
+
+fake_interleaver my_int
+	(clk, reset, cbs_ready, data_ready, data_out);
 						  
 encoder_top_parallel my_enc(
 	.clock(clk), .reset(reset), .cbs_ready(cbs_ready), .cbs_blocksize(cbs_blocksize), .cbs_fifo_empty(empty_enc_fifo), .int_ready(int_ready),
-	.cbs_din(cbs_din), .int_din(int_din),
+	.cbs_din(cbs_din), .int_din(d_int_din),
 	.xk_out(xk_out), .zk_out(zk_out), .zk_prime_out(zk_prime_out), .cbs_fifo_rreq(rreq_enc_fifo), .out_valid(out_valid),
 	);
 
