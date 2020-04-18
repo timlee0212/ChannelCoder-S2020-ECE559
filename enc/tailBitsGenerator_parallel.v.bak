@@ -1,0 +1,4 @@
+module tailBitsGenerator_parallel(
+	input q0, q1, q2, q0_prime, q1_prime, q2_prime, xk_in, zk_in, zk_prime_in,
+	tail_bit_regs_enable, tail_bit_mode, tail_counter_enable, clock, reset,
+	output xk_out, zk_out, zk_prime_out, tail_bit_done);

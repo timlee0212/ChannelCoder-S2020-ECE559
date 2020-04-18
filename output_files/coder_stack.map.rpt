@@ -1,0 +1,782 @@
+Analysis & Synthesis report for coder_stack
+Fri Apr 10 02:41:26 2020
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |encoder_top_parallel|fsm:my_fsm|state_curr
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for delay:del|byte_fifo:delay_fifo|scfifo:scfifo_component|scfifo_uqc1:auto_generated|a_dpfifo_bca1:dpfifo|altsyncram_i0t1:FIFOram
+ 14. Parameter Settings for User Entity Instance: my_counter:counter|counter_enc:count|lpm_counter:LPM_COUNTER_component
+ 15. Parameter Settings for User Entity Instance: delay:del|byte_fifo:delay_fifo|scfifo:scfifo_component
+ 16. Parameter Settings for User Entity Instance: delay:del|fifoFSM:my_fifo_fsm
+ 17. Parameter Settings for User Entity Instance: delay:del|my_counter:we_counter|counter_enc:count|lpm_counter:LPM_COUNTER_component
+ 18. Parameter Settings for User Entity Instance: fsm:my_fsm
+ 19. scfifo Parameter Settings by Entity Instance
+ 20. Port Connectivity Checks: "fsm:my_fsm"
+ 21. Port Connectivity Checks: "delay:del|my_counter:we_counter"
+ 22. Port Connectivity Checks: "delay:del|byte_fifo:delay_fifo"
+ 23. Port Connectivity Checks: "delay:del"
+ 24. Port Connectivity Checks: "encoder_parallel:en2"
+ 25. Port Connectivity Checks: "my_counter:counter"
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
+ 29. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Fri Apr 10 02:41:26 2020       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; coder_stack                                 ;
+; Top-level Entity Name           ; encoder_top_parallel                        ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 101                                         ;
+; Total pins                      ; 51                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 8,192                                       ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                               ;
++---------------------------------------------------------------------------------+----------------------+--------------------+
+; Option                                                                          ; Setting              ; Default Value      ;
++---------------------------------------------------------------------------------+----------------------+--------------------+
+; Device                                                                          ; 5CEBA4F23C7          ;                    ;
+; Top-level entity name                                                           ; encoder_top_parallel ; coder_stack        ;
+; Family name                                                                     ; Cyclone V            ; Cyclone V          ;
+; Maximum processors allowed for parallel compilation                             ; All                  ;                    ;
+; Use smart compilation                                                           ; Off                  ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                   ; On                 ;
+; Enable compact report table                                                     ; Off                  ; Off                ;
+; Restructure Multiplexers                                                        ; Auto                 ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                  ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                  ; Off                ;
+; Preserve fewer node names                                                       ; On                   ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable               ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001         ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993            ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto                 ; Auto               ;
+; Safe State Machine                                                              ; Off                  ; Off                ;
+; Extract Verilog State Machines                                                  ; On                   ; On                 ;
+; Extract VHDL State Machines                                                     ; On                   ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                  ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000                 ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                  ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                   ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                   ; On                 ;
+; Parallel Synthesis                                                              ; On                   ; On                 ;
+; DSP Block Balancing                                                             ; Auto                 ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                   ; On                 ;
+; Power-Up Don't Care                                                             ; On                   ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                  ; Off                ;
+; Remove Duplicate Registers                                                      ; On                   ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                  ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                  ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                  ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                  ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                  ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                   ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                  ; Off                ;
+; Optimization Technique                                                          ; Balanced             ; Balanced           ;
+; Carry Chain Length                                                              ; 70                   ; 70                 ;
+; Auto Carry Chains                                                               ; On                   ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                   ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                  ; Off                ;
+; Auto ROM Replacement                                                            ; On                   ; On                 ;
+; Auto RAM Replacement                                                            ; On                   ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                   ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto                 ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto                 ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                   ; On                 ;
+; Strict RAM Replacement                                                          ; Off                  ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                   ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                  ; Off                ;
+; Auto Resource Sharing                                                           ; Off                  ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                  ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                  ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                  ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                   ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                  ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                   ; On                 ;
+; Report Parameter Settings                                                       ; On                   ; On                 ;
+; Report Source Assignments                                                       ; On                   ; On                 ;
+; Report Connectivity Checks                                                      ; On                   ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                  ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                    ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation   ; Normal compilation ;
+; HDL message level                                                               ; Level2               ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                  ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000                 ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000                 ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                  ; 100                ;
+; Clock MUX Protection                                                            ; On                   ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                  ; Off                ;
+; Block Design Naming                                                             ; Auto                 ; Auto               ;
+; SDC constraint protection                                                       ; Off                  ; Off                ;
+; Synthesis Effort                                                                ; Auto                 ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                   ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                  ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium               ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto                 ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                   ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                   ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                  ; Off                ;
++---------------------------------------------------------------------------------+----------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 6           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-6         ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                       ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                   ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
+; enc/byte_fifo.v                  ; yes             ; User Wizard-Generated File   ; C:/Users/matth/Documents/ECE559/coder-stack/enc/byte_fifo.v                    ;         ;
+; enc/my_counter.v                 ; yes             ; User Verilog HDL File        ; C:/Users/matth/Documents/ECE559/coder-stack/enc/my_counter.v                   ;         ;
+; enc/fsm.v                        ; yes             ; User Verilog HDL File        ; C:/Users/matth/Documents/ECE559/coder-stack/enc/fsm.v                          ;         ;
+; enc/fifoFSM.v                    ; yes             ; User Verilog HDL File        ; C:/Users/matth/Documents/ECE559/coder-stack/enc/fifoFSM.v                      ;         ;
+; enc/delay.v                      ; yes             ; User Verilog HDL File        ; C:/Users/matth/Documents/ECE559/coder-stack/enc/delay.v                        ;         ;
+; enc/counter.v                    ; yes             ; User Wizard-Generated File   ; C:/Users/matth/Documents/ECE559/coder-stack/enc/counter.v                      ;         ;
+; enc/encoder_parallel.v           ; yes             ; User Verilog HDL File        ; C:/Users/matth/Documents/ECE559/coder-stack/enc/encoder_parallel.v             ;         ;
+; enc/tailBitsGenerator_parallel.v ; yes             ; User Verilog HDL File        ; C:/Users/matth/Documents/ECE559/coder-stack/enc/tailBitsGenerator_parallel.v   ;         ;
+; enc/encoder_top_parallel.v       ; yes             ; User Verilog HDL File        ; C:/Users/matth/Documents/ECE559/coder-stack/enc/encoder_top_parallel.v         ;         ;
+; lpm_counter.tdf                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_counter.tdf         ;         ;
+; lpm_constant.inc                 ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_constant.inc        ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc          ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
+; cmpconst.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/cmpconst.inc            ;         ;
+; lpm_compare.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_compare.inc         ;         ;
+; lpm_counter.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_counter.inc         ;         ;
+; dffeea.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/dffeea.inc              ;         ;
+; alt_counter_stratix.inc          ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/alt_counter_stratix.inc ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc          ;         ;
+; db/cntr_5mi.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/matth/Documents/ECE559/coder-stack/db/cntr_5mi.tdf                    ;         ;
+; scfifo.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/scfifo.tdf              ;         ;
+; a_regfifo.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_regfifo.inc           ;         ;
+; a_dpfifo.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_dpfifo.inc            ;         ;
+; a_i2fifo.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_i2fifo.inc            ;         ;
+; a_fffifo.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_fffifo.inc            ;         ;
+; a_f2fifo.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_f2fifo.inc            ;         ;
+; db/scfifo_uqc1.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/matth/Documents/ECE559/coder-stack/db/scfifo_uqc1.tdf                 ;         ;
+; db/a_dpfifo_bca1.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/matth/Documents/ECE559/coder-stack/db/a_dpfifo_bca1.tdf               ;         ;
+; db/a_fefifo_jaf.tdf              ; yes             ; Auto-Generated Megafunction  ; C:/Users/matth/Documents/ECE559/coder-stack/db/a_fefifo_jaf.tdf                ;         ;
+; db/cntr_ai7.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/matth/Documents/ECE559/coder-stack/db/cntr_ai7.tdf                    ;         ;
+; db/altsyncram_i0t1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/matth/Documents/ECE559/coder-stack/db/altsyncram_i0t1.tdf             ;         ;
+; db/cntr_uhb.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/matth/Documents/ECE559/coder-stack/db/cntr_uhb.tdf                    ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 82          ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 144         ;
+;     -- 7 input functions                    ; 0           ;
+;     -- 6 input functions                    ; 18          ;
+;     -- 5 input functions                    ; 22          ;
+;     -- 4 input functions                    ; 6           ;
+;     -- <=3 input functions                  ; 98          ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 101         ;
+;                                             ;             ;
+; I/O pins                                    ; 51          ;
+; Total MLAB memory bits                      ; 0           ;
+; Total block memory bits                     ; 8192        ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clock~input ;
+; Maximum fan-out                             ; 109         ;
+; Total fan-out                               ; 1099        ;
+; Average fan-out                             ; 3.10        ;
++---------------------------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                              ;
++-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------+
+; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                       ; Entity Name                ; Library Name ;
++-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------+
+; |encoder_top_parallel                           ; 144 (2)             ; 101 (17)                  ; 8192              ; 0          ; 51   ; 0            ; |encoder_top_parallel                                                                                                                                                     ; encoder_top_parallel       ; work         ;
+;    |delay:del|                                  ; 59 (0)              ; 46 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |encoder_top_parallel|delay:del                                                                                                                                           ; delay                      ; work         ;
+;       |byte_fifo:delay_fifo|                    ; 39 (0)              ; 32 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |encoder_top_parallel|delay:del|byte_fifo:delay_fifo                                                                                                                      ; byte_fifo                  ; work         ;
+;          |scfifo:scfifo_component|              ; 39 (0)              ; 32 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |encoder_top_parallel|delay:del|byte_fifo:delay_fifo|scfifo:scfifo_component                                                                                              ; scfifo                     ; work         ;
+;             |scfifo_uqc1:auto_generated|        ; 39 (0)              ; 32 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |encoder_top_parallel|delay:del|byte_fifo:delay_fifo|scfifo:scfifo_component|scfifo_uqc1:auto_generated                                                                   ; scfifo_uqc1                ; work         ;
+;                |a_dpfifo_bca1:dpfifo|           ; 39 (2)              ; 32 (0)                    ; 8192              ; 0          ; 0    ; 0            ; |encoder_top_parallel|delay:del|byte_fifo:delay_fifo|scfifo:scfifo_component|scfifo_uqc1:auto_generated|a_dpfifo_bca1:dpfifo                                              ; a_dpfifo_bca1              ; work         ;
+;                   |a_fefifo_jaf:fifo_state|     ; 17 (7)              ; 12 (2)                    ; 0                 ; 0          ; 0    ; 0            ; |encoder_top_parallel|delay:del|byte_fifo:delay_fifo|scfifo:scfifo_component|scfifo_uqc1:auto_generated|a_dpfifo_bca1:dpfifo|a_fefifo_jaf:fifo_state                      ; a_fefifo_jaf               ; work         ;
+;                      |cntr_ai7:count_usedw|     ; 10 (10)             ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |encoder_top_parallel|delay:del|byte_fifo:delay_fifo|scfifo:scfifo_component|scfifo_uqc1:auto_generated|a_dpfifo_bca1:dpfifo|a_fefifo_jaf:fifo_state|cntr_ai7:count_usedw ; cntr_ai7                   ; work         ;
+;                   |altsyncram_i0t1:FIFOram|     ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |encoder_top_parallel|delay:del|byte_fifo:delay_fifo|scfifo:scfifo_component|scfifo_uqc1:auto_generated|a_dpfifo_bca1:dpfifo|altsyncram_i0t1:FIFOram                      ; altsyncram_i0t1            ; work         ;
+;                   |cntr_uhb:rd_ptr_count|       ; 10 (10)             ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |encoder_top_parallel|delay:del|byte_fifo:delay_fifo|scfifo:scfifo_component|scfifo_uqc1:auto_generated|a_dpfifo_bca1:dpfifo|cntr_uhb:rd_ptr_count                        ; cntr_uhb                   ; work         ;
+;                   |cntr_uhb:wr_ptr|             ; 10 (10)             ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |encoder_top_parallel|delay:del|byte_fifo:delay_fifo|scfifo:scfifo_component|scfifo_uqc1:auto_generated|a_dpfifo_bca1:dpfifo|cntr_uhb:wr_ptr                              ; cntr_uhb                   ; work         ;
+;       |fifoFSM:my_fifo_fsm|                     ; 7 (7)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |encoder_top_parallel|delay:del|fifoFSM:my_fifo_fsm                                                                                                                       ; fifoFSM                    ; work         ;
+;       |my_counter:we_counter|                   ; 13 (0)              ; 13 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |encoder_top_parallel|delay:del|my_counter:we_counter                                                                                                                     ; my_counter                 ; work         ;
+;          |counter_enc:count|                    ; 13 (0)              ; 13 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |encoder_top_parallel|delay:del|my_counter:we_counter|counter_enc:count                                                                                                   ; counter_enc                ; work         ;
+;             |lpm_counter:LPM_COUNTER_component| ; 13 (0)              ; 13 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |encoder_top_parallel|delay:del|my_counter:we_counter|counter_enc:count|lpm_counter:LPM_COUNTER_component                                                                 ; lpm_counter                ; work         ;
+;                |cntr_5mi:auto_generated|        ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |encoder_top_parallel|delay:del|my_counter:we_counter|counter_enc:count|lpm_counter:LPM_COUNTER_component|cntr_5mi:auto_generated                                         ; cntr_5mi                   ; work         ;
+;    |encoder_parallel:en1|                       ; 13 (13)             ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |encoder_top_parallel|encoder_parallel:en1                                                                                                                                ; encoder_parallel           ; work         ;
+;    |encoder_parallel:en2|                       ; 13 (13)             ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |encoder_top_parallel|encoder_parallel:en2                                                                                                                                ; encoder_parallel           ; work         ;
+;    |fsm:my_fsm|                                 ; 14 (14)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |encoder_top_parallel|fsm:my_fsm                                                                                                                                          ; fsm                        ; work         ;
+;    |my_counter:counter|                         ; 19 (6)              ; 13 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |encoder_top_parallel|my_counter:counter                                                                                                                                  ; my_counter                 ; work         ;
+;       |counter_enc:count|                       ; 13 (0)              ; 13 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |encoder_top_parallel|my_counter:counter|counter_enc:count                                                                                                                ; counter_enc                ; work         ;
+;          |lpm_counter:LPM_COUNTER_component|    ; 13 (0)              ; 13 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |encoder_top_parallel|my_counter:counter|counter_enc:count|lpm_counter:LPM_COUNTER_component                                                                              ; lpm_counter                ; work         ;
+;             |cntr_5mi:auto_generated|           ; 13 (13)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |encoder_top_parallel|my_counter:counter|counter_enc:count|lpm_counter:LPM_COUNTER_component|cntr_5mi:auto_generated                                                      ; cntr_5mi                   ; work         ;
+;    |tailBitsGenerator_parallel:mytail|          ; 24 (24)             ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |encoder_top_parallel|tailBitsGenerator_parallel:mytail                                                                                                                   ; tailBitsGenerator_parallel ; work         ;
++-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                              ;
++-------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                                                                      ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++-------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; delay:del|byte_fifo:delay_fifo|scfifo:scfifo_component|scfifo_uqc1:auto_generated|a_dpfifo_bca1:dpfifo|altsyncram_i0t1:FIFOram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 1024         ; 8            ; 1024         ; 8            ; 8192 ; None ;
++-------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |encoder_top_parallel|fsm:my_fsm|state_curr                                                                                          ;
++-------------------------+-----------------+-------------------------+--------------------+---------------------+-------------------+-----------------+
+; Name                    ; state_curr.TAIL ; state_curr.LAST_OPERATE ; state_curr.OPERATE ; state_curr.WAIT_INT ; state_curr.RECORD ; state_curr.INIT ;
++-------------------------+-----------------+-------------------------+--------------------+---------------------+-------------------+-----------------+
+; state_curr.INIT         ; 0               ; 0                       ; 0                  ; 0                   ; 0                 ; 0               ;
+; state_curr.RECORD       ; 0               ; 0                       ; 0                  ; 0                   ; 1                 ; 1               ;
+; state_curr.WAIT_INT     ; 0               ; 0                       ; 0                  ; 1                   ; 0                 ; 1               ;
+; state_curr.OPERATE      ; 0               ; 0                       ; 1                  ; 0                   ; 0                 ; 1               ;
+; state_curr.LAST_OPERATE ; 0               ; 1                       ; 0                  ; 0                   ; 0                 ; 1               ;
+; state_curr.TAIL         ; 1               ; 0                       ; 0                  ; 0                   ; 0                 ; 1               ;
++-------------------------+-----------------+-------------------------+--------------------+---------------------+-------------------+-----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                    ;
++-----------------------------------------------------+-----------------------------------------------------------------+
+; Register name                                       ; Reason for Removal                                              ;
++-----------------------------------------------------+-----------------------------------------------------------------+
+; xk_reg[0..7]                                        ; Stuck at GND due to stuck port data_in                          ;
+; tailBitsGenerator_parallel:mytail|tail_bit_regs[10] ; Merged with tailBitsGenerator_parallel:mytail|tail_bit_regs[11] ;
+; tailBitsGenerator_parallel:mytail|tail_bit_regs[8]  ; Merged with tailBitsGenerator_parallel:mytail|tail_bit_regs[9]  ;
+; fsm:my_fsm|state_curr~4                             ; Lost fanout                                                     ;
+; fsm:my_fsm|state_curr~5                             ; Lost fanout                                                     ;
+; fsm:my_fsm|state_curr~6                             ; Lost fanout                                                     ;
+; Total Number of Removed Registers = 13              ;                                                                 ;
++-----------------------------------------------------+-----------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 101   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 98    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 72    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |encoder_top_parallel|fsm:my_fsm|count[1] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for delay:del|byte_fifo:delay_fifo|scfifo:scfifo_component|scfifo_uqc1:auto_generated|a_dpfifo_bca1:dpfifo|altsyncram_i0t1:FIFOram ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                      ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                       ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: my_counter:counter|counter_enc:count|lpm_counter:LPM_COUNTER_component ;
++------------------------+-------------+------------------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                                         ;
++------------------------+-------------+------------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                                 ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                               ;
+; LPM_WIDTH              ; 13          ; Signed Integer                                                               ;
+; LPM_DIRECTION          ; UP          ; Untyped                                                                      ;
+; LPM_MODULUS            ; 0           ; Untyped                                                                      ;
+; LPM_AVALUE             ; UNUSED      ; Untyped                                                                      ;
+; LPM_SVALUE             ; UNUSED      ; Untyped                                                                      ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED ; Untyped                                                                      ;
+; DEVICE_FAMILY          ; Cyclone V   ; Untyped                                                                      ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                                      ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                                           ;
+; NOT_GATE_PUSH_BACK     ; ON          ; NOT_GATE_PUSH_BACK                                                           ;
+; CARRY_CNT_EN           ; SMART       ; Untyped                                                                      ;
+; LABWIDE_SCLR           ; ON          ; Untyped                                                                      ;
+; USE_NEW_VERSION        ; TRUE        ; Untyped                                                                      ;
+; CBXI_PARAMETER         ; cntr_5mi    ; Untyped                                                                      ;
++------------------------+-------------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: delay:del|byte_fifo:delay_fifo|scfifo:scfifo_component ;
++-------------------------+-------------+-------------------------------------------------------------+
+; Parameter Name          ; Value       ; Type                                                        ;
++-------------------------+-------------+-------------------------------------------------------------+
+; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                                                  ;
+; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                                                ;
+; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                                                ;
+; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                                              ;
+; lpm_width               ; 8           ; Signed Integer                                              ;
+; LPM_NUMWORDS            ; 1024        ; Signed Integer                                              ;
+; LPM_WIDTHU              ; 10          ; Signed Integer                                              ;
+; LPM_SHOWAHEAD           ; OFF         ; Untyped                                                     ;
+; UNDERFLOW_CHECKING      ; ON          ; Untyped                                                     ;
+; OVERFLOW_CHECKING       ; ON          ; Untyped                                                     ;
+; ALLOW_RWCYCLE_WHEN_FULL ; OFF         ; Untyped                                                     ;
+; ADD_RAM_OUTPUT_REGISTER ; OFF         ; Untyped                                                     ;
+; ALMOST_FULL_VALUE       ; 768         ; Signed Integer                                              ;
+; ALMOST_EMPTY_VALUE      ; 0           ; Untyped                                                     ;
+; ENABLE_ECC              ; FALSE       ; Untyped                                                     ;
+; USE_EAB                 ; ON          ; Untyped                                                     ;
+; MAXIMIZE_SPEED          ; 5           ; Untyped                                                     ;
+; DEVICE_FAMILY           ; Cyclone V   ; Untyped                                                     ;
+; OPTIMIZE_FOR_SPEED      ; 5           ; Untyped                                                     ;
+; CBXI_PARAMETER          ; scfifo_uqc1 ; Untyped                                                     ;
++-------------------------+-------------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: delay:del|fifoFSM:my_fifo_fsm ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; INIT           ; 0     ; Unsigned Binary                                   ;
+; COUNTING       ; 1     ; Unsigned Binary                                   ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: delay:del|my_counter:we_counter|counter_enc:count|lpm_counter:LPM_COUNTER_component ;
++------------------------+-------------+-------------------------------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                                                      ;
++------------------------+-------------+-------------------------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                                              ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                                            ;
+; LPM_WIDTH              ; 13          ; Signed Integer                                                                            ;
+; LPM_DIRECTION          ; UP          ; Untyped                                                                                   ;
+; LPM_MODULUS            ; 0           ; Untyped                                                                                   ;
+; LPM_AVALUE             ; UNUSED      ; Untyped                                                                                   ;
+; LPM_SVALUE             ; UNUSED      ; Untyped                                                                                   ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED ; Untyped                                                                                   ;
+; DEVICE_FAMILY          ; Cyclone V   ; Untyped                                                                                   ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                                                   ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                                                        ;
+; NOT_GATE_PUSH_BACK     ; ON          ; NOT_GATE_PUSH_BACK                                                                        ;
+; CARRY_CNT_EN           ; SMART       ; Untyped                                                                                   ;
+; LABWIDE_SCLR           ; ON          ; Untyped                                                                                   ;
+; USE_NEW_VERSION        ; TRUE        ; Untyped                                                                                   ;
+; CBXI_PARAMETER         ; cntr_5mi    ; Untyped                                                                                   ;
++------------------------+-------------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fsm:my_fsm ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; INIT           ; 000   ; Unsigned Binary                ;
+; RECORD         ; 001   ; Unsigned Binary                ;
+; WAIT_INT       ; 010   ; Unsigned Binary                ;
+; OPERATE        ; 011   ; Unsigned Binary                ;
+; LAST_OPERATE   ; 100   ; Unsigned Binary                ;
+; TAIL           ; 101   ; Unsigned Binary                ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; scfifo Parameter Settings by Entity Instance                                        ;
++----------------------------+--------------------------------------------------------+
+; Name                       ; Value                                                  ;
++----------------------------+--------------------------------------------------------+
+; Number of entity instances ; 1                                                      ;
+; Entity Instance            ; delay:del|byte_fifo:delay_fifo|scfifo:scfifo_component ;
+;     -- FIFO Type           ; Single Clock                                           ;
+;     -- lpm_width           ; 8                                                      ;
+;     -- LPM_NUMWORDS        ; 1024                                                   ;
+;     -- LPM_SHOWAHEAD       ; OFF                                                    ;
+;     -- USE_EAB             ; ON                                                     ;
++----------------------------+--------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fsm:my_fsm"                                                                          ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; ready ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "delay:del|my_counter:we_counter"                                                                                ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                                                  ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; count_valid ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "delay:del|byte_fifo:delay_fifo"                                                      ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; empty ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; full  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "delay:del"                  ;
++-----------+--------+----------+------------------------+
+; Port      ; Type   ; Severity ; Details                ;
++-----------+--------+----------+------------------------+
+; full_6144 ; Output ; Info     ; Explicitly unconnected ;
+; usedw     ; Output ; Info     ; Explicitly unconnected ;
++-----------+--------+----------+------------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "encoder_parallel:en2"  ;
++------+--------+----------+------------------------+
+; Port ; Type   ; Severity ; Details                ;
++------+--------+----------+------------------------+
+; xk   ; Output ; Info     ; Explicitly unconnected ;
++------+--------+----------+------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "my_counter:counter"                                                                                             ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                                                  ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; count_valid ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 101                         ;
+;     CLR               ; 26                          ;
+;     ENA CLR           ; 72                          ;
+;     plain             ; 3                           ;
+; arriav_lcell_comb     ; 148                         ;
+;     arith             ; 56                          ;
+;         1 data inputs ; 47                          ;
+;         2 data inputs ; 9                           ;
+;     normal            ; 92                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 25                          ;
+;         3 data inputs ; 17                          ;
+;         4 data inputs ; 6                           ;
+;         5 data inputs ; 22                          ;
+;         6 data inputs ; 18                          ;
+; boundary_port         ; 51                          ;
+; stratixv_ram_block    ; 8                           ;
+;                       ;                             ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.71                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Fri Apr 10 02:41:15 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Channel_Coder -c coder_stack
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file enc/byte_fifo.v
+    Info (12023): Found entity 1: byte_fifo File: C:/Users/matth/Documents/ECE559/coder-stack/enc/byte_fifo.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file int/ram2.v
+    Info (12023): Found entity 1: RAM2 File: C:/Users/matth/Documents/ECE559/coder-stack/int/RAM2.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file int/ram1.v
+    Info (12023): Found entity 1: RAM1 File: C:/Users/matth/Documents/ECE559/coder-stack/int/RAM1.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file int/pi2_small.v
+    Info (12023): Found entity 1: pi2_small File: C:/Users/matth/Documents/ECE559/coder-stack/int/pi2_small.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file int/pi2_large.v
+    Info (12023): Found entity 1: pi2_large File: C:/Users/matth/Documents/ECE559/coder-stack/int/pi2_large.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file int/pi1_small.v
+    Info (12023): Found entity 1: pi1_small File: C:/Users/matth/Documents/ECE559/coder-stack/int/pi1_small.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file int/pi1_large.v
+    Info (12023): Found entity 1: pi1_large File: C:/Users/matth/Documents/ECE559/coder-stack/int/pi1_large.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file int/interleaver_fsm.v
+    Info (12023): Found entity 1: interleaver_fsm File: C:/Users/matth/Documents/ECE559/coder-stack/int/interleaver_fsm.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file int/interleaver.v
+    Info (12023): Found entity 1: interleaver File: C:/Users/matth/Documents/ECE559/coder-stack/int/interleaver.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file int/counter2.v
+    Info (12023): Found entity 1: counter2 File: C:/Users/matth/Documents/ECE559/coder-stack/int/counter2.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file int/counter1.v
+    Info (12023): Found entity 1: counter1 File: C:/Users/matth/Documents/ECE559/coder-stack/int/counter1.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file int/counter_wrapper2.v
+    Info (12023): Found entity 1: counter_wrapper2 File: C:/Users/matth/Documents/ECE559/coder-stack/int/counter_wrapper2.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file int/counter_wrapper1.v
+    Info (12023): Found entity 1: counter_wrapper1 File: C:/Users/matth/Documents/ECE559/coder-stack/int/counter_wrapper1.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file int/counter.v
+    Info (12023): Found entity 1: counter File: C:/Users/matth/Documents/ECE559/coder-stack/int/counter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file enc/tailbitsgenerator.v
+    Info (12023): Found entity 1: tailBitsGenerator File: C:/Users/matth/Documents/ECE559/coder-stack/enc/tailBitsGenerator.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file enc/my_counter.v
+    Info (12023): Found entity 1: my_counter File: C:/Users/matth/Documents/ECE559/coder-stack/enc/my_counter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file enc/fsm.v
+    Info (12023): Found entity 1: fsm File: C:/Users/matth/Documents/ECE559/coder-stack/enc/fsm.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file enc/fifofsm.v
+    Info (12023): Found entity 1: fifoFSM File: C:/Users/matth/Documents/ECE559/coder-stack/enc/fifoFSM.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file enc/fifo.v
+    Info (12023): Found entity 1: fifo File: C:/Users/matth/Documents/ECE559/coder-stack/enc/fifo.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file enc/encoder_top.v
+    Info (12023): Found entity 1: encoder_top File: C:/Users/matth/Documents/ECE559/coder-stack/enc/encoder_top.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file enc/encoder.v
+    Info (12023): Found entity 1: encoder File: C:/Users/matth/Documents/ECE559/coder-stack/enc/encoder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file enc/delay.v
+    Info (12023): Found entity 1: delay File: C:/Users/matth/Documents/ECE559/coder-stack/enc/delay.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file enc/counter.v
+    Info (12023): Found entity 1: counter_enc File: C:/Users/matth/Documents/ECE559/coder-stack/enc/counter.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file enc/mux_4to1_3wide.v
+    Info (12023): Found entity 1: mux_4to1_3wide File: C:/Users/matth/Documents/ECE559/coder-stack/enc/mux_4to1_3wide.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file enc/mux_2to1_3wide.v
+    Info (12023): Found entity 1: mux_2to1_3wide File: C:/Users/matth/Documents/ECE559/coder-stack/enc/mux_2to1_3wide.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file enc/counter4.v
+    Info (12023): Found entity 1: counter4 File: C:/Users/matth/Documents/ECE559/coder-stack/enc/counter4.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file enc/compare_2bit.v
+    Info (12023): Found entity 1: compare_2bit File: C:/Users/matth/Documents/ECE559/coder-stack/enc/compare_2bit.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file cdseg/ip/shiftreg.v
+    Info (12023): Found entity 1: shiftreg File: C:/Users/matth/Documents/ECE559/coder-stack/cdseg/IP/shiftreg.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file cdseg/ip/register_8bits.v
+    Info (12023): Found entity 1: register_8bits File: C:/Users/matth/Documents/ECE559/coder-stack/cdseg/IP/register_8bits.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file cdseg/ip/register_2bits.v
+    Info (12023): Found entity 1: register_2bits File: C:/Users/matth/Documents/ECE559/coder-stack/cdseg/IP/register_2bits.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file cdseg/ip/register_1bit.v
+    Info (12023): Found entity 1: register_1bit File: C:/Users/matth/Documents/ECE559/coder-stack/cdseg/IP/register_1bit.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file cdseg/ip/mux_ip.v
+    Info (12023): Found entity 1: mux_ip File: C:/Users/matth/Documents/ECE559/coder-stack/cdseg/IP/mux_ip.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file cdseg/ip/itl_fifo.v
+    Info (12023): Found entity 1: itl_fifo File: C:/Users/matth/Documents/ECE559/coder-stack/cdseg/IP/itl_fifo.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file cdseg/ip/fifo20.v
+    Info (12023): Found entity 1: fifo20 File: C:/Users/matth/Documents/ECE559/coder-stack/cdseg/IP/fifo20.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file cdseg/ip/fifo16.v
+    Info (12023): Found entity 1: fifo16 File: C:/Users/matth/Documents/ECE559/coder-stack/cdseg/IP/fifo16.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file cdseg/ip/fifo_tb.v
+    Info (12023): Found entity 1: fifo_tb File: C:/Users/matth/Documents/ECE559/coder-stack/cdseg/IP/fifo_tb.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file cdseg/ip/enc_fifo.v
+    Info (12023): Found entity 1: enc_fifo File: C:/Users/matth/Documents/ECE559/coder-stack/cdseg/IP/enc_fifo.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file cdseg/ip/counter_16bits.v
+    Info (12023): Found entity 1: counter_16bits File: C:/Users/matth/Documents/ECE559/coder-stack/cdseg/IP/counter_16bits.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file cdseg/ip/counter_5bits.v
+    Info (12023): Found entity 1: counter_5bits File: C:/Users/matth/Documents/ECE559/coder-stack/cdseg/IP/counter_5bits.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file cdseg/src/top_module.v
+    Info (12023): Found entity 1: cb_seg File: C:/Users/matth/Documents/ECE559/coder-stack/cdseg/src/top_module.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cdseg/src/data_path_control.v
+    Info (12023): Found entity 1: data_fsm File: C:/Users/matth/Documents/ECE559/coder-stack/cdseg/src/data_path_control.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cdseg/src/crc24.v
+    Info (12023): Found entity 1: crc24 File: C:/Users/matth/Documents/ECE559/coder-stack/cdseg/src/crc24.v Line: 1
+Info (12021): Found 2 design units, including 2 entities, in source file cdseg/src/crc_size.sv
+    Info (12023): Found entity 1: cal_size File: C:/Users/matth/Documents/ECE559/coder-stack/cdseg/src/CRC_size.sv Line: 2
+    Info (12023): Found entity 2: CRC_size File: C:/Users/matth/Documents/ECE559/coder-stack/cdseg/src/CRC_size.sv Line: 56
+Info (12021): Found 1 design units, including 1 entities, in source file coder_stack_top.v
+    Info (12023): Found entity 1: coder_stack_top File: C:/Users/matth/Documents/ECE559/coder-stack/coder_stack_top.v Line: 1
+Info (12021): Found 3 design units, including 3 entities, in source file tb/htb_coder_stack.v
+    Info (12023): Found entity 1: mem_tb_coder_stack File: C:/Users/matth/Documents/ECE559/coder-stack/tb/htb_coder_stack.v Line: 1
+    Info (12023): Found entity 2: write_ctl File: C:/Users/matth/Documents/ECE559/coder-stack/tb/htb_coder_stack.v Line: 67
+    Info (12023): Found entity 3: read_ctl File: C:/Users/matth/Documents/ECE559/coder-stack/tb/htb_coder_stack.v Line: 161
+Info (12021): Found 1 design units, including 1 entities, in source file tb/ip/test_input.v
+    Info (12023): Found entity 1: test_input File: C:/Users/matth/Documents/ECE559/coder-stack/tb/IP/test_input.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file tb/ip/delay2.v
+    Info (12023): Found entity 1: delay2 File: C:/Users/matth/Documents/ECE559/coder-stack/tb/IP/delay2.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file tb/ip/ref_small.v
+    Info (12023): Found entity 1: ref_small File: C:/Users/matth/Documents/ECE559/coder-stack/tb/IP/ref_small.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file tb/tb_htb_coder_stack.v
+    Info (12023): Found entity 1: tb_mem_htb File: C:/Users/matth/Documents/ECE559/coder-stack/tb/tb_htb_coder_stack.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file tb/ip/delay3.v
+    Info (12023): Found entity 1: delay3 File: C:/Users/matth/Documents/ECE559/coder-stack/tb/IP/delay3.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file enc/encoder_parallel.v
+    Info (12023): Found entity 1: encoder_parallel File: C:/Users/matth/Documents/ECE559/coder-stack/enc/encoder_parallel.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file enc/tailbitsgenerator_parallel.v
+    Info (12023): Found entity 1: tailBitsGenerator_parallel File: C:/Users/matth/Documents/ECE559/coder-stack/enc/tailBitsGenerator_parallel.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file enc/encoder_top_parallel.v
+    Info (12023): Found entity 1: encoder_top_parallel File: C:/Users/matth/Documents/ECE559/coder-stack/enc/encoder_top_parallel.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at delay.v(9): created implicit net for "empty" File: C:/Users/matth/Documents/ECE559/coder-stack/enc/delay.v Line: 9
+Warning (10236): Verilog HDL Implicit Net warning at delay.v(9): created implicit net for "full" File: C:/Users/matth/Documents/ECE559/coder-stack/enc/delay.v Line: 9
+Info (12127): Elaborating entity "encoder_top_parallel" for the top level hierarchy
+Info (12128): Elaborating entity "my_counter" for hierarchy "my_counter:counter" File: C:/Users/matth/Documents/ECE559/coder-stack/enc/encoder_top_parallel.v Line: 49
+Info (12128): Elaborating entity "counter_enc" for hierarchy "my_counter:counter|counter_enc:count" File: C:/Users/matth/Documents/ECE559/coder-stack/enc/my_counter.v Line: 11
+Info (12128): Elaborating entity "lpm_counter" for hierarchy "my_counter:counter|counter_enc:count|lpm_counter:LPM_COUNTER_component" File: C:/Users/matth/Documents/ECE559/coder-stack/enc/counter.v Line: 69
+Info (12130): Elaborated megafunction instantiation "my_counter:counter|counter_enc:count|lpm_counter:LPM_COUNTER_component" File: C:/Users/matth/Documents/ECE559/coder-stack/enc/counter.v Line: 69
+Info (12133): Instantiated megafunction "my_counter:counter|counter_enc:count|lpm_counter:LPM_COUNTER_component" with the following parameter: File: C:/Users/matth/Documents/ECE559/coder-stack/enc/counter.v Line: 69
+    Info (12134): Parameter "lpm_direction" = "UP"
+    Info (12134): Parameter "lpm_port_updown" = "PORT_UNUSED"
+    Info (12134): Parameter "lpm_type" = "LPM_COUNTER"
+    Info (12134): Parameter "lpm_width" = "13"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_5mi.tdf
+    Info (12023): Found entity 1: cntr_5mi File: C:/Users/matth/Documents/ECE559/coder-stack/db/cntr_5mi.tdf Line: 25
+Info (12128): Elaborating entity "cntr_5mi" for hierarchy "my_counter:counter|counter_enc:count|lpm_counter:LPM_COUNTER_component|cntr_5mi:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 258
+Info (12128): Elaborating entity "encoder_parallel" for hierarchy "encoder_parallel:en1" File: C:/Users/matth/Documents/ECE559/coder-stack/enc/encoder_top_parallel.v Line: 73
+Warning (10034): Output port "xk" at encoder_parallel.v(4) has no driver File: C:/Users/matth/Documents/ECE559/coder-stack/enc/encoder_parallel.v Line: 4
+Info (12128): Elaborating entity "delay" for hierarchy "delay:del" File: C:/Users/matth/Documents/ECE559/coder-stack/enc/encoder_top_parallel.v Line: 81
+Warning (10034): Output port "usedw" at delay.v(3) has no driver File: C:/Users/matth/Documents/ECE559/coder-stack/enc/delay.v Line: 3
+Info (12128): Elaborating entity "byte_fifo" for hierarchy "delay:del|byte_fifo:delay_fifo" File: C:/Users/matth/Documents/ECE559/coder-stack/enc/delay.v Line: 9
+Info (12128): Elaborating entity "scfifo" for hierarchy "delay:del|byte_fifo:delay_fifo|scfifo:scfifo_component" File: C:/Users/matth/Documents/ECE559/coder-stack/enc/byte_fifo.v Line: 83
+Info (12130): Elaborated megafunction instantiation "delay:del|byte_fifo:delay_fifo|scfifo:scfifo_component" File: C:/Users/matth/Documents/ECE559/coder-stack/enc/byte_fifo.v Line: 83
+Info (12133): Instantiated megafunction "delay:del|byte_fifo:delay_fifo|scfifo:scfifo_component" with the following parameter: File: C:/Users/matth/Documents/ECE559/coder-stack/enc/byte_fifo.v Line: 83
+    Info (12134): Parameter "add_ram_output_register" = "OFF"
+    Info (12134): Parameter "almost_full_value" = "768"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+    Info (12134): Parameter "lpm_numwords" = "1024"
+    Info (12134): Parameter "lpm_showahead" = "OFF"
+    Info (12134): Parameter "lpm_type" = "scfifo"
+    Info (12134): Parameter "lpm_width" = "8"
+    Info (12134): Parameter "lpm_widthu" = "10"
+    Info (12134): Parameter "overflow_checking" = "ON"
+    Info (12134): Parameter "underflow_checking" = "ON"
+    Info (12134): Parameter "use_eab" = "ON"
+Info (12021): Found 1 design units, including 1 entities, in source file db/scfifo_uqc1.tdf
+    Info (12023): Found entity 1: scfifo_uqc1 File: C:/Users/matth/Documents/ECE559/coder-stack/db/scfifo_uqc1.tdf Line: 24
+Info (12128): Elaborating entity "scfifo_uqc1" for hierarchy "delay:del|byte_fifo:delay_fifo|scfifo:scfifo_component|scfifo_uqc1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/scfifo.tdf Line: 299
+Info (12021): Found 1 design units, including 1 entities, in source file db/a_dpfifo_bca1.tdf
+    Info (12023): Found entity 1: a_dpfifo_bca1 File: C:/Users/matth/Documents/ECE559/coder-stack/db/a_dpfifo_bca1.tdf Line: 28
+Info (12128): Elaborating entity "a_dpfifo_bca1" for hierarchy "delay:del|byte_fifo:delay_fifo|scfifo:scfifo_component|scfifo_uqc1:auto_generated|a_dpfifo_bca1:dpfifo" File: C:/Users/matth/Documents/ECE559/coder-stack/db/scfifo_uqc1.tdf Line: 37
+Info (12021): Found 1 design units, including 1 entities, in source file db/a_fefifo_jaf.tdf
+    Info (12023): Found entity 1: a_fefifo_jaf File: C:/Users/matth/Documents/ECE559/coder-stack/db/a_fefifo_jaf.tdf Line: 24
+Info (12128): Elaborating entity "a_fefifo_jaf" for hierarchy "delay:del|byte_fifo:delay_fifo|scfifo:scfifo_component|scfifo_uqc1:auto_generated|a_dpfifo_bca1:dpfifo|a_fefifo_jaf:fifo_state" File: C:/Users/matth/Documents/ECE559/coder-stack/db/a_dpfifo_bca1.tdf Line: 42
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_ai7.tdf
+    Info (12023): Found entity 1: cntr_ai7 File: C:/Users/matth/Documents/ECE559/coder-stack/db/cntr_ai7.tdf Line: 25
+Info (12128): Elaborating entity "cntr_ai7" for hierarchy "delay:del|byte_fifo:delay_fifo|scfifo:scfifo_component|scfifo_uqc1:auto_generated|a_dpfifo_bca1:dpfifo|a_fefifo_jaf:fifo_state|cntr_ai7:count_usedw" File: C:/Users/matth/Documents/ECE559/coder-stack/db/a_fefifo_jaf.tdf Line: 38
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_i0t1.tdf
+    Info (12023): Found entity 1: altsyncram_i0t1 File: C:/Users/matth/Documents/ECE559/coder-stack/db/altsyncram_i0t1.tdf Line: 27
+Info (12128): Elaborating entity "altsyncram_i0t1" for hierarchy "delay:del|byte_fifo:delay_fifo|scfifo:scfifo_component|scfifo_uqc1:auto_generated|a_dpfifo_bca1:dpfifo|altsyncram_i0t1:FIFOram" File: C:/Users/matth/Documents/ECE559/coder-stack/db/a_dpfifo_bca1.tdf Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_uhb.tdf
+    Info (12023): Found entity 1: cntr_uhb File: C:/Users/matth/Documents/ECE559/coder-stack/db/cntr_uhb.tdf Line: 25
+Info (12128): Elaborating entity "cntr_uhb" for hierarchy "delay:del|byte_fifo:delay_fifo|scfifo:scfifo_component|scfifo_uqc1:auto_generated|a_dpfifo_bca1:dpfifo|cntr_uhb:rd_ptr_count" File: C:/Users/matth/Documents/ECE559/coder-stack/db/a_dpfifo_bca1.tdf Line: 44
+Info (12128): Elaborating entity "fifoFSM" for hierarchy "delay:del|fifoFSM:my_fifo_fsm" File: C:/Users/matth/Documents/ECE559/coder-stack/enc/delay.v Line: 12
+Info (12128): Elaborating entity "fsm" for hierarchy "fsm:my_fsm" File: C:/Users/matth/Documents/ECE559/coder-stack/enc/encoder_top_parallel.v Line: 87
+Warning (10230): Verilog HDL assignment warning at fsm.v(22): truncated value with size 32 to match size of target (3) File: C:/Users/matth/Documents/ECE559/coder-stack/enc/fsm.v Line: 22
+Info (12128): Elaborating entity "tailBitsGenerator_parallel" for hierarchy "tailBitsGenerator_parallel:mytail" File: C:/Users/matth/Documents/ECE559/coder-stack/enc/encoder_top_parallel.v Line: 94
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "xk_out[4]" is stuck at GND File: C:/Users/matth/Documents/ECE559/coder-stack/enc/encoder_top_parallel.v Line: 4
+    Warning (13410): Pin "xk_out[5]" is stuck at GND File: C:/Users/matth/Documents/ECE559/coder-stack/enc/encoder_top_parallel.v Line: 4
+    Warning (13410): Pin "xk_out[6]" is stuck at GND File: C:/Users/matth/Documents/ECE559/coder-stack/enc/encoder_top_parallel.v Line: 4
+    Warning (13410): Pin "xk_out[7]" is stuck at GND File: C:/Users/matth/Documents/ECE559/coder-stack/enc/encoder_top_parallel.v Line: 4
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/matth/Documents/ECE559/coder-stack/output_files/coder_stack.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 210 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 22 input pins
+    Info (21059): Implemented 29 output pins
+    Info (21061): Implemented 151 logic cells
+    Info (21064): Implemented 8 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 4872 megabytes
+    Info: Processing ended: Fri Apr 10 02:41:26 2020
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:21
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/matth/Documents/ECE559/coder-stack/output_files/coder_stack.map.smsg.
+
+

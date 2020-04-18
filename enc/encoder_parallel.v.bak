@@ -1,0 +1,5 @@
+module encoder_parallel(
+	input serial_in, switch, clock, reset, en,
+	output zk, xk,
+	output [2:0] q);
+
