@@ -1,12 +1,12 @@
-// megafunction wizard: %LPM_SHIFTREG%
+// megafunction wizard: %LPM_COUNTER%
 // GENERATION: STANDARD
 // VERSION: WM1.0
-// MODULE: LPM_SHIFTREG 
+// MODULE: LPM_COUNTER 
 
 // ============================================================
-// File Name: shiftreg.v
+// File Name: counter_10bits.v
 // Megafunction Name(s):
-// 			LPM_SHIFTREG
+// 			LPM_COUNTER
 //
 // Simulation Library Files(s):
 // 			lpm
@@ -36,46 +36,45 @@
 // synopsys translate_off
 `timescale 1 ps / 1 ps
 // synopsys translate_on
-module shiftreg (
+module counter_10bits (
 	aclr,
 	clock,
+	cnt_en,
 	data,
-	enable,
-	load,
-	sset,
+	sload,
 	q);
 
 	input	  aclr;
 	input	  clock;
-	input	[23:0]  data;
-	input	  enable;
-	input	  load;
-	input	  sset;
-	output	[23:0]  q;
+	input	  cnt_en;
+	input	[9:0]  data;
+	input	  sload;
+	output	[9:0]  q;
 
-	wire [23:0] sub_wire0;
-	wire [23:0] q = sub_wire0[23:0];
+	wire [9:0] sub_wire0;
+	wire [9:0] q = sub_wire0[9:0];
 
-	lpm_shiftreg	LPM_SHIFTREG_component (
+	lpm_counter	LPM_COUNTER_component (
 				.aclr (aclr),
 				.clock (clock),
+				.cnt_en (cnt_en),
 				.data (data),
-				.enable (enable),
-				.load (load),
-				.sset (sset),
-				.q (sub_wire0)
-				// synopsys translate_off
-				,
-				.aset (),
-				.sclr (),
-				.shiftin (),
-				.shiftout ()
-				// synopsys translate_on
-				);
+				.sload (sload),
+				.q (sub_wire0),
+				.aload (1'b0),
+				.aset (1'b0),
+				.cin (1'b1),
+				.clk_en (1'b1),
+				.cout (),
+				.eq (),
+				.sclr (1'b0),
+				.sset (1'b0),
+				.updown (1'b1));
 	defparam
-		LPM_SHIFTREG_component.lpm_direction = "RIGHT",
-		LPM_SHIFTREG_component.lpm_type = "LPM_SHIFTREG",
-		LPM_SHIFTREG_component.lpm_width = 24;
+		LPM_COUNTER_component.lpm_direction = "DOWN",
+		LPM_COUNTER_component.lpm_port_updown = "PORT_UNUSED",
+		LPM_COUNTER_component.lpm_type = "LPM_COUNTER",
+		LPM_COUNTER_component.lpm_width = 10;
 
 
 endmodule
@@ -87,42 +86,42 @@ endmodule
 // Retrieval info: PRIVATE: ALOAD NUMERIC "0"
 // Retrieval info: PRIVATE: ASET NUMERIC "0"
 // Retrieval info: PRIVATE: ASET_ALL1 NUMERIC "1"
-// Retrieval info: PRIVATE: CLK_EN NUMERIC "1"
+// Retrieval info: PRIVATE: CLK_EN NUMERIC "0"
+// Retrieval info: PRIVATE: CNT_EN NUMERIC "1"
+// Retrieval info: PRIVATE: CarryIn NUMERIC "0"
+// Retrieval info: PRIVATE: CarryOut NUMERIC "0"
+// Retrieval info: PRIVATE: Direction NUMERIC "1"
 // Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone V"
-// Retrieval info: PRIVATE: LeftShift NUMERIC "0"
-// Retrieval info: PRIVATE: ParallelDataInput NUMERIC "1"
-// Retrieval info: PRIVATE: Q_OUT NUMERIC "1"
+// Retrieval info: PRIVATE: ModulusCounter NUMERIC "0"
+// Retrieval info: PRIVATE: ModulusValue NUMERIC "0"
 // Retrieval info: PRIVATE: SCLR NUMERIC "0"
 // Retrieval info: PRIVATE: SLOAD NUMERIC "1"
-// Retrieval info: PRIVATE: SSET NUMERIC "1"
+// Retrieval info: PRIVATE: SSET NUMERIC "0"
 // Retrieval info: PRIVATE: SSET_ALL1 NUMERIC "1"
 // Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
-// Retrieval info: PRIVATE: SerialShiftInput NUMERIC "0"
-// Retrieval info: PRIVATE: SerialShiftOutput NUMERIC "0"
-// Retrieval info: PRIVATE: nBit NUMERIC "24"
+// Retrieval info: PRIVATE: nBit NUMERIC "10"
 // Retrieval info: PRIVATE: new_diagram STRING "1"
 // Retrieval info: LIBRARY: lpm lpm.lpm_components.all
-// Retrieval info: CONSTANT: LPM_DIRECTION STRING "RIGHT"
-// Retrieval info: CONSTANT: LPM_TYPE STRING "LPM_SHIFTREG"
-// Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "24"
+// Retrieval info: CONSTANT: LPM_DIRECTION STRING "DOWN"
+// Retrieval info: CONSTANT: LPM_PORT_UPDOWN STRING "PORT_UNUSED"
+// Retrieval info: CONSTANT: LPM_TYPE STRING "LPM_COUNTER"
+// Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "10"
 // Retrieval info: USED_PORT: aclr 0 0 0 0 INPUT NODEFVAL "aclr"
 // Retrieval info: USED_PORT: clock 0 0 0 0 INPUT NODEFVAL "clock"
-// Retrieval info: USED_PORT: data 0 0 24 0 INPUT NODEFVAL "data[23..0]"
-// Retrieval info: USED_PORT: enable 0 0 0 0 INPUT NODEFVAL "enable"
-// Retrieval info: USED_PORT: load 0 0 0 0 INPUT NODEFVAL "load"
-// Retrieval info: USED_PORT: q 0 0 24 0 OUTPUT NODEFVAL "q[23..0]"
-// Retrieval info: USED_PORT: sset 0 0 0 0 INPUT NODEFVAL "sset"
+// Retrieval info: USED_PORT: cnt_en 0 0 0 0 INPUT NODEFVAL "cnt_en"
+// Retrieval info: USED_PORT: data 0 0 10 0 INPUT NODEFVAL "data[9..0]"
+// Retrieval info: USED_PORT: q 0 0 10 0 OUTPUT NODEFVAL "q[9..0]"
+// Retrieval info: USED_PORT: sload 0 0 0 0 INPUT NODEFVAL "sload"
 // Retrieval info: CONNECT: @aclr 0 0 0 0 aclr 0 0 0 0
 // Retrieval info: CONNECT: @clock 0 0 0 0 clock 0 0 0 0
-// Retrieval info: CONNECT: @data 0 0 24 0 data 0 0 24 0
-// Retrieval info: CONNECT: @enable 0 0 0 0 enable 0 0 0 0
-// Retrieval info: CONNECT: @load 0 0 0 0 load 0 0 0 0
-// Retrieval info: CONNECT: @sset 0 0 0 0 sset 0 0 0 0
-// Retrieval info: CONNECT: q 0 0 24 0 @q 0 0 24 0
-// Retrieval info: GEN_FILE: TYPE_NORMAL shiftreg.v TRUE
-// Retrieval info: GEN_FILE: TYPE_NORMAL shiftreg.inc FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL shiftreg.cmp FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL shiftreg.bsf FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL shiftreg_inst.v TRUE
-// Retrieval info: GEN_FILE: TYPE_NORMAL shiftreg_bb.v FALSE
+// Retrieval info: CONNECT: @cnt_en 0 0 0 0 cnt_en 0 0 0 0
+// Retrieval info: CONNECT: @data 0 0 10 0 data 0 0 10 0
+// Retrieval info: CONNECT: @sload 0 0 0 0 sload 0 0 0 0
+// Retrieval info: CONNECT: q 0 0 10 0 @q 0 0 10 0
+// Retrieval info: GEN_FILE: TYPE_NORMAL counter_10bits.v TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL counter_10bits.inc FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL counter_10bits.cmp FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL counter_10bits.bsf FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL counter_10bits_inst.v FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL counter_10bits_bb.v FALSE
 // Retrieval info: LIB_FILE: lpm

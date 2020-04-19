@@ -1,0 +1,126 @@
+module mem_tb_cb_seg(
+	input wire reset,
+	input wire clk,
+	input wire test_start,
+	
+	output wire test_good,
+	
+	//Debug Port for logic analyzer
+	output wire data,
+	output wire size,
+	output wire start,
+	output wire crc,
+	output wire filling
+);
+
+wire data_in, wreq_data, wreq_size;
+wire[15:0] size_in;
+
+wire cnt_read_en, cnt_read_in, cnt_read_load, cnt_read_q;
+
+
+cb_seg test_obj(
+    .clk(clk),
+    .reset(reset),
+    .tb_in(data_in),
+    .wreq_data(wreq_data),        //Write Request of the Input TB buffer
+    .tb_size_in(size_in),  
+    .wreq_size(wreq_size),
+
+    .filling(filling),
+    .crc(crc),
+    .start(start),
+
+    .cb_size(size),  //1-bit 2 possible size
+    .cb_data(data)   //Serial Data Output
+);
+
+counter_16bits	cnt_read (
+	.aclr ( reset),
+	.clock ( clk ),
+	.cnt_en ( cnt_fl_en ),
+	.data ( cnt_fl_in ),
+	.sload ( cnt_fl_load ),
+	.q ( cnt_fl_q )
+	);
+
+
+
+
+endmodule
+
+
+
+module write_ctl(
+	input wire reset,
+	input wire clk,
+	input wire test_start,
+	
+	output wire wreq_size,
+	output wire wreq_data,
+	output wire[15:0] size
+)
+
+//FSM State Encoding
+//Following the Quartus Encoding Scheme
+parameter IDLE			=	3'000,
+			 WRITE_SIZE	=	3'b011,
+			 WRITE_DATA	=	3'b101,
+
+wire[15:0] cnt_write_in;
+wire cnt_write_en, cnt_write_load, cnt_write_q;
+reg[2:0] state_reg, next_state;
+
+counter_16bits	cnt_write (
+	.aclr ( reset),
+	.clock ( clk ),
+	.cnt_en ( cnt_write_en ),
+	.data ( cnt_write_in ),
+	.sload ( cnt_write_load ),
+	.q ( cnt_write_q )
+	);
+
+//ROM
+	
+	
+always@(posedge clk, reset) begin
+	if(reset==1'b1) state_reg <= IDLE;
+	else state_reg <= next_state;
+end
+
+always@(*) begin
+	case(state_reg)
+		IDLE: if(test_start==1'b1) next_state <=WRITE_SIZE;
+				else next_state <= IDLE;
+		WRITE_SIZE: next_state <= WRITE_DATA;
+		WRITE_DATA: if(cnt_write_q==16'h0000) next_state <= IDLE;
+						else next_state <= WRITE_DATA;
+		default:	next_state <= IDLE;
+	endcase
+end
+
+always@(*) begin
+wreq_size 		<=		1'b0;
+wreq_data 		<= 	1'b0;
+size				<=		16'h0;
+cnt_write_en	<=		1'b0;
+cnt_write_in	<=		16'h0;
+cnt_write_load	<=		1'b0;
+
+	case(state_reg)
+		IDLE: begin
+			cnt_write_in  	<= 16'd7010;
+			cnt_write_load <=1'b1;		
+		end
+		WRITE_SIZE: begin 
+			size				<= 16'd7010;
+			wreq_size		<= 1'b1;
+		end
+		WRITE_DATA: begin
+			cnt_write_en 	<= 1'b1;
+			wreq_data		<= 1'b1;
+			//ROM Contorl
+		end
+	endcase
+end
+endmodule

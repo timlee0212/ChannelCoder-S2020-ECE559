@@ -1,9 +1,0 @@
-
-State Machine - |encoder_top_parallel|fsm:my_fsm|state_curr
-Name state_curr.TAIL state_curr.LAST_OPERATE state_curr.OPERATE state_curr.WAIT_INT state_curr.RECORD state_curr.INIT 
-state_curr.INIT 0 0 0 0 0 0 
-state_curr.RECORD 0 0 0 0 1 1 
-state_curr.WAIT_INT 0 0 0 1 0 1 
-state_curr.OPERATE 0 0 1 0 0 1 
-state_curr.LAST_OPERATE 0 1 0 0 0 1 
-state_curr.TAIL 1 0 0 0 0 1 
