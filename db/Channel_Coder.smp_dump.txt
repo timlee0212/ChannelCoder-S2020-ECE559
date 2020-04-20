@@ -1,0 +1,47 @@
+
+State Machine - |mem_tb_coder_stack|read_ctl:reader|state_reg
+Name state_reg.WAIT_F2 state_reg.WAIT_F1 state_reg.READ_LARGE state_reg.WAIT_REG2 state_reg.WAIT_REG1 state_reg.LOAD_SIZE state_reg.IDLE 
+state_reg.IDLE 0 0 0 0 0 0 0 
+state_reg.LOAD_SIZE 0 0 0 0 0 1 1 
+state_reg.WAIT_REG1 0 0 0 0 1 0 1 
+state_reg.WAIT_REG2 0 0 0 1 0 0 1 
+state_reg.READ_LARGE 0 0 1 0 0 0 1 
+state_reg.WAIT_F1 0 1 0 0 0 0 1 
+state_reg.WAIT_F2 1 0 0 0 0 0 1 
+
+State Machine - |mem_tb_coder_stack|write_ctl:writer|state_reg
+Name state_reg.WRITE_FIN2 state_reg.WRITE_FIN1 state_reg.WRITE_DATA state_reg.WAIT_MEM state_reg.WRITE_SIZE state_reg.IDLE 
+state_reg.IDLE 0 0 0 0 0 0 
+state_reg.WRITE_SIZE 0 0 0 0 1 1 
+state_reg.WAIT_MEM 0 0 0 1 0 1 
+state_reg.WRITE_DATA 0 0 1 0 0 1 
+state_reg.WRITE_FIN1 0 1 0 0 0 1 
+state_reg.WRITE_FIN2 1 0 0 0 0 1 
+
+State Machine - |mem_tb_coder_stack|coder_stack_top:test_obj|encoder_top_parallel:my_enc|fsm:my_fsm|state_curr
+Name state_curr.TAIL state_curr.LAST_OPERATE state_curr.OPERATE state_curr.WAIT_INT state_curr.RECORD state_curr.INIT 
+state_curr.INIT 0 0 0 0 0 0 
+state_curr.RECORD 0 0 0 0 1 1 
+state_curr.WAIT_INT 0 0 0 1 0 1 
+state_curr.OPERATE 0 0 1 0 0 1 
+state_curr.LAST_OPERATE 0 1 0 0 0 1 
+state_curr.TAIL 1 0 0 0 0 1 
+
+State Machine - |mem_tb_coder_stack|coder_stack_top:test_obj|encoder_top_parallel:my_enc|delay:del|fifoFSM:my_fifo_fsm|state_curr
+Name state_curr.INIT state_curr.END state_curr.COUNTING 
+state_curr.INIT 0 0 0 
+state_curr.COUNTING 1 0 1 
+state_curr.END 1 1 0 
+
+State Machine - |mem_tb_coder_stack|coder_stack_top:test_obj|cb_seg:my_cb_seg|data_fsm:datapath_control_unit|state_reg
+Name state_reg.WAIT_NEXT state_reg.NEXT_BLOCK state_reg.OUT_CRC state_reg.READ_DATA state_reg.FILLING state_reg.SEND_SIZE state_reg.LOAD_SIZE state_reg.READ_SIZE state_reg.READ_REQ state_reg.IDLE 
+state_reg.IDLE 0 0 0 0 0 0 0 0 0 0 
+state_reg.READ_REQ 0 0 0 0 0 0 0 0 1 1 
+state_reg.READ_SIZE 0 0 0 0 0 0 0 1 0 1 
+state_reg.LOAD_SIZE 0 0 0 0 0 0 1 0 0 1 
+state_reg.SEND_SIZE 0 0 0 0 0 1 0 0 0 1 
+state_reg.FILLING 0 0 0 0 1 0 0 0 0 1 
+state_reg.READ_DATA 0 0 0 1 0 0 0 0 0 1 
+state_reg.OUT_CRC 0 0 1 0 0 0 0 0 0 1 
+state_reg.NEXT_BLOCK 0 1 0 0 0 0 0 0 0 1 
+state_reg.WAIT_NEXT 1 0 0 0 0 0 0 0 0 1 

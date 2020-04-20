@@ -1,0 +1,125 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "test_good",
+					"strict" : false
+				},
+				{
+					"name" : "test_end",
+					"strict" : false
+				},
+				{
+					"name" : "xk_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "xk_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "xk_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "xk_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "xk_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "xk_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "xk_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "xk_out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "zk_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "zk_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "zk_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "zk_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "zk_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "zk_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "zk_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "zk_out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "zk_p_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "zk_p_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "zk_p_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "zk_p_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "zk_p_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "zk_p_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "zk_p_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "zk_p_out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "test_start",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

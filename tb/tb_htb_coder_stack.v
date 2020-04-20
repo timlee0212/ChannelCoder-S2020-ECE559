@@ -2,7 +2,7 @@
 module tb_mem_htb();
 reg clk, reset, test_start;
 
-wire xk_out, zk_out, zk_p_out;
+wire[7:0] xk_out, zk_out, zk_p_out;
 wire test_good, test_end;
 
 mem_tb_coder_stack test_obj(

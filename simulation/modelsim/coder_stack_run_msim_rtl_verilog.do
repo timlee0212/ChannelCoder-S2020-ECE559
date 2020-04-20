@@ -27,14 +27,18 @@ vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Cour
 vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/fifoFSM.v}
 vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/delay.v}
 vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/counter.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/tb {E:/Courses/ECE559/coder-stack/tb/htb_coder_stack.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/tb/IP {E:/Courses/ECE559/coder-stack/tb/IP/test_input.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/tb/IP {E:/Courses/ECE559/coder-stack/tb/IP/ref_small.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/tb/IP {E:/Courses/ECE559/coder-stack/tb/IP/delay3.v}
 vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/encoder_parallel.v}
 vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/tailBitsGenerator_parallel.v}
 vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/encoder_top_parallel.v}
 vlog -sv -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/src {E:/Courses/ECE559/coder-stack/cdseg/src/CRC_size.sv}
 
-vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/tb {E:/Courses/ECE559/coder-stack/tb/tb_full_sys.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/tb {E:/Courses/ECE559/coder-stack/tb/tb_htb_coder_stack.v}
 
-vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_full
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_mem_htb
 
 add wave *
 view structure

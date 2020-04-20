@@ -12,147 +12,147 @@
 # 
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack {E:/Courses/ECE559/coder-stack/fake_interleaver.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:28:21 on Apr 18,2020
+# Start time: 18:10:46 on Apr 20,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack" E:/Courses/ECE559/coder-stack/fake_interleaver.v 
 # -- Compiling module fake_interleaver
 # 
 # Top level modules:
 # 	fake_interleaver
-# End time: 00:28:21 on Apr 18,2020, Elapsed time: 0:00:00
+# End time: 18:10:46 on Apr 20,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack {E:/Courses/ECE559/coder-stack/coder_stack_top_parallel.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:28:21 on Apr 18,2020
+# Start time: 18:10:47 on Apr 20,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack" E:/Courses/ECE559/coder-stack/coder_stack_top_parallel.v 
 # -- Compiling module coder_stack_top_parallel
 # 
 # Top level modules:
 # 	coder_stack_top_parallel
-# End time: 00:28:22 on Apr 18,2020, Elapsed time: 0:00:01
+# End time: 18:10:47 on Apr 20,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/shiftreg.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:28:22 on Apr 18,2020
+# Start time: 18:10:47 on Apr 20,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/shiftreg.v 
 # -- Compiling module shiftreg
 # 
 # Top level modules:
 # 	shiftreg
-# End time: 00:28:22 on Apr 18,2020, Elapsed time: 0:00:00
+# End time: 18:10:47 on Apr 20,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/register_8bits.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:28:22 on Apr 18,2020
+# Start time: 18:10:47 on Apr 20,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/register_8bits.v 
 # -- Compiling module register_8bits
 # 
 # Top level modules:
 # 	register_8bits
-# End time: 00:28:22 on Apr 18,2020, Elapsed time: 0:00:00
+# End time: 18:10:47 on Apr 20,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/register_2bits.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:28:22 on Apr 18,2020
+# Start time: 18:10:47 on Apr 20,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/register_2bits.v 
 # -- Compiling module register_2bits
 # 
 # Top level modules:
 # 	register_2bits
-# End time: 00:28:23 on Apr 18,2020, Elapsed time: 0:00:01
+# End time: 18:10:47 on Apr 20,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/register_1bit.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:28:23 on Apr 18,2020
+# Start time: 18:10:48 on Apr 20,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/register_1bit.v 
 # -- Compiling module register_1bit
 # 
 # Top level modules:
 # 	register_1bit
-# End time: 00:28:23 on Apr 18,2020, Elapsed time: 0:00:00
+# End time: 18:10:48 on Apr 20,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/mux_ip.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:28:23 on Apr 18,2020
+# Start time: 18:10:48 on Apr 20,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/mux_ip.v 
 # -- Compiling module mux_ip
 # 
 # Top level modules:
 # 	mux_ip
-# End time: 00:28:23 on Apr 18,2020, Elapsed time: 0:00:00
+# End time: 18:10:48 on Apr 20,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/fifo14.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:28:24 on Apr 18,2020
+# Start time: 18:10:48 on Apr 20,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/fifo14.v 
 # -- Compiling module fifo14
 # 
 # Top level modules:
 # 	fifo14
-# End time: 00:28:24 on Apr 18,2020, Elapsed time: 0:00:00
+# End time: 18:10:48 on Apr 20,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/fifo12.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:28:24 on Apr 18,2020
+# Start time: 18:10:48 on Apr 20,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/fifo12.v 
 # -- Compiling module fifo12
 # 
 # Top level modules:
 # 	fifo12
-# End time: 00:28:24 on Apr 18,2020, Elapsed time: 0:00:00
+# End time: 18:10:48 on Apr 20,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/fifo_tb.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:28:24 on Apr 18,2020
+# Start time: 18:10:49 on Apr 20,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/fifo_tb.v 
 # -- Compiling module fifo_tb
 # 
 # Top level modules:
 # 	fifo_tb
-# End time: 00:28:25 on Apr 18,2020, Elapsed time: 0:00:01
+# End time: 18:10:49 on Apr 20,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/fifo_10bits.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:28:25 on Apr 18,2020
+# Start time: 18:10:49 on Apr 20,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/fifo_10bits.v 
 # -- Compiling module fifo_10bits
 # 
 # Top level modules:
 # 	fifo_10bits
-# End time: 00:28:25 on Apr 18,2020, Elapsed time: 0:00:00
+# End time: 18:10:49 on Apr 20,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/crc_shift_mux.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:28:25 on Apr 18,2020
+# Start time: 18:10:49 on Apr 20,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/crc_shift_mux.v 
 # -- Compiling module crc_shift_mux
 # 
 # Top level modules:
 # 	crc_shift_mux
-# End time: 00:28:25 on Apr 18,2020, Elapsed time: 0:00:00
+# End time: 18:10:49 on Apr 20,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/counter_10bits.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:28:25 on Apr 18,2020
+# Start time: 18:10:49 on Apr 20,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/counter_10bits.v 
 # -- Compiling module counter_10bits
 # 
 # Top level modules:
 # 	counter_10bits
-# End time: 00:28:26 on Apr 18,2020, Elapsed time: 0:00:01
+# End time: 18:10:49 on Apr 20,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/src {E:/Courses/ECE559/coder-stack/cdseg/src/top_module.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:28:26 on Apr 18,2020
+# Start time: 18:10:50 on Apr 20,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/src" E:/Courses/ECE559/coder-stack/cdseg/src/top_module.v 
 # -- Compiling module cb_seg
 # 
 # Top level modules:
 # 	cb_seg
-# End time: 00:28:26 on Apr 18,2020, Elapsed time: 0:00:00
+# End time: 18:10:50 on Apr 20,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/src {E:/Courses/ECE559/coder-stack/cdseg/src/data_path_control.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:28:26 on Apr 18,2020
+# Start time: 18:10:50 on Apr 20,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/src" E:/Courses/ECE559/coder-stack/cdseg/src/data_path_control.v 
 # -- Compiling module data_fsm
 # ** Warning: E:/Courses/ECE559/coder-stack/cdseg/src/data_path_control.v(142): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
@@ -164,616 +164,179 @@
 # 
 # Top level modules:
 # 	data_fsm
-# End time: 00:28:26 on Apr 18,2020, Elapsed time: 0:00:00
+# End time: 18:10:50 on Apr 20,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 6
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/src {E:/Courses/ECE559/coder-stack/cdseg/src/crc24.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:28:26 on Apr 18,2020
+# Start time: 18:10:50 on Apr 20,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/src" E:/Courses/ECE559/coder-stack/cdseg/src/crc24.v 
 # -- Compiling module crc24
 # 
 # Top level modules:
 # 	crc24
-# End time: 00:28:27 on Apr 18,2020, Elapsed time: 0:00:01
+# End time: 18:10:50 on Apr 20,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/byte_fifo.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:28:27 on Apr 18,2020
+# Start time: 18:10:50 on Apr 20,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/enc" E:/Courses/ECE559/coder-stack/enc/byte_fifo.v 
 # -- Compiling module byte_fifo
 # 
 # Top level modules:
 # 	byte_fifo
-# End time: 00:28:27 on Apr 18,2020, Elapsed time: 0:00:00
+# End time: 18:10:50 on Apr 20,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/my_counter.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:28:27 on Apr 18,2020
+# Start time: 18:10:51 on Apr 20,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/enc" E:/Courses/ECE559/coder-stack/enc/my_counter.v 
 # -- Compiling module my_counter
 # 
 # Top level modules:
 # 	my_counter
-# End time: 00:28:27 on Apr 18,2020, Elapsed time: 0:00:00
+# End time: 18:10:51 on Apr 20,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/fsm.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:28:27 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/enc" E:/Courses/ECE559/coder-stack/enc/fsm.v 
-# -- Compiling module fsm
-# ** Error (suppressible): E:/Courses/ECE559/coder-stack/enc/fsm.v(40): (vlog-2388) 'out_valid_reg_in' already declared in this scope (fsm).
-# End time: 00:28:27 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-# ** Error: F:/quartus/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./coder_stack_run_msim_rtl_verilog.do line 26
-# F:/quartus/modelsim_ase/win32aloem/vlog failed.
-#     while executing
-# "vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/fsm.v}"
-do coder_stack_run_msim_rtl_verilog.do
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack {E:/Courses/ECE559/coder-stack/fake_interleaver.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:33:06 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack" E:/Courses/ECE559/coder-stack/fake_interleaver.v 
-# -- Compiling module fake_interleaver
-# 
-# Top level modules:
-# 	fake_interleaver
-# End time: 00:33:06 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack {E:/Courses/ECE559/coder-stack/coder_stack_top_parallel.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:33:06 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack" E:/Courses/ECE559/coder-stack/coder_stack_top_parallel.v 
-# -- Compiling module coder_stack_top_parallel
-# 
-# Top level modules:
-# 	coder_stack_top_parallel
-# End time: 00:33:06 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/shiftreg.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:33:06 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/shiftreg.v 
-# -- Compiling module shiftreg
-# 
-# Top level modules:
-# 	shiftreg
-# End time: 00:33:07 on Apr 18,2020, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/register_8bits.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:33:07 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/register_8bits.v 
-# -- Compiling module register_8bits
-# 
-# Top level modules:
-# 	register_8bits
-# End time: 00:33:07 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/register_2bits.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:33:07 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/register_2bits.v 
-# -- Compiling module register_2bits
-# 
-# Top level modules:
-# 	register_2bits
-# End time: 00:33:07 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/register_1bit.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:33:07 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/register_1bit.v 
-# -- Compiling module register_1bit
-# 
-# Top level modules:
-# 	register_1bit
-# End time: 00:33:07 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/mux_ip.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:33:07 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/mux_ip.v 
-# -- Compiling module mux_ip
-# 
-# Top level modules:
-# 	mux_ip
-# End time: 00:33:08 on Apr 18,2020, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/fifo14.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:33:08 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/fifo14.v 
-# -- Compiling module fifo14
-# 
-# Top level modules:
-# 	fifo14
-# End time: 00:33:08 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/fifo12.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:33:08 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/fifo12.v 
-# -- Compiling module fifo12
-# 
-# Top level modules:
-# 	fifo12
-# End time: 00:33:08 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/fifo_tb.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:33:08 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/fifo_tb.v 
-# -- Compiling module fifo_tb
-# 
-# Top level modules:
-# 	fifo_tb
-# End time: 00:33:08 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/fifo_10bits.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:33:09 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/fifo_10bits.v 
-# -- Compiling module fifo_10bits
-# 
-# Top level modules:
-# 	fifo_10bits
-# End time: 00:33:09 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/crc_shift_mux.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:33:09 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/crc_shift_mux.v 
-# -- Compiling module crc_shift_mux
-# 
-# Top level modules:
-# 	crc_shift_mux
-# End time: 00:33:09 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/counter_10bits.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:33:09 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/counter_10bits.v 
-# -- Compiling module counter_10bits
-# 
-# Top level modules:
-# 	counter_10bits
-# End time: 00:33:09 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/src {E:/Courses/ECE559/coder-stack/cdseg/src/top_module.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:33:09 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/src" E:/Courses/ECE559/coder-stack/cdseg/src/top_module.v 
-# -- Compiling module cb_seg
-# 
-# Top level modules:
-# 	cb_seg
-# End time: 00:33:09 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/src {E:/Courses/ECE559/coder-stack/cdseg/src/data_path_control.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:33:10 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/src" E:/Courses/ECE559/coder-stack/cdseg/src/data_path_control.v 
-# -- Compiling module data_fsm
-# ** Warning: E:/Courses/ECE559/coder-stack/cdseg/src/data_path_control.v(142): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: E:/Courses/ECE559/coder-stack/cdseg/src/data_path_control.v(145): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: E:/Courses/ECE559/coder-stack/cdseg/src/data_path_control.v(148): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: E:/Courses/ECE559/coder-stack/cdseg/src/data_path_control.v(152): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: E:/Courses/ECE559/coder-stack/cdseg/src/data_path_control.v(188): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: E:/Courses/ECE559/coder-stack/cdseg/src/data_path_control.v(189): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# 
-# Top level modules:
-# 	data_fsm
-# End time: 00:33:10 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 6
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/src {E:/Courses/ECE559/coder-stack/cdseg/src/crc24.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:33:10 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/src" E:/Courses/ECE559/coder-stack/cdseg/src/crc24.v 
-# -- Compiling module crc24
-# 
-# Top level modules:
-# 	crc24
-# End time: 00:33:10 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/byte_fifo.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:33:10 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/enc" E:/Courses/ECE559/coder-stack/enc/byte_fifo.v 
-# -- Compiling module byte_fifo
-# 
-# Top level modules:
-# 	byte_fifo
-# End time: 00:33:10 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/my_counter.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:33:11 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/enc" E:/Courses/ECE559/coder-stack/enc/my_counter.v 
-# -- Compiling module my_counter
-# 
-# Top level modules:
-# 	my_counter
-# End time: 00:33:11 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/fsm.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:33:11 on Apr 18,2020
+# Start time: 18:10:51 on Apr 20,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/enc" E:/Courses/ECE559/coder-stack/enc/fsm.v 
 # -- Compiling module fsm
 # 
 # Top level modules:
 # 	fsm
-# End time: 00:33:11 on Apr 18,2020, Elapsed time: 0:00:00
+# End time: 18:10:51 on Apr 20,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/fifoFSM.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:33:11 on Apr 18,2020
+# Start time: 18:10:51 on Apr 20,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/enc" E:/Courses/ECE559/coder-stack/enc/fifoFSM.v 
 # -- Compiling module fifoFSM
 # 
 # Top level modules:
 # 	fifoFSM
-# End time: 00:33:11 on Apr 18,2020, Elapsed time: 0:00:00
+# End time: 18:10:51 on Apr 20,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/delay.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:33:11 on Apr 18,2020
+# Start time: 18:10:51 on Apr 20,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/enc" E:/Courses/ECE559/coder-stack/enc/delay.v 
 # -- Compiling module delay
 # 
 # Top level modules:
 # 	delay
-# End time: 00:33:11 on Apr 18,2020, Elapsed time: 0:00:00
+# End time: 18:10:52 on Apr 20,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/counter.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:33:12 on Apr 18,2020
+# Start time: 18:10:52 on Apr 20,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/enc" E:/Courses/ECE559/coder-stack/enc/counter.v 
 # -- Compiling module counter_enc
 # 
 # Top level modules:
 # 	counter_enc
-# End time: 00:33:12 on Apr 18,2020, Elapsed time: 0:00:00
+# End time: 18:10:52 on Apr 20,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/tb {E:/Courses/ECE559/coder-stack/tb/htb_coder_stack.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:10:52 on Apr 20,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/tb" E:/Courses/ECE559/coder-stack/tb/htb_coder_stack.v 
+# -- Compiling module mem_tb_coder_stack
+# -- Compiling module write_ctl
+# -- Compiling module read_ctl
+# ** Warning: E:/Courses/ECE559/coder-stack/tb/htb_coder_stack.v(281): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# Top level modules:
+# 	mem_tb_coder_stack
+# End time: 18:10:52 on Apr 20,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/tb/IP {E:/Courses/ECE559/coder-stack/tb/IP/test_input.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:10:52 on Apr 20,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/tb/IP" E:/Courses/ECE559/coder-stack/tb/IP/test_input.v 
+# -- Compiling module test_input
+# 
+# Top level modules:
+# 	test_input
+# End time: 18:10:52 on Apr 20,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/tb/IP {E:/Courses/ECE559/coder-stack/tb/IP/ref_small.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:10:52 on Apr 20,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/tb/IP" E:/Courses/ECE559/coder-stack/tb/IP/ref_small.v 
+# -- Compiling module ref_small
+# 
+# Top level modules:
+# 	ref_small
+# End time: 18:10:53 on Apr 20,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/tb/IP {E:/Courses/ECE559/coder-stack/tb/IP/delay3.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:10:53 on Apr 20,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/tb/IP" E:/Courses/ECE559/coder-stack/tb/IP/delay3.v 
+# -- Compiling module delay3
+# 
+# Top level modules:
+# 	delay3
+# End time: 18:10:53 on Apr 20,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/encoder_parallel.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:33:12 on Apr 18,2020
+# Start time: 18:10:53 on Apr 20,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/enc" E:/Courses/ECE559/coder-stack/enc/encoder_parallel.v 
 # -- Compiling module encoder_parallel
 # 
 # Top level modules:
 # 	encoder_parallel
-# End time: 00:33:12 on Apr 18,2020, Elapsed time: 0:00:00
+# End time: 18:10:53 on Apr 20,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/tailBitsGenerator_parallel.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:33:12 on Apr 18,2020
+# Start time: 18:10:54 on Apr 20,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/enc" E:/Courses/ECE559/coder-stack/enc/tailBitsGenerator_parallel.v 
 # -- Compiling module tailBitsGenerator_parallel
 # 
 # Top level modules:
 # 	tailBitsGenerator_parallel
-# End time: 00:33:12 on Apr 18,2020, Elapsed time: 0:00:00
+# End time: 18:10:54 on Apr 20,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/encoder_top_parallel.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:33:12 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/enc" E:/Courses/ECE559/coder-stack/enc/encoder_top_parallel.v 
-# -- Compiling module encoder_top_parallel
-# ** Error: E:/Courses/ECE559/coder-stack/enc/encoder_top_parallel.v(13): (vlog-2730) Undefined variable: 'cbs_ready_guarded'.
-# ** Error: E:/Courses/ECE559/coder-stack/enc/encoder_top_parallel.v(25): (vlog-2730) Undefined variable: 'cbs_blocksize_guarded'.
-# ** Error (suppressible): E:/Courses/ECE559/coder-stack/enc/encoder_top_parallel.v(31): (vlog-2388) 'cbs_ready_guarded' already declared in this scope (encoder_top_parallel).
-# ** Error (suppressible): E:/Courses/ECE559/coder-stack/enc/encoder_top_parallel.v(31): (vlog-2388) 'cbs_blocksize_guarded' already declared in this scope (encoder_top_parallel).
-# End time: 00:33:12 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 4, Warnings: 0
-# ** Error: F:/quartus/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./coder_stack_run_msim_rtl_verilog.do line 32
-# F:/quartus/modelsim_ase/win32aloem/vlog failed.
-#     while executing
-# "vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/encoder_top_parallel.v}"
-do coder_stack_run_msim_rtl_verilog.do
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack {E:/Courses/ECE559/coder-stack/fake_interleaver.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:45 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack" E:/Courses/ECE559/coder-stack/fake_interleaver.v 
-# -- Compiling module fake_interleaver
-# 
-# Top level modules:
-# 	fake_interleaver
-# End time: 00:39:45 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack {E:/Courses/ECE559/coder-stack/coder_stack_top_parallel.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:46 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack" E:/Courses/ECE559/coder-stack/coder_stack_top_parallel.v 
-# -- Compiling module coder_stack_top_parallel
-# 
-# Top level modules:
-# 	coder_stack_top_parallel
-# End time: 00:39:46 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/shiftreg.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:46 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/shiftreg.v 
-# -- Compiling module shiftreg
-# 
-# Top level modules:
-# 	shiftreg
-# End time: 00:39:46 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/register_8bits.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:46 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/register_8bits.v 
-# -- Compiling module register_8bits
-# 
-# Top level modules:
-# 	register_8bits
-# End time: 00:39:46 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/register_2bits.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:46 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/register_2bits.v 
-# -- Compiling module register_2bits
-# 
-# Top level modules:
-# 	register_2bits
-# End time: 00:39:46 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/register_1bit.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:47 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/register_1bit.v 
-# -- Compiling module register_1bit
-# 
-# Top level modules:
-# 	register_1bit
-# End time: 00:39:47 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/mux_ip.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:47 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/mux_ip.v 
-# -- Compiling module mux_ip
-# 
-# Top level modules:
-# 	mux_ip
-# End time: 00:39:47 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/fifo14.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:47 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/fifo14.v 
-# -- Compiling module fifo14
-# 
-# Top level modules:
-# 	fifo14
-# End time: 00:39:47 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/fifo12.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:47 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/fifo12.v 
-# -- Compiling module fifo12
-# 
-# Top level modules:
-# 	fifo12
-# End time: 00:39:47 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/fifo_tb.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:48 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/fifo_tb.v 
-# -- Compiling module fifo_tb
-# 
-# Top level modules:
-# 	fifo_tb
-# End time: 00:39:48 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/fifo_10bits.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:48 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/fifo_10bits.v 
-# -- Compiling module fifo_10bits
-# 
-# Top level modules:
-# 	fifo_10bits
-# End time: 00:39:48 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/crc_shift_mux.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:48 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/crc_shift_mux.v 
-# -- Compiling module crc_shift_mux
-# 
-# Top level modules:
-# 	crc_shift_mux
-# End time: 00:39:48 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/counter_10bits.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:48 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/IP" E:/Courses/ECE559/coder-stack/cdseg/IP/counter_10bits.v 
-# -- Compiling module counter_10bits
-# 
-# Top level modules:
-# 	counter_10bits
-# End time: 00:39:48 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/src {E:/Courses/ECE559/coder-stack/cdseg/src/top_module.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:49 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/src" E:/Courses/ECE559/coder-stack/cdseg/src/top_module.v 
-# -- Compiling module cb_seg
-# 
-# Top level modules:
-# 	cb_seg
-# End time: 00:39:49 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/src {E:/Courses/ECE559/coder-stack/cdseg/src/data_path_control.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:49 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/src" E:/Courses/ECE559/coder-stack/cdseg/src/data_path_control.v 
-# -- Compiling module data_fsm
-# ** Warning: E:/Courses/ECE559/coder-stack/cdseg/src/data_path_control.v(142): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: E:/Courses/ECE559/coder-stack/cdseg/src/data_path_control.v(145): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: E:/Courses/ECE559/coder-stack/cdseg/src/data_path_control.v(148): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: E:/Courses/ECE559/coder-stack/cdseg/src/data_path_control.v(152): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: E:/Courses/ECE559/coder-stack/cdseg/src/data_path_control.v(188): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: E:/Courses/ECE559/coder-stack/cdseg/src/data_path_control.v(189): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# 
-# Top level modules:
-# 	data_fsm
-# End time: 00:39:49 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 6
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/src {E:/Courses/ECE559/coder-stack/cdseg/src/crc24.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:49 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/src" E:/Courses/ECE559/coder-stack/cdseg/src/crc24.v 
-# -- Compiling module crc24
-# 
-# Top level modules:
-# 	crc24
-# End time: 00:39:49 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/byte_fifo.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:50 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/enc" E:/Courses/ECE559/coder-stack/enc/byte_fifo.v 
-# -- Compiling module byte_fifo
-# 
-# Top level modules:
-# 	byte_fifo
-# End time: 00:39:50 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/my_counter.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:50 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/enc" E:/Courses/ECE559/coder-stack/enc/my_counter.v 
-# -- Compiling module my_counter
-# 
-# Top level modules:
-# 	my_counter
-# End time: 00:39:50 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/fsm.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:50 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/enc" E:/Courses/ECE559/coder-stack/enc/fsm.v 
-# -- Compiling module fsm
-# 
-# Top level modules:
-# 	fsm
-# End time: 00:39:50 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/fifoFSM.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:50 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/enc" E:/Courses/ECE559/coder-stack/enc/fifoFSM.v 
-# -- Compiling module fifoFSM
-# 
-# Top level modules:
-# 	fifoFSM
-# End time: 00:39:50 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/delay.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:51 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/enc" E:/Courses/ECE559/coder-stack/enc/delay.v 
-# -- Compiling module delay
-# 
-# Top level modules:
-# 	delay
-# End time: 00:39:51 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/counter.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:51 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/enc" E:/Courses/ECE559/coder-stack/enc/counter.v 
-# -- Compiling module counter_enc
-# 
-# Top level modules:
-# 	counter_enc
-# End time: 00:39:51 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/encoder_parallel.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:51 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/enc" E:/Courses/ECE559/coder-stack/enc/encoder_parallel.v 
-# -- Compiling module encoder_parallel
-# 
-# Top level modules:
-# 	encoder_parallel
-# End time: 00:39:51 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/tailBitsGenerator_parallel.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:51 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/enc" E:/Courses/ECE559/coder-stack/enc/tailBitsGenerator_parallel.v 
-# -- Compiling module tailBitsGenerator_parallel
-# 
-# Top level modules:
-# 	tailBitsGenerator_parallel
-# End time: 00:39:51 on Apr 18,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/encoder_top_parallel.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:52 on Apr 18,2020
+# Start time: 18:10:54 on Apr 20,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/enc" E:/Courses/ECE559/coder-stack/enc/encoder_top_parallel.v 
 # -- Compiling module encoder_top_parallel
 # 
 # Top level modules:
 # 	encoder_top_parallel
-# End time: 00:39:52 on Apr 18,2020, Elapsed time: 0:00:00
+# End time: 18:10:54 on Apr 20,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/src {E:/Courses/ECE559/coder-stack/cdseg/src/CRC_size.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:52 on Apr 18,2020
+# Start time: 18:10:54 on Apr 20,2020
 # vlog -reportprogress 300 -sv -work work "+incdir+E:/Courses/ECE559/coder-stack/cdseg/src" E:/Courses/ECE559/coder-stack/cdseg/src/CRC_size.sv 
 # -- Compiling module cal_size
 # -- Compiling module CRC_size
 # 
 # Top level modules:
 # 	CRC_size
-# End time: 00:39:52 on Apr 18,2020, Elapsed time: 0:00:00
+# End time: 18:10:54 on Apr 20,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/tb {E:/Courses/ECE559/coder-stack/tb/tb_full_sys.v}
+# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/tb {E:/Courses/ECE559/coder-stack/tb/tb_htb_coder_stack.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:52 on Apr 18,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/tb" E:/Courses/ECE559/coder-stack/tb/tb_full_sys.v 
-# -- Compiling module tb_full
+# Start time: 18:10:54 on Apr 20,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/coder-stack/tb" E:/Courses/ECE559/coder-stack/tb/tb_htb_coder_stack.v 
+# -- Compiling module tb_mem_htb
 # 
 # Top level modules:
-# 	tb_full
-# End time: 00:39:52 on Apr 18,2020, Elapsed time: 0:00:00
+# 	tb_mem_htb
+# End time: 18:10:55 on Apr 20,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_full
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_full 
-# Start time: 00:39:54 on Apr 18,2020
-# Loading work.tb_full
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_mem_htb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_mem_htb 
+# Start time: 18:10:55 on Apr 20,2020
+# Loading work.tb_mem_htb
+# Loading work.mem_tb_coder_stack
 # Loading work.coder_stack_top_parallel
 # Loading work.cb_seg
 # Loading work.mux_ip
@@ -807,16 +370,24 @@ do coder_stack_run_msim_rtl_verilog.do
 # Loading work.fifoFSM
 # Loading work.fsm
 # Loading work.tailBitsGenerator_parallel
+# Loading work.write_ctl
+# Loading work.test_input
+# Loading altera_mf_ver.altsyncram
+# Loading work.read_ctl
+# Loading work.delay3
+# Loading work.ref_small
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
 # ** Warning: (vsim-3016) E:/Courses/ECE559/coder-stack/cdseg/IP/shiftreg.v(59): Port type is incompatible with connection (port 'load').
-#    Time: 0 ps  Iteration: 0  Instance: /tb_full/test_obj/my_cb_seg/crc_mod/shiftreg_inst/LPM_SHIFTREG_component File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
+#    Time: 0 ps  Iteration: 0  Instance: /tb_mem_htb/test_obj/test_obj/my_cb_seg/crc_mod/shiftreg_inst/LPM_SHIFTREG_component File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
 # ** Warning: (vsim-3017) E:/Courses/ECE559/coder-stack/coder_stack_top_parallel.v(69): [TFMPC] - Too few port connections. Expected 14, found 13.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_full/test_obj/my_enc File: E:/Courses/ECE559/coder-stack/enc/encoder_top_parallel.v
+#    Time: 0 ps  Iteration: 0  Instance: /tb_mem_htb/test_obj/test_obj/my_enc File: E:/Courses/ECE559/coder-stack/enc/encoder_top_parallel.v
 # ** Warning: (vsim-3722) E:/Courses/ECE559/coder-stack/coder_stack_top_parallel.v(69): [TFMPC] - Missing connection for port 'd_state'.
 # ** Warning: (vsim-3017) E:/Courses/ECE559/coder-stack/enc/encoder_top_parallel.v(57): [TFMPC] - Too few port connections. Expected 6, found 5.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_full/test_obj/my_enc/counter File: E:/Courses/ECE559/coder-stack/enc/my_counter.v
+#    Time: 0 ps  Iteration: 0  Instance: /tb_mem_htb/test_obj/test_obj/my_enc/counter File: E:/Courses/ECE559/coder-stack/enc/my_counter.v
 # ** Warning: (vsim-3722) E:/Courses/ECE559/coder-stack/enc/encoder_top_parallel.v(57): [TFMPC] - Missing connection for port 'count_valid'.
 # ** Warning: (vsim-3017) E:/Courses/ECE559/coder-stack/enc/delay.v(14): [TFMPC] - Too few port connections. Expected 6, found 5.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_full/test_obj/my_enc/del/we_counter File: E:/Courses/ECE559/coder-stack/enc/my_counter.v
+#    Time: 0 ps  Iteration: 0  Instance: /tb_mem_htb/test_obj/test_obj/my_enc/del/we_counter File: E:/Courses/ECE559/coder-stack/enc/my_counter.v
 # ** Warning: (vsim-3722) E:/Courses/ECE559/coder-stack/enc/delay.v(14): [TFMPC] - Missing connection for port 'count_valid'.
 # 
 # add wave *
@@ -825,7 +396,46 @@ do coder_stack_run_msim_rtl_verilog.do
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run 100 us
-# Warning : Underflow occurred! Fifo output is unknown until the next reset is asserted.
-# Time: 12475000  Instance: tb_full.test_obj.my_cb_seg.data_fifo.scfifo_component
-# End time: 00:40:22 on Apr 18,2020, Elapsed time: 0:00:28
+# Warning : Address pointed at port A is out of bound!
+# Time: 1765000  Instance: tb_mem_htb.test_obj.reader.ref_small_block.altsyncram_component.m_default.altsyncram_inst
+# Warning : Address pointed at port A is out of bound!
+# Time: 1765000  Instance: tb_mem_htb.test_obj.reader.ref_small_block.altsyncram_component.m_default.altsyncram_inst
+# Warning : Address pointed at port A is out of bound!
+# Time: 3195000  Instance: tb_mem_htb.test_obj.reader.ref_small_block.altsyncram_component.m_default.altsyncram_inst
+# Warning : Address pointed at port A is out of bound!
+# Time: 3195000  Instance: tb_mem_htb.test_obj.reader.ref_small_block.altsyncram_component.m_default.altsyncram_inst
+# Warning : Address pointed at port A is out of bound!
+# Time: 4555000  Instance: tb_mem_htb.test_obj.reader.ref_small_block.altsyncram_component.m_default.altsyncram_inst
+# Warning : Address pointed at port A is out of bound!
+# Time: 4555000  Instance: tb_mem_htb.test_obj.reader.ref_small_block.altsyncram_component.m_default.altsyncram_inst
+# Warning : Address pointed at port A is out of bound!
+# Time: 5915000  Instance: tb_mem_htb.test_obj.reader.ref_small_block.altsyncram_component.m_default.altsyncram_inst
+# Warning : Address pointed at port A is out of bound!
+# Time: 5915000  Instance: tb_mem_htb.test_obj.reader.ref_small_block.altsyncram_component.m_default.altsyncram_inst
+# Warning : Address pointed at port A is out of bound!
+# Time: 7275000  Instance: tb_mem_htb.test_obj.reader.ref_small_block.altsyncram_component.m_default.altsyncram_inst
+# Warning : Address pointed at port A is out of bound!
+# Time: 7275000  Instance: tb_mem_htb.test_obj.reader.ref_small_block.altsyncram_component.m_default.altsyncram_inst
+# Warning : Address pointed at port A is out of bound!
+# Time: 8635000  Instance: tb_mem_htb.test_obj.reader.ref_small_block.altsyncram_component.m_default.altsyncram_inst
+# Warning : Address pointed at port A is out of bound!
+# Time: 8635000  Instance: tb_mem_htb.test_obj.reader.ref_small_block.altsyncram_component.m_default.altsyncram_inst
+# Warning : Address pointed at port A is out of bound!
+# Time: 8945000  Instance: tb_mem_htb.test_obj.writer.test_input_inst.altsyncram_component.m_default.altsyncram_inst
+# Warning : Address pointed at port A is out of bound!
+# Time: 8945000  Instance: tb_mem_htb.test_obj.writer.test_input_inst.altsyncram_component.m_default.altsyncram_inst
+# Warning : Address pointed at port A is out of bound!
+# Time: 9995000  Instance: tb_mem_htb.test_obj.reader.ref_small_block.altsyncram_component.m_default.altsyncram_inst
+# Warning : Address pointed at port A is out of bound!
+# Time: 9995000  Instance: tb_mem_htb.test_obj.reader.ref_small_block.altsyncram_component.m_default.altsyncram_inst
+# End time: 18:11:28 on Apr 20,2020, Elapsed time: 0:00:33
 # Errors: 0, Warnings: 7
+#  Trace back: invalid command name ".main_pane.wave.interior.cs.body.pw.wf.grid.row0,wave.data"
+#     while executing
+# "$widget index @$x,$y"
+#     (procedure "WaveABar::mouseMotionUpdate" line 19)
+#     invoked from within
+# "WaveABar::mouseMotionUpdate .main_pane.wave.interior.cs.body.pw.wf.grid.row0,wave.data .main_pane.wave.interior.cs.body.pw.wf 310 503"
+#     ("after" script)
+#    <2:F:/quartus/modelsim_ase/win32aloem/tk8.5/bgerror.tcl:92: ::tkerror {invalid command name ".main_pane.wave.interior.cs.body.pw.wf.grid.row0,wave.data"}
+#    <1:eval:1: ::tk::dialog::error::bgerror {invalid command name ".main_pane.wave.interior.cs.body.pw.wf.grid.row0,wave.data"}

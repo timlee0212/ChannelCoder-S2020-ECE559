@@ -39,29 +39,31 @@
 module delay3 (
 	aclr,
 	clock,
-	shiftin,
+	data,
+	load,
 	q);
 
 	input	  aclr;
 	input	  clock;
-	input	  shiftin;
-	output	[2:0]  q;
+	input	[23:0]  data;
+	input	  load;
+	output	[23:0]  q;
 
-	wire [2:0] sub_wire0;
-	wire [2:0] q = sub_wire0[2:0];
+	wire [23:0] sub_wire0;
+	wire [23:0] q = sub_wire0[23:0];
 
 	lpm_shiftreg	LPM_SHIFTREG_component (
 				.aclr (aclr),
 				.clock (clock),
-				.shiftin (shiftin),
+				.data (data),
+				.load (load),
 				.q (sub_wire0)
 				// synopsys translate_off
 				,
 				.aset (),
-				.data (),
 				.enable (),
-				.load (),
 				.sclr (),
+				.shiftin (),
 				.shiftout (),
 				.sset ()
 				// synopsys translate_on
@@ -69,7 +71,7 @@ module delay3 (
 	defparam
 		LPM_SHIFTREG_component.lpm_direction = "RIGHT",
 		LPM_SHIFTREG_component.lpm_type = "LPM_SHIFTREG",
-		LPM_SHIFTREG_component.lpm_width = 3;
+		LPM_SHIFTREG_component.lpm_width = 24;
 
 
 endmodule
@@ -84,33 +86,35 @@ endmodule
 // Retrieval info: PRIVATE: CLK_EN NUMERIC "0"
 // Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone V"
 // Retrieval info: PRIVATE: LeftShift NUMERIC "0"
-// Retrieval info: PRIVATE: ParallelDataInput NUMERIC "0"
+// Retrieval info: PRIVATE: ParallelDataInput NUMERIC "1"
 // Retrieval info: PRIVATE: Q_OUT NUMERIC "1"
 // Retrieval info: PRIVATE: SCLR NUMERIC "0"
-// Retrieval info: PRIVATE: SLOAD NUMERIC "0"
+// Retrieval info: PRIVATE: SLOAD NUMERIC "1"
 // Retrieval info: PRIVATE: SSET NUMERIC "0"
 // Retrieval info: PRIVATE: SSET_ALL1 NUMERIC "1"
 // Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
-// Retrieval info: PRIVATE: SerialShiftInput NUMERIC "1"
+// Retrieval info: PRIVATE: SerialShiftInput NUMERIC "0"
 // Retrieval info: PRIVATE: SerialShiftOutput NUMERIC "0"
-// Retrieval info: PRIVATE: nBit NUMERIC "3"
+// Retrieval info: PRIVATE: nBit NUMERIC "24"
 // Retrieval info: PRIVATE: new_diagram STRING "1"
 // Retrieval info: LIBRARY: lpm lpm.lpm_components.all
 // Retrieval info: CONSTANT: LPM_DIRECTION STRING "RIGHT"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "LPM_SHIFTREG"
-// Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "3"
+// Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "24"
 // Retrieval info: USED_PORT: aclr 0 0 0 0 INPUT NODEFVAL "aclr"
 // Retrieval info: USED_PORT: clock 0 0 0 0 INPUT NODEFVAL "clock"
-// Retrieval info: USED_PORT: q 0 0 3 0 OUTPUT NODEFVAL "q[2..0]"
-// Retrieval info: USED_PORT: shiftin 0 0 0 0 INPUT NODEFVAL "shiftin"
+// Retrieval info: USED_PORT: data 0 0 24 0 INPUT NODEFVAL "data[23..0]"
+// Retrieval info: USED_PORT: load 0 0 0 0 INPUT NODEFVAL "load"
+// Retrieval info: USED_PORT: q 0 0 24 0 OUTPUT NODEFVAL "q[23..0]"
 // Retrieval info: CONNECT: @aclr 0 0 0 0 aclr 0 0 0 0
 // Retrieval info: CONNECT: @clock 0 0 0 0 clock 0 0 0 0
-// Retrieval info: CONNECT: @shiftin 0 0 0 0 shiftin 0 0 0 0
-// Retrieval info: CONNECT: q 0 0 3 0 @q 0 0 3 0
+// Retrieval info: CONNECT: @data 0 0 24 0 data 0 0 24 0
+// Retrieval info: CONNECT: @load 0 0 0 0 load 0 0 0 0
+// Retrieval info: CONNECT: q 0 0 24 0 @q 0 0 24 0
 // Retrieval info: GEN_FILE: TYPE_NORMAL delay3.v TRUE
 // Retrieval info: GEN_FILE: TYPE_NORMAL delay3.inc FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL delay3.cmp FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL delay3.bsf FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL delay3_inst.v TRUE
-// Retrieval info: GEN_FILE: TYPE_NORMAL delay3_bb.v TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL delay3_inst.v FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL delay3_bb.v FALSE
 // Retrieval info: LIB_FILE: lpm

@@ -1,0 +1,167 @@
+Archive Project report for coder_stack
+Mon Apr 20 18:26:52 2020
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Archive Project Summary
+  3. Archive Project Messages
+  4. Files Archived
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------+
+; Archive Project Summary                                        ;
++------------------------+---------------------------------------+
+; Archive Project Status ; Successful - Mon Apr 20 18:26:52 2020 ;
+; Revision Name          ; coder_stack                           ;
+; Top-level Entity Name  ; mem_tb_coder_stack                    ;
+; Family                 ; Cyclone V                             ;
++------------------------+---------------------------------------+
+
+
++--------------------------+
+; Archive Project Messages ;
++--------------------------+
+Info: File Set 'Source control' contains:
+    Info: Project source and settings files
+    Info: Automatically detected source files
+Warning: Hierarchical Platform Designer systems and custom IP components(_hw.tcl and associated files) are not archived by the Quartus Archiver
+Info: Archive will store files relative to the closest common parent directory
+Info (13213): Using common directory E:/Courses/ECE559/coder-stack/
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated archive 'C:/Users/Timlee/Desktop/Full_htb_par.qar'
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated report 'coder_stack.archive.rpt'
+Info (23030): Evaluation of Tcl script f:/quartus/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 16 warnings
+    Info: Peak virtual memory: 4896 megabytes
+    Info: Processing ended: Mon Apr 20 18:26:52 2020
+    Info: Elapsed time: 00:00:35
+    Info: Total CPU time (on all processors): 00:00:59
+
+
++--------------------------------------------------+
+; Files Archived                                   ;
++--------------------------------------------------+
+; File Name                                        ;
++--------------------------------------------------+
+; cdseg/IP/counter_5bits.qip                       ;
+; cdseg/IP/counter_5bits.v                         ;
+; cdseg/IP/counter_5bits_inst.v                    ;
+; cdseg/IP/counter_10bits.qip                      ;
+; cdseg/IP/counter_10bits.v                        ;
+; cdseg/IP/crc_shift_mux.qip                       ;
+; cdseg/IP/crc_shift_mux.v                         ;
+; cdseg/IP/crc_shift_mux_inst.v                    ;
+; cdseg/IP/fifo12.qip                              ;
+; cdseg/IP/fifo12.v                                ;
+; cdseg/IP/fifo14.qip                              ;
+; cdseg/IP/fifo14.v                                ;
+; cdseg/IP/fifo_10bits.qip                         ;
+; cdseg/IP/fifo_10bits.v                           ;
+; cdseg/IP/fifo_tb.qip                             ;
+; cdseg/IP/fifo_tb.v                               ;
+; cdseg/IP/fifo_tb_inst.v                          ;
+; cdseg/IP/mux_ip.qip                              ;
+; cdseg/IP/mux_ip.v                                ;
+; cdseg/IP/mux_ip_inst.v                           ;
+; cdseg/IP/register_1bit.qip                       ;
+; cdseg/IP/register_1bit.v                         ;
+; cdseg/IP/register_1bit_inst.v                    ;
+; cdseg/IP/register_2bits.qip                      ;
+; cdseg/IP/register_2bits.v                        ;
+; cdseg/IP/register_2bits_inst.v                   ;
+; cdseg/IP/register_8bits.qip                      ;
+; cdseg/IP/register_8bits.v                        ;
+; cdseg/IP/register_8bits_inst.v                   ;
+; cdseg/IP/shiftreg.qip                            ;
+; cdseg/IP/shiftreg.v                              ;
+; cdseg/IP/shiftreg_inst.v                         ;
+; cdseg/src/crc24.v                                ;
+; cdseg/src/CRC_size.sv                            ;
+; cdseg/src/data_path_control.v                    ;
+; cdseg/src/top_module.v                           ;
+; Channel_Coder.qpf                                ;
+; coder_stack.qsf                                  ;
+; coder_stack_top.v                                ;
+; enc/byte_fifo.v                                  ;
+; enc/compare_2bit.qip                             ;
+; enc/compare_2bit.v                               ;
+; enc/compare_2bit_bb.v                            ;
+; enc/counter.v                                    ;
+; enc/counter4.qip                                 ;
+; enc/counter4.v                                   ;
+; enc/counter4_bb.v                                ;
+; enc/delay.v                                      ;
+; enc/encoder_parallel.v                           ;
+; enc/encoder_top_parallel.v                       ;
+; enc/fifo.v                                       ;
+; enc/fifoFSM.v                                    ;
+; enc/fsm.v                                        ;
+; enc/mux_2to1_3wide.qip                           ;
+; enc/mux_2to1_3wide.v                             ;
+; enc/mux_2to1_3wide_bb.v                          ;
+; enc/mux_4to1_3wide.qip                           ;
+; enc/mux_4to1_3wide.v                             ;
+; enc/mux_4to1_3wide_bb.v                          ;
+; enc/my_counter.v                                 ;
+; enc/tailBitsGenerator_parallel.v                 ;
+; f:/quartus/quartus/bin64/assignment_defaults.qdf ;
+; fake_interleaver.v                               ;
+; int/counter.v                                    ;
+; int/counter1.v                                   ;
+; int/counter2.v                                   ;
+; int/counter_wrapper1.v                           ;
+; int/counter_wrapper2.v                           ;
+; int/interleaver.tcl                              ;
+; int/interleaver.v                                ;
+; int/interleaver_fsm.v                            ;
+; int/pi1_large.v                                  ;
+; int/pi1_small.v                                  ;
+; int/pi2_large.v                                  ;
+; int/pi2_small.v                                  ;
+; int/RAM1.v                                       ;
+; int/RAM2.v                                       ;
+; tb/htb_coder_stack.v                             ;
+; tb/IP/delay2.qip                                 ;
+; tb/IP/delay2.v                                   ;
+; tb/IP/delay2_inst.v                              ;
+; tb/IP/delay3.qip                                 ;
+; tb/IP/delay3.v                                   ;
+; tb/IP/ref_small.qip                              ;
+; tb/IP/ref_small.v                                ;
+; tb/IP/test_input.qip                             ;
+; tb/IP/test_input.v                               ;
+; tb/mem/input_vector.mif                          ;
+; tb/mem/ref_output.mif                            ;
+; tb/tb_full_sys.v                                 ;
+; tb/tb_htb_coder_stack.v                          ;
+; timing_constraint.sdc                            ;
++--------------------------------------------------+
+
+

@@ -7,15 +7,19 @@
 	output wire test_end,
 	
 	//Debug Port for logic analyzer
-	output wire xk_out,
-	output wire zk_out,
-	output wire zk_p_out
+	output wire[7:0] xk_out,
+	output wire[7:0] zk_out,
+	output wire[7:0] zk_p_out,
+	output wire out_valid			//For the trigger
 );
-wire in_xk, in_zk, in_zk_p;
-wire data_in, wreq_data, wreq_size;
-wire[15:0] size_in;
+wire[7:0] in_xk, in_zk, in_zk_p;
+wire[7:0] data_in;
+wire wreq_data, wreq_size;
+wire[11:0] size_in;
 
 wire valid;
+
+assign out_valid = valid;
 
 assign xk_out = in_xk;
 assign zk_out = in_zk;
@@ -71,8 +75,8 @@ module write_ctl(
 	
 	output reg wreq_size,
 	output reg wreq_data,
-	output wire data_in,
-	output reg[15:0] size
+	output wire[7:0] data_in,
+	output reg[11:0] size
 );
 
 //FSM State Encoding
@@ -84,13 +88,13 @@ parameter IDLE			=	6'b000000,
 			 WRITE_FIN1	=	6'b010001,
 			 WRITE_FIN2	= 	6'b100001;
 
-reg[15:0] cnt_write_in;
+reg[9:0] cnt_write_in;
 reg cnt_write_en, cnt_write_load;
 reg[5:0] state_reg, next_state;
 
-wire[15:0] cnt_write_q;
+wire[9:0] cnt_write_q;
 
-counter_16bits	cnt_write (
+counter_10bits	cnt_write (
 	.aclr ( reset),
 	.clock ( clk ),
 	.cnt_en ( cnt_write_en ),
@@ -118,7 +122,7 @@ always@(*) begin
 				else next_state <= IDLE;
 		WRITE_SIZE: next_state <= WAIT_MEM;
 		WAIT_MEM: next_state <= WRITE_DATA;
-		WRITE_DATA: if(cnt_write_q==16'h0000) next_state <= WRITE_FIN1;
+		WRITE_DATA: if(cnt_write_q==10'h000) next_state <= WRITE_FIN1;
 						else next_state <= WRITE_DATA;
 		WRITE_FIN1: next_state <= WRITE_FIN2;
 		WRITE_FIN2: next_state <= IDLE;
@@ -129,18 +133,18 @@ end
 always@(*) begin
 wreq_size 		=		1'b0;
 wreq_data 		= 	1'b0;
-size				=		16'h0;
+size				=		10'h0;
 cnt_write_en	=		1'b0;
-cnt_write_in	=		16'h0;
+cnt_write_in	=		10'h0;
 cnt_write_load	=		1'b0;
 
 	case(state_reg)
 		IDLE: begin
-			cnt_write_in  	= 16'd7009;
+			cnt_write_in  	= 10'd877;
 			cnt_write_load =1'b1;		
 		end
 		WRITE_SIZE: begin 
-			size				= 16'd7010;
+			size				= 12'd878;
 			wreq_size		= 1'b1;
 			cnt_write_en 	= 1'b1;
 		end
@@ -162,9 +166,9 @@ module read_ctl(
 	input wire reset,
 	input wire clk,
 	input wire valid,
-	input wire xk,
-	input wire zk,
-	input wire zk_p,
+	input wire[7:0] xk,
+	input wire[7:0] zk,
+	input wire[7:0] zk_p,
 	
 	output wire test_good,
 	output reg test_end
@@ -179,13 +183,13 @@ parameter IDLE 		= 7'b0000000,
 			 WAIT_F1		= 7'b0100001,
 			 WAIT_F2		= 7'b1000001;
 
-reg[15:0] cnt_read_in;
+reg[9:0] cnt_read_in;
 reg cnt_read_en, cnt_read_load;
 reg[6:0] state_reg, next_state;
 
-wire[15:0] cnt_read_q;
+wire[9:0] cnt_read_q;
 
-wire[2:0] ref_s;
+wire[23:0] ref_s;
 
 reg buf_load, buf_in;
 
@@ -193,11 +197,11 @@ reg buf_load, buf_in;
 reg tg_load, tg_in;
 wire tg_q, buf_size;
 
-wire[2:0] d_xk, d_zk, d_zk_p;
+wire[23:0] d_xk, d_zk, d_zk_p;
 
 assign test_good = tg_q;
 
-counter_16bits	cnt_read(
+counter_10bits	cnt_read(
 	.aclr ( reset),
 	.clock ( clk ),
 	.cnt_en ( cnt_read_en ),
@@ -220,31 +224,49 @@ register_1bit	reg_testgood (
 delay3	delay3_xk (
 	.aclr (reset),
 	.clock (clk),
-	.shiftin (xk),
-	.q (d_xk)
+	.data ({xk, d_xk[23:8]}),
+	.q (d_xk),
+	.load(1'b1)
 );
 
 delay3	delay3_zk (
 	.aclr (reset),
 	.clock (clk),
-	.shiftin (zk),
-	.q (d_zk)
+	.data({zk, d_zk[23:8]}),
+	.q (d_zk),
+	.load(1'b1)
 );
 
 delay3	delay3_zk_p (
 	.aclr (reset),
 	.clock (clk),
-	.shiftin (zk_p),
-	.q (d_zk_p)
+	.data ({zk_p, d_zk_p[23:8]}),
+	.q (d_zk_p),
+	.load(1'b1)
 );
 
 	
 ref_small	ref_small_block (
 	.aclr (reset),
-	.address (cnt_read_q[10:0]),
+	.address (cnt_read_q[7:0]),
 	.clock (clk),
 	.q (ref_s)
 	);
+	
+//Avoid Redundant Logic Description
+wire correct;
+wire[7:0] cr_xk, cr_zk, cr_zk_p;
+wire acr_xk, acr_zk, acr_zk_p;
+
+assign cr_xk = ref_s[23:16] ^~ d_xk[7:0];
+assign cr_zk = ref_s[15:8] ^~ d_zk[7:0];
+assign cr_zk_p = ref_s[7:0] ^~ d_zk_p[7:0];
+
+and(acr_xk, cr_xk[0], cr_xk[1], cr_xk[2], cr_xk[3], cr_xk[4], cr_xk[5], cr_xk[6], cr_xk[7]);
+and(acr_zk, cr_zk[0], cr_zk[1], cr_zk[2], cr_zk[3], cr_zk[4], cr_zk[5], cr_zk[6], cr_zk[7]);
+and(acr_zk_p, cr_zk_p[0], cr_zk_p[1], cr_zk_p[2], cr_zk_p[3], cr_zk_p[4], cr_zk_p[5], cr_zk_p[6], cr_zk_p[7]);
+and(correct, acr_xk, acr_zk, acr_zk_p);
+
 
 always@(posedge clk or posedge reset) begin
 	if(reset==1'b1) state_reg <= IDLE;
@@ -259,7 +281,7 @@ always@(*) begin
 		LOAD_SIZE: next_state <= WAIT_REG1;
 		WAIT_REG1: next_state <= WAIT_REG2;
 		WAIT_REG2: next_state <= READ_LARGE;
-		READ_LARGE: if(cnt_read_q==16'h0000) next_state <= WAIT_F1;
+		READ_LARGE: if(cnt_read_q==10'h0000) next_state <= WAIT_F1;
 						else next_state <= READ_LARGE;
 		WAIT_F1:	next_state <= WAIT_F2;
 		WAIT_F2: next_state <= IDLE;
@@ -272,14 +294,14 @@ test_end			<= 	1'b0;
 tg_in 			<= 	1'b1;
 tg_load			<= 	1'b0;
 cnt_read_en		<=		1'b0;
-cnt_read_in		<=		16'h0;
+cnt_read_in		<=		10'h0;
 cnt_read_load	<=		1'b0;
 
 	case(state_reg)
 		IDLE: begin
 			tg_in 	<= 1'b1;
 			tg_load	<= 1'b1;
-			cnt_read_in 	<= 16'd1062;
+			cnt_read_in 	<= 10'd132;
 			cnt_read_load	<= 1'b1;
 			cnt_read_en <= 1'b0;
 		end
@@ -290,16 +312,16 @@ cnt_read_load	<=		1'b0;
 			cnt_read_en <= 1'b1;
 		end
 		READ_LARGE: begin
-			tg_in <= tg_q & (ref_s[2] ^~ d_xk[0]) & (ref_s[1] ^~ d_zk[0]) & (ref_s[0] ^~ d_zk_p[0]);
+			tg_in <= tg_q & correct;
 			tg_load <= 1'b1;
 			cnt_read_en <= 1'b1;
 		end
 		WAIT_F1: begin
-			tg_in <= tg_q & (ref_s[2] ^~ d_xk[0]) & (ref_s[1] ^~ d_zk[0]) & (ref_s[0] ^~ d_zk_p[0]);
+			tg_in <= tg_q & correct;
 			tg_load <= 1'b1;
 		end
 		WAIT_F2: begin
-			tg_in <= tg_q & (ref_s[2] ^~ d_xk[0]) & (ref_s[1] ^~ d_zk[0]) & (ref_s[0] ^~ d_zk_p[0]);
+			tg_in <= tg_q & correct;
 			tg_load <= 1'b1;
 			test_end <= 1'b1;
 		end
