@@ -7,7 +7,7 @@ reg[7:0] tb_in;
 reg[11:0] tb_size_in;
 
 //Output Ports
-wire[7:0] xk_out, zk_out, zk_prime_out;
+wire[7:0] xk_out, zk_out, zk_prime_out, d_cbs_out;
 wire out_valid;
 
 coder_stack_top_parallel test_obj(
@@ -20,7 +20,8 @@ coder_stack_top_parallel test_obj(
 	.xk_out(xk_out), 
 	.zk_out(zk_out), 
 	.zk_prime_out(zk_prime_out),
-	.out_valid(out_valid)
+	.out_valid(out_valid),
+	.d_cbs_out(d_cbs_out)
 );
 
 
@@ -48,13 +49,16 @@ always #5 clk=~clk;
 reg prev_out_valid;
 always @(posedge clk) begin
 	if (out_valid) begin
-		$fwrite(f_xk, xk_out);
-		$fwrite(f_zk, zk_out);
-		$fwrite(f_zk_p, zk_prime_out);
+		$fwrite(f_xk, "%8b\n", xk_out);
+		$fwrite(f_zk, "%8b\n", zk_out);
+		$fwrite(f_zk_p, "%8b\n", zk_prime_out);
 		prev_out_valid = out_valid;
 	end
 	else begin
 		if (prev_out_valid) begin
+			$fclose(f_xk);
+			$fclose(f_zk);
+			$fclose(f_zk_p);
 			$stop();
 		end
 	end
