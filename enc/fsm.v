@@ -15,17 +15,17 @@ reg [2:0] state_curr, state_next;
 wire out_valid_reg_in;
 reg out_valid_reg;
 
-wire count_valid;
+//wire count_valid;
 reg [2:0] count = 0;
 always @(posedge clock) begin
 	if (aclr) begin
 		count = 0;
 	end
 	else if (state_curr == OPERATE & count < 5) begin
-		count = count + 1;
+		count = count + 1'd1;
 	end
 end
-assign count_valid = count > 4;
+//assign count_valid = count > 4;
 
 assign state = state_curr;
 

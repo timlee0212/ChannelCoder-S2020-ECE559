@@ -2,7 +2,7 @@
 module cal_size ( input logic [11:0] B,
 						output logic [1:0] C_plus,
 						output logic [1:0] C_minus,
-						output logic [11:0] filler,
+						output logic [9:0] filler,
 						output logic max_exceed_error);
 						
 	logic [2:0] branch;
@@ -82,7 +82,7 @@ module CRC_size  (input logic aclr,
 
 	logic max_exceed_error;
 	logic [1:0] C_minus, C_plus;
-	logic [11:0] filler;
+	logic [9:0] filler;
 	// calculate block & filler sizes
 	cal_size cal_size_inst (B, C_plus, C_minus, filler, max_exceed_error);
 	
@@ -97,7 +97,7 @@ module CRC_size  (input logic aclr,
 	assign r = (~stop);
 	assign w_in = (~prev_stop);
 	
-	assign data_in = {C_plus, C_minus, filler[9:0]};
+	assign data_in = {C_plus, C_minus, filler};
 	
 endmodule
 

@@ -1,9 +1,9 @@
 module delay(input clock, aclr,  data_write, data_read, counter_mode,
 				 input [7:0] data_in,
-				 output full_6144, usedw, actual_fifo_we,
+				 output full_6144, actual_fifo_we,
 				 output [7:0] data_out);
 	
-	wire we, count_complete;
+	wire we, count_complete, empty, full;
 	
 	//FIFO clocked on falling edge
 	byte_fifo delay_fifo(aclr, ~clock, data_in, data_read, we, full_6144, empty, full, data_out);
