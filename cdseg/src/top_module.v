@@ -18,7 +18,7 @@ module cb_seg(
 
 	 //Interleaver FIFO Ports
 	 input wire rreq_itl_fifo,
-	 output wire[9:0] q_itl_fifo, //{data[7:0], size, start}
+	 output wire[10:0] q_itl_fifo, //{data[7:0], size, start, tf_end}
 	 output wire empty_itl_fifo,
 	 
 	 //Encoder FIFO Ports
@@ -33,7 +33,7 @@ module cb_seg(
 wire[7:0] data_fifo_out;
 wire data_fifo_rd, data_fifo_empty, size_fifo_rd, size_fifo_empty;
 
-wire start, cb_size;
+wire start, cb_size, tf_end;
 wire[7:0] cb_data;
 
 wire wreq_itl_fifo, wreq_enc_fifo;
@@ -96,10 +96,10 @@ crc24 crc_mod(
     .crc_out(crc_out)
 );
 
-fifo_10bits	itl_fifo_inst (
+fifo_11bits	itl_fifo_inst (
 	.aclr (reset),
 	.clock (clk),
-	.data ({cb_data, cb_size, start}),
+	.data ({cb_data, cb_size, start, tf_end}),
 	.rdreq (rreq_itl_fifo),
 	.wrreq (wreq_itl_fifo),
 	.empty (empty_itl_fifo),
@@ -145,6 +145,7 @@ data_fsm datapath_control_unit(
 	.wreq_enc_fifo(wreq_enc_fifo),
 
 	.start(start),
+	.tf_end(tf_end),
 	.filling(),
 	//.stop(stop),
 	.crc()

@@ -189,13 +189,13 @@ reg[6:0] state_reg, next_state;
 
 wire[9:0] cnt_read_q;
 
-wire[23:0] ref_s;
+wire[23:0] ref_s, ref_l;
 
 reg buf_load, buf_in;
 
 
-reg tg_load, tg_in;
-wire tg_q, buf_size;
+reg tg_load, tg_in, sw_load, sw_in;
+wire tg_q, buf_size, sw_q;
 
 wire[23:0] d_xk, d_zk, d_zk_p;
 
@@ -217,6 +217,15 @@ register_1bit	reg_testgood (
 	.enable (tg_load),
 	.load (tg_load),
 	.q (tg_q)
+	);
+	
+register_1bit	reg_switch (
+	.aclr (reset),
+	.clock (clk),
+	.data (sw_in),
+	.enable (sw_load),
+	.load (sw_load),
+	.q (sw_q)
 	);
 	
 
@@ -253,19 +262,41 @@ ref_small	ref_small_block (
 	.q (ref_s)
 	);
 	
+ref_large	ref_large_block (
+	.aclr (reset),
+	.address (cnt_read_q[9:0]),
+	.clock (clk),
+	.q (ref_l)
+	);
+	
 //Avoid Redundant Logic Description
-wire correct;
-wire[7:0] cr_xk, cr_zk, cr_zk_p;
-wire acr_xk, acr_zk, acr_zk_p;
+wire correct_s;
+wire[7:0] cr_s_xk, cr_s_zk, cr_s_zk_p;
+wire acr_s_xk, acr_s_zk, acr_s_zk_p;
 
-assign cr_xk = ref_s[23:16] ^~ d_xk[7:0];
-assign cr_zk = ref_s[15:8] ^~ d_zk[7:0];
-assign cr_zk_p = ref_s[7:0] ^~ d_zk_p[7:0];
+assign cr_s_xk = ref_s[23:16] ^~ d_xk[7:0];
+assign cr_s_zk = ref_s[15:8] ^~ d_zk[7:0];
+assign cr_s_zk_p = ref_s[7:0] ^~ d_zk_p[7:0];
 
-and(acr_xk, cr_xk[0], cr_xk[1], cr_xk[2], cr_xk[3], cr_xk[4], cr_xk[5], cr_xk[6], cr_xk[7]);
-and(acr_zk, cr_zk[0], cr_zk[1], cr_zk[2], cr_zk[3], cr_zk[4], cr_zk[5], cr_zk[6], cr_zk[7]);
-and(acr_zk_p, cr_zk_p[0], cr_zk_p[1], cr_zk_p[2], cr_zk_p[3], cr_zk_p[4], cr_zk_p[5], cr_zk_p[6], cr_zk_p[7]);
-and(correct, acr_xk, acr_zk, acr_zk_p);
+and(acr_s_xk, cr_s_xk[0], cr_s_xk[1], cr_s_xk[2], cr_s_xk[3], cr_s_xk[4], cr_s_xk[5], cr_s_xk[6], cr_s_xk[7]);
+and(acr_s_zk, cr_s_zk[0], cr_s_zk[1], cr_s_zk[2], cr_s_zk[3], cr_s_zk[4], cr_s_zk[5], cr_s_zk[6], cr_s_zk[7]);
+and(acr_s_zk_p, cr_s_zk_p[0], cr_s_zk_p[1], cr_s_zk_p[2], cr_s_zk_p[3], cr_s_zk_p[4], cr_s_zk_p[5], cr_s_zk_p[6], cr_s_zk_p[7]);
+and(correct_s, acr_s_xk, acr_s_zk, acr_s_zk_p);
+
+//Avoid Redundant Logic Description
+wire correct_l;
+wire[7:0] cr_l_xk, cr_l_zk, cr_l_zk_p;
+wire acr_l_xk, acr_l_zk, acr_l_zk_p;
+
+assign cr_l_xk = ref_l[23:16] ^~ d_xk[7:0];
+assign cr_l_zk = ref_l[15:8] ^~ d_zk[7:0];
+assign cr_l_zk_p = ref_l[7:0] ^~ d_zk_p[7:0];
+
+and(acr_l_xk, cr_l_xk[0], cr_l_xk[1], cr_l_xk[2], cr_l_xk[3], cr_l_xk[4], cr_l_xk[5], cr_l_xk[6], cr_l_xk[7]);
+and(acr_l_zk, cr_l_zk[0], cr_l_zk[1], cr_l_zk[2], cr_l_zk[3], cr_l_zk[4], cr_l_zk[5], cr_l_zk[6], cr_l_zk[7]);
+and(acr_l_zk_p, cr_l_zk_p[0], cr_l_zk_p[1], cr_l_zk_p[2], cr_l_zk_p[3], cr_l_zk_p[4], cr_l_zk_p[5], cr_l_zk_p[6], cr_l_zk_p[7]);
+and(correct_l, acr_l_xk, acr_l_zk, acr_l_zk_p);
+
 
 
 always@(posedge clk or posedge reset) begin
@@ -296,12 +327,14 @@ tg_load			<= 	1'b0;
 cnt_read_en		<=		1'b0;
 cnt_read_in		<=		10'h0;
 cnt_read_load	<=		1'b0;
+sw_in				<= 	1'b0;
+sw_load			<= 	1'b0;
 
 	case(state_reg)
 		IDLE: begin
 			tg_in 	<= 1'b1;
 			tg_load	<= 1'b1;
-			cnt_read_in 	<= 10'd132;
+			cnt_read_in 	<= (sw_q ? 10'd 768 : 10'd132);
 			cnt_read_load	<= 1'b1;
 			cnt_read_en <= 1'b0;
 		end
@@ -312,18 +345,20 @@ cnt_read_load	<=		1'b0;
 			cnt_read_en <= 1'b1;
 		end
 		READ_LARGE: begin
-			tg_in <= tg_q & correct;
+			tg_in <= tg_q & (sw_q ? correct_l : correct_s);
 			tg_load <= 1'b1;
 			cnt_read_en <= 1'b1;
 		end
 		WAIT_F1: begin
-			tg_in <= tg_q & correct;
+			tg_in <= tg_q & (sw_q ? correct_l : correct_s);
 			tg_load <= 1'b1;
 		end
 		WAIT_F2: begin
-			tg_in <= tg_q & correct;
+			tg_in <= tg_q & (sw_q ? correct_l : correct_s);
 			tg_load <= 1'b1;
 			test_end <= 1'b1;
+			sw_in <= ~sw_q;
+			sw_load <= 1'b1;
 		end
 	endcase
 

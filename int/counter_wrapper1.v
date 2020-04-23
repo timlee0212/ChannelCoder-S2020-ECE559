@@ -5,13 +5,17 @@ module counter_wrapper1 (count_enable, block_size, clk, reset, count, target_rea
 	
 	output [12:0] count;
 	output target_reached;
-	wire[12:0] target;
 	
+	//output [12:0] target;
 	//assign target = (block_size) ? (13'd6144) : (13'd1056);
+	wire [12:0] target;
 	assign target = (block_size) ? (13'd6143) : (13'd1055); // one less than actual number
 	
-	wire [12:0] q, target_check;
-	assign count = q;
+	wire [9:0] q;
+	wire [12:0] target_check;
+	
+//	assign count[12:3] = q;
+//	assign count[2:0] = offset;
 	
 //	xor (target_check[0 ], target[0 ], q[0 ]);
 //	xor (target_check[1 ], target[1 ], q[1 ]);
@@ -36,9 +40,10 @@ module counter_wrapper1 (count_enable, block_size, clk, reset, count, target_rea
 //									
 //	not (target_reached, target_not_reached);
 	
-	assign target_reached = (q==target)?1:0;
+	assign target_reached = (count>=target) ? 1'b1 : 1'b0;
 	wire enable;
 	and (enable, count_enable, ~target_reached);
 	
 	counter1 counter1_inst (reset, enable, clk, q);
+	assign count = {q,3'd0};
 endmodule

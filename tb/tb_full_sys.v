@@ -28,12 +28,17 @@ integer length = 878;
 integer iterations = 925, i, k;
 
 
-integer f_xk, f_zk, f_zk_p;
+integer f_xk_s, f_zk_s, f_zk_p_s,
+		  f_xk_l, f_zk_l, f_zk_p_l;
 
 initial begin
-	f_xk = $fopen("xk.txt", "w");
-	f_zk = $fopen("zk.txt", "w");
-	f_zk_p = $fopen("zk_p.txt", "w");
+	f_xk_s = $fopen("xk_s.txt", "w");
+	f_zk_s = $fopen("zk_s.txt", "w");
+	f_zk_p_s = $fopen("zk_p_s.txt", "w");
+	
+	f_xk_l = $fopen("xk_l.txt", "w");
+	f_zk_l = $fopen("zk_l.txt", "w");
+	f_zk_p_l = $fopen("zk_p_l.txt", "w");
 end
 
 
@@ -44,20 +49,38 @@ initial clk=1'b0;
 always #5 clk=~clk;
 
 
-reg prev_out_valid;
+reg switch, prev_out_valid;
+
+initial begin
+switch = 1'b0;
+end
+
 always @(posedge clk) begin
-	if (out_valid) begin
-		$fwrite(f_xk, "%8b\n", xk_out);
-		$fwrite(f_zk, "%8b\n", zk_out);
-		$fwrite(f_zk_p, "%8b\n", zk_prime_out);
+	if (out_valid && switch==1'b0) begin
+		$fwrite(f_xk_s, "%8b\n", xk_out);
+		$fwrite(f_zk_s, "%8b\n", zk_out);
+		$fwrite(f_zk_p_s, "%8b\n", zk_prime_out);
+		prev_out_valid = out_valid;
+	end
+	else if(out_valid && switch==1'b1) begin
+		$fwrite(f_xk_l, "%8b\n", xk_out);
+		$fwrite(f_zk_l, "%8b\n", zk_out);
+		$fwrite(f_zk_p_l, "%8b\n", zk_prime_out);
 		prev_out_valid = out_valid;
 	end
 	else begin
-		if (prev_out_valid) begin
-			$fclose(f_xk);
-			$fclose(f_zk);
-			$fclose(f_zk_p);
-			$stop();
+		if (prev_out_valid && switch==1'b0) begin
+			$fclose(f_xk_s);
+			$fclose(f_zk_s);
+			$fclose(f_zk_p_s);
+			prev_out_valid = 1'b0;
+			switch = 1'b1;
+		end
+		else if (prev_out_valid && switch==1'b1) begin	//Large Block
+			$fclose(f_xk_l);
+			$fclose(f_zk_l);
+			$fclose(f_zk_p_l);
+			prev_out_valid = 1'b0;
 		end
 	end
 end

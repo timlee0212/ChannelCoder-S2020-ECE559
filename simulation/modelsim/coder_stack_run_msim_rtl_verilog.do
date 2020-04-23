@@ -5,8 +5,31 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack {E:/Courses/ECE559/coder-stack/fake_interleaver.v}
-vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack {E:/Courses/ECE559/coder-stack/coder_stack_top_parallel.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/interleaver_fsm_new.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/interleaver.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/counter2.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/counter1.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/counter_wrapper2.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/counter_wrapper1.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/pi1_small_bit7.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/pi1_small_bit6.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/pi1_small_bit5.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/pi1_small_bit4.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/pi1_small_bit3.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/pi1_small_bit2.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/pi1_small_bit1.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/pi1_small_bit0.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/pi1_large_bit7.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/pi1_large_bit6.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/pi1_large_bit5.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/pi1_large_bit4.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/pi1_large_bit3.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/pi1_large_bit2.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/pi1_large_bit1.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/pi1_large_bit0.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/int {E:/Courses/ECE559/coder-stack/int/bit_ram.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/fifo_11bits.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack {E:/Courses/ECE559/coder-stack/coder_stack_top.v}
 vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/shiftreg.v}
 vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/register_8bits.v}
 vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/IP {E:/Courses/ECE559/coder-stack/cdseg/IP/register_2bits.v}
@@ -34,6 +57,7 @@ vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/tb/IP {E:/Co
 vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/encoder_parallel.v}
 vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/tailBitsGenerator_parallel.v}
 vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/enc {E:/Courses/ECE559/coder-stack/enc/encoder_top_parallel.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/tb/IP {E:/Courses/ECE559/coder-stack/tb/IP/ref_large.v}
 vlog -sv -work work +incdir+E:/Courses/ECE559/coder-stack/cdseg/src {E:/Courses/ECE559/coder-stack/cdseg/src/CRC_size.sv}
 
 vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/coder-stack/tb {E:/Courses/ECE559/coder-stack/tb/tb_htb_coder_stack.v}

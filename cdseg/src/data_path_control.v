@@ -26,8 +26,8 @@ module data_fsm(
 
 	output reg start,
 	output reg filling,
-	//output reg stop,
-	output reg crc
+	output reg crc,
+	output reg tf_end
 );
 
 //FSM State Encoding
@@ -152,13 +152,15 @@ always@(*) begin
 		OUT_CRC:		if(cnt_cb_q == 10'h0001) next_state <= NEXT_BLOCK;
 						else next_state <= OUT_CRC;
 		
-		NEXT_BLOCK:	next_state <= WAIT_NEXT;
+		NEXT_BLOCK:	if(cm_q == 2'b00 && cp_q == 2'b00) next_state <= WAIT_NEXT;
+						else next_state <= LOAD_SIZE;
 		WAIT_NEXT: begin
-						//6 Cycles Delay between two blocks
-						if(wc_q == 8'd5) begin
-							if(cm_q == 2'b00 && cp_q == 2'b00) next_state <= IDLE;
-							else next_state <= LOAD_SIZE;
-						end
+						//1 Cycles Delay between two blocks
+						if(wc_q == 8'd1)
+//							if(cm_q == 2'b00 && cp_q == 2'b00) 
+							next_state <= IDLE;
+//							else next_state <= LOAD_SIZE;
+//						end
 						else next_state <= WAIT_NEXT;
 				end
 		
@@ -208,6 +210,8 @@ always@(*) begin
 	
 	wc_in 		= 	8'b0;
 	wc_load		= 	1'b0;
+	
+	tf_end 		=	1'b0;
 	case(state_reg)
 		IDLE:	begin
 						init_crc = 1'b1;
@@ -350,7 +354,8 @@ always@(*) begin
 			//Self increase without latch
 			wc_in 	= wc_q + 1'd1;
 			wc_load 	=	1'b1;
-			ena_crc 	= 1'b0;
+			ena_crc 	= 	1'b0;
+			tf_end	=	1'b1;
 		end
 	endcase
 end
